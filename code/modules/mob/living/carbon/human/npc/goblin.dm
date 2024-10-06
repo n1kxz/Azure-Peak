@@ -2,7 +2,7 @@
 	name = "goblin"
 
 	icon = 'icons/roguetown/mob/monster/goblins.dmi'
-	icon_state = "human_basic"
+	icon_state = "goblin"
 	race = /datum/species/goblin
 	gender = MALE
 	bodyparts = list(/obj/item/bodypart/chest/goblin, /obj/item/bodypart/head/goblin, /obj/item/bodypart/l_arm/goblin,
@@ -14,7 +14,7 @@
 	possible_rmb_intents = list()
 
 /mob/living/carbon/human/species/goblin/npc
-	aggressive=1
+	aggressive = 1
 	mode = AI_IDLE
 	dodgetime = 30 //they can dodge easily, but have a cooldown on it
 	flee_in_pain = TRUE
@@ -86,7 +86,7 @@
 /obj/item/bodypart/head/goblin/update_icon_dropped()
 	return
 
-/obj/item/bodypart/head/goblin/get_limb_icon()
+/obj/item/bodypart/head/goblin/get_limb_icon(dropped, hideaux = FALSE)
 	return
 
 /obj/item/bodypart/head/goblin/skeletonize()

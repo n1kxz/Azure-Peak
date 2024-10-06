@@ -70,6 +70,10 @@
 /obj/item/clothing/mask/rogue/lordmask/l
 	icon_state = "lmask_l"
 
+/obj/item/clothing/mask/rogue/lordmask/tarnished
+	name = "tarnished golden halfmask"
+	desc = "Runes and wards, meant for daemons; the gold has somehow rusted in unnatural, impossible agony. It is worthless."
+	sellprice = 0
 
 /obj/item/clothing/mask/rogue/wildguard
 	name = "wild guard"
@@ -123,6 +127,13 @@
 	icon_state = "smask"
 	max_integrity = 200
 	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/mask/rogue/facemask/goldmask
+	name = "Gold Mask"
+	icon_state = "goldmask"
+	max_integrity = 150
+	sellprice = 100
+	smeltresult = /obj/item/ingot/gold
 
 /obj/item/clothing/mask/rogue/shepherd
 	name = "halfmask"

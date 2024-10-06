@@ -83,6 +83,58 @@
 	verbage = "strings together"
 	craftdiff = 2
 
+/datum/crafting_recipe/roguetown/recurvepartial
+	name = "unstrung recurve bow"
+	result = /obj/item/grown/log/tree/bowpartial/recurve
+	reqs = list(
+		/obj/item/grown/log/tree = 1,
+		/obj/item/natural/bone = 2,
+		/obj/item/reagent_containers/food/snacks/fat = 2,
+		/obj/item/natural/fibers = 2,
+	)
+	tools = /obj/item/rogueweapon/huntingknife
+	verbage_simple = "carve"
+	verbage = "carves"
+	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/recurvebow
+	name = "recurve bow"
+	result = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
+	reqs = list(
+		/obj/item/natural/bowstring = 1,
+		/obj/item/grown/log/tree/bowpartial/recurve = 1,
+		)
+	skillcraft = /datum/skill/combat/bows
+	verbage_simple = "string together"
+	verbage = "strings together"
+	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/longbowpartial
+	name = "unstrung recurve bow"
+	result = /obj/item/grown/log/tree/bowpartial/longbow
+	reqs = list(
+		/obj/item/grown/log/tree = 1,
+		/obj/item/natural/cloth = 1,
+		/obj/item/reagent_containers/food/snacks/fat = 2,
+		/obj/item/natural/fibers = 2,
+	)
+	tools = /obj/item/rogueweapon/huntingknife
+	verbage_simple = "carve"
+	verbage = "carves"
+	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/longbow
+	name = "long bow"
+	result = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
+	reqs = list(
+		/obj/item/natural/bowstring = 1,
+		/obj/item/grown/log/tree/bowpartial/longbow = 1,
+		)
+	skillcraft = /datum/skill/combat/bows
+	verbage_simple = "string together"
+	verbage = "strings together"
+	craftdiff = 3
+
 /datum/crafting_recipe/roguetown/torch
 	name = "torch"
 	result = /obj/item/flashlight/flare/torch
@@ -167,22 +219,6 @@
 	tools = list(/obj/item/rogueweapon/hammer)
 	craftdiff = 3
 
-/datum/crafting_recipe/roguetown/lproesthetic
-	name = "wood arm (L)"
-	result = list(/obj/item/bodypart/l_arm/rproesthetic)
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-	/obj/item/roguegear = 1)
-	skillcraft = /datum/skill/craft/carpentry
-	craftdiff = 3
-
-/datum/crafting_recipe/roguetown/rproesthetic
-	name = "wood arm (R)"
-	result = list(/obj/item/bodypart/r_arm/rproesthetic)
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-	/obj/item/roguegear = 1)
-	skillcraft = /datum/skill/craft/carpentry
-	craftdiff = 3
-
 /obj/item/rogueweapon/mace/woodclub/crafted
 	sellprice = 8
 
@@ -209,13 +245,13 @@
 	skillcraft = /datum/skill/craft/carpentry
 
 /datum/crafting_recipe/roguetown/spoon
-	name = "spoon"
+	name = "spoon (x2)"
 	result = list(/obj/item/kitchen/spoon,
 				/obj/item/kitchen/spoon)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
 /datum/crafting_recipe/roguetown/platter
-	name = "platter"
+	name = "platter (x2)"
 	result = list(/obj/item/cooking/platter,
 				/obj/item/cooking/platter)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
@@ -503,8 +539,6 @@
 	verbage = "sews"
 	craftdiff = 0
 
-
-
 /datum/crafting_recipe/roguetown/bonespear
 	name = "bone spear"
 	result = /obj/item/rogueweapon/spear/bonespear
@@ -521,3 +555,19 @@
 				/obj/item/natural/bone = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/prosthetic/woodleft
+	name = "wood arm (L)"
+	result = list(/obj/item/bodypart/l_arm/prosthetic/woodleft)
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+	/obj/item/roguegear = 1)
+	skillcraft = /datum/skill/craft/engineering
+	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/prosthetic/woodright
+	name = "wood arm (R)"
+	result = list(/obj/item/bodypart/r_arm/prosthetic/woodright)
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+	/obj/item/roguegear = 1)
+	skillcraft = /datum/skill/craft/engineering
+	craftdiff = 3

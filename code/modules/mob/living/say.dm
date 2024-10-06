@@ -318,6 +318,8 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		listening |= M
 		the_dead[M] = TRUE
 
+	log_seen(src, null, listening, original_message, SEEN_LOG_SAY)
+
 	var/eavesdropping
 	var/eavesrendered
 	if(eavesdrop_range)
@@ -421,7 +423,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		if(message_mode == MODE_HEADSET)
 			imp.radio.talk_into(src, message, , spans, language)
 			return ITALICS | REDUCE_RANGE
-		if(message_mode == MODE_DEPARTMENT || message_mode in imp.radio.channels)
+		if(message_mode == MODE_DEPARTMENT || (message_mode in imp.radio.channels))
 			imp.radio.talk_into(src, message, message_mode, spans, language)
 			return ITALICS | REDUCE_RANGE
 

@@ -171,7 +171,7 @@
 				else
 					visible_message(span_warning("[user] sends something."))
 					playsound(loc, 'sound/misc/disposalflush.ogg', 100, FALSE, -1)
-					send_ooc_note(span_boldwarning("New letter from <b>[sentfrom].</b>"), name = send2place)
+					send_ooc_note("New letter from <b>[sentfrom].</b>", name = send2place)
 					return
 	if(istype(P, /obj/item/roguecoin))
 		if(coin_loaded)
@@ -196,6 +196,7 @@
 /obj/structure/roguemachine/mail/Destroy()
 	set_light(0)
 	SSroguemachine.hermailers -= src
+	return ..()
 
 /obj/structure/roguemachine/mail/r
 	pixel_y = 0

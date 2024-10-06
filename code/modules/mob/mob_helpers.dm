@@ -128,6 +128,8 @@
 				newletter+="[newletter]"
 			if(20)
 				newletter+="[newletter][newletter]"
+			else
+				;;
 		newphrase+="[newletter]";counter-=1
 	return newphrase
 
@@ -140,7 +142,7 @@
 	var/newletter=""
 	while(counter>=1)
 		newletter=copytext_char(phrase,(leng-counter)+1,(leng-counter)+2)
-		if(rand(1,2)==2)
+		if(prob(50))
 			if(lowertext(newletter)=="o")
 				newletter="u"
 			if(lowertext(newletter)=="t")
@@ -153,7 +155,7 @@
 				newletter=" NAR "
 			if(lowertext(newletter)=="s")
 				newletter=" SIE "
-		if(rand(1,4)==4)
+		if(prob(25))
 			if(newletter==" ")
 				newletter=" no hope... "
 			if(newletter=="H")
@@ -170,6 +172,8 @@
 				newletter="nglu"
 			if(5)
 				newletter="glor"
+			else
+				;;
 		newphrase+="[newletter]";counter-=1
 	return newphrase
 
@@ -379,28 +383,23 @@
 		if(o_intent)
 			o_intent.afterchange()
 	else
-		var/obj/item/Masteritem = get_active_held_item()
 		if(numb)
 			if(numb > possible_a_intents.len)
 				return
 			else
 				if(active_hand_index == 1)
-					if(!Masteritem)
-						l_ua_index = numb
+					l_ua_index = numb
 					l_index = numb
 				else
-					if(!Masteritem)
-						r_ua_index = numb
+					r_ua_index = numb
 					r_index = numb
 				a_intent = possible_a_intents[numb]
 		else
 			if(active_hand_index == 1)
-				if(!Masteritem)
-					l_ua_index = numb
+				l_ua_index = numb
 				l_index = numb
 			else
-				if(!Masteritem)
-					r_ua_index = numb
+				r_ua_index = numb
 				r_index = numb
 			a_intent = null
 		if(a_intent)
@@ -558,7 +557,7 @@
 	if(isliving(src))
 		L = src
 	var/client/client = L.client
-	if(L.IsSleeping())
+	if(L.IsSleeping() || L.surrendering)
 		if(cmode)
 			playsound_local(src, 'sound/misc/comboff.ogg', 100)
 			SSdroning.play_area_sound(get_area(src), client)
@@ -783,7 +782,7 @@
 	for(var/mob/dead/observer/O in GLOB.player_list)
 		if(!notify_suiciders && (O in GLOB.suicided_mob_list))
 			continue
-		if (ignore_key && O.ckey in GLOB.poll_ignore[ignore_key])
+		if (ignore_key && (O.ckey in GLOB.poll_ignore[ignore_key]))
 			continue
 		var/orbit_link
 		if (source && action == NOTIFY_ORBIT)

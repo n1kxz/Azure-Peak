@@ -311,6 +311,9 @@
 //			LoseTarget()
 //			return 0
 		var/target_distance = get_dist(targets_from,target)
+		if(incapacitated())
+			walk(src,0)
+			return 1
 		if(ranged) //We ranged? Shoot at em
 			if(!target.Adjacent(targets_from) && ranged_cooldown <= world.time) //But make sure they're not in range for a melee attack and our range attack is off cooldown
 				OpenFire(target)
@@ -350,8 +353,8 @@
 //			else
 //				if(FindHidden())
 //					return 1
-	LoseTarget()
-	return 0
+//	LoseTarget()
+//	return 0
 
 /mob/living/simple_animal/hostile/proc/Goto(target, delay, minimum_distance)
 	if(target == src.target)
@@ -470,7 +473,7 @@
 
 
 /mob/living/simple_animal/hostile/Move(atom/newloc, dir , step_x , step_y)
-	if(dodging && approaching_target && prob(dodge_prob) && moving_diagonally == 0 && isturf(loc) && isturf(newloc))
+	if(dodging && approaching_target && prob(dodge_prob) && moving_diagonally == 0 && isturf(loc) && isturf(newloc) && !incapacitated())
 		return dodge(newloc,dir)
 	else
 		return ..()
@@ -518,7 +521,7 @@
 			O.climb_structure(src)
 			break
 
-mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with megafauna destroying everything around them
+/mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with megafauna destroying everything around them
 	if(environment_smash)
 		EscapeConfinement()
 		for(var/dir in GLOB.cardinals)
