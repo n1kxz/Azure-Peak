@@ -21,10 +21,10 @@
 
 	allow_custom_genitals = TRUE
 
+	cmode_music = 'sound/music/combat_fancy.ogg'
+
 /datum/job/roguetown/prince/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
-	if(GLOB.lordsurname && H)
-		give_lord_surname(H)
 	if(ishuman(H))
 		var/mob/living/carbon/human/Q = H
 		Q.advsetup = 1

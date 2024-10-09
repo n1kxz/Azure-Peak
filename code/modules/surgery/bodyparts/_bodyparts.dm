@@ -247,7 +247,7 @@
 		. |= BODYPART_LIFE_UPDATE_HEALTH
 
 /obj/item/bodypart/Initialize()
-	..()
+	. = ..()
 	update_HP()
 
 /obj/item/bodypart/proc/update_HP()
@@ -611,7 +611,7 @@
 			. += marking_overlays
 	
 	// Organ overlays
-	if(!rotted && !skeletonized && draw_organ_features)
+	if(!skeletonized && draw_organ_features)
 		for(var/obj/item/organ/organ as anything in get_organs())
 			if(!organ.is_visible())
 				continue

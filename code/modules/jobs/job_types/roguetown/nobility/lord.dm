@@ -10,7 +10,6 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	spawn_positions = 1
 	selection_color = JCOLOR_NOBLE
 	allowed_races = RACES_ALL_KINDS
-	allowed_patrons = ALL_DIVINE_PATRONS
 	allowed_sexes = list(MALE, FEMALE)
 
 	spells = list(
@@ -31,6 +30,8 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	required = TRUE
 
 	allow_custom_genitals = TRUE
+
+	cmode_music = 'sound/music/combat_fancy.ogg'
 
 /datum/job/roguetown/exlord //just used to change the lords title
 	title = "Monarch Emeritus"

@@ -607,49 +607,6 @@ GLOBAL_VAR_INIT(mobids, 1)
 //		to_chat(src, "You don't have a mind datum for some reason, so you can't add a note to it.")
 
 /**
-  * Allows you to respawn, abandoning your current mob
-  *
-  * This sends you back to the lobby creating a new dead mob
-  *
-  * Only works if flag/norespawn is allowed in config
-  */
-/mob/verb/abandon_mob()
-	set name = "{RETURN TO LOBBY}"
-	set category = "Options"
-	set hidden = 1
-	if(!check_rights(0))
-		return
-	if (CONFIG_GET(flag/norespawn))
-		return
-	if ((stat != DEAD || !( SSticker )))
-		to_chat(usr, span_boldnotice("I must be dead to use this!"))
-		return
-
-	log_game("[key_name(usr)] used abandon mob.")
-
-	to_chat(src, span_info("Returned to lobby successfully."))
-
-	if(!client)
-		log_game("[key_name(usr)] AM failed due to disconnect.")
-		return
-	client.screen.Cut()
-	client.screen += client.void
-	if(!client)
-		log_game("[key_name(usr)] AM failed due to disconnect.")
-		return
-
-	var/mob/dead/new_player/M = new /mob/dead/new_player()
-	if(!client)
-		log_game("[key_name(usr)] AM failed due to disconnect.")
-		qdel(M)
-		return
-
-	M.key = key
-//	M.Login()	//wat
-	return
-
-
-/**
   * Sometimes helps if the user is stuck in another perspective or camera
   */
 /mob/verb/cancel_camera()
@@ -764,6 +721,8 @@ GLOBAL_VAR_INIT(mobids, 1)
 /mob/Stat()
 	..()
 	// && check_rights(R_ADMIN,0)
+	var/ticker_time = world.time - SSticker.round_start_time
+	var/time_left = SSticker.mode?.round_ends_at - ticker_time
 	if(client && client.holder)
 		if(statpanel("Status"))
 			if (client)
@@ -775,6 +734,8 @@ GLOBAL_VAR_INIT(mobids, 1)
 			stat(null, "Round ID: [GLOB.rogue_round_id ? GLOB.rogue_round_id : "NULL"]")
 //			stat(null, "Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]")
 			stat(null, "Round Time: [time2text(STATION_TIME_PASSED(), "hh:mm:ss", 0)] [world.time - SSticker.round_start_time]")
+			if(SSticker.mode?.roundvoteend)
+				stat("Round End: [DisplayTimeText(time_left)]")
 			stat(null, "Round TrueTime: [worldtime2text()] [world.time]")
 			stat(null, "TimeOfDay: [GLOB.tod]")
 			stat(null, "IC Time: [station_time_timestamp()] [station_time()]")
@@ -789,6 +750,8 @@ GLOBAL_VAR_INIT(mobids, 1)
 		if(statpanel("RoundInfo"))
 			stat("Round ID: [GLOB.rogue_round_id]")
 			stat("Round Time: [time2text(STATION_TIME_PASSED(), "hh:mm:ss", 0)] [world.time - SSticker.round_start_time]")
+			if(SSticker.mode?.roundvoteend)
+				stat("Round End: [DisplayTimeText(time_left)]")
 			stat("TimeOfDay: [GLOB.tod]")
 
 	if(client && client.holder && check_rights(R_ADMIN,0))
