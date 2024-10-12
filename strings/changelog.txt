@@ -1,1 +1,3 @@
-Únete a nuestro Discord.
+Roleplay ads can be set in the OOC tabs. Toggle Roleplay Ads on to be notified of new postings.
+Critical hits have minimum damage thresholds.
+Loadout items can be selected in the character creation menu.
