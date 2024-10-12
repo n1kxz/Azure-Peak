@@ -105,7 +105,7 @@
 	set name = "Recent Changes"
 	set category = "OOC"
 	if(GLOB.changelog.len)
-		to_chat(src, "Novedades:")
+		to_chat(src, "Recent Changes:")
 		for(var/change in GLOB.changelog)
 			to_chat(src, span_info("- [change]"))
 
