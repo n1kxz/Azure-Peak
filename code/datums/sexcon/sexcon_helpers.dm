@@ -35,7 +35,7 @@
 	extra_range = -4
 
 /mob/living
-	var/can_do_sex = TRUE
+//
 	var/virginity = FALSE
 
 /mob/living/carbon/human/MiddleMouseDrop_T(mob/living/target, mob/living/user)
@@ -45,7 +45,7 @@
 		return
 	if(target != user)
 		return
-	if(!user.can_do_sex())
+//
 		to_chat(user, "<span class='warning'>I can't do this.</span>")
 		return
 	if(!target.client || !target.client.prefs || (target.client.prefs.sexable == FALSE)) // Don't bang someone that dosn't want it.
@@ -54,8 +54,8 @@
 		return
 	user.sexcon.start(src)
 
-/mob/living/proc/can_do_sex()
-	return TRUE
+//mob/living/proc/can_do_sex()
+//	return TRUE
 
 /mob/living/carbon/human/proc/make_sucking_noise()
 	if(gender == FEMALE)

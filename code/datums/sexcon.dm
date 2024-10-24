@@ -70,9 +70,9 @@
 	gender = FEMALE
 
 /mob
-	var/can_do_sex = 2
+//
 
-/mob/proc/can_do_sex()
+/*
 	if(can_do_sex != 2)
 		return can_do_sex
 	if(!client)
@@ -88,16 +88,16 @@
 		return can_do_sex
 	can_do_sex = 1
 	return can_do_sex
-
+*/
 /mob/living/carbon/MiddleMouseDrop_T(mob/living/target, mob/living/user)
 	if(user.mmb_intent)
 		return ..()
 	if(!istype(target))
 		return
-	if(!user.can_do_sex())
+//
 		to_chat(user, "<span class='warning'>I can't do this.</span>")
 		return
-	if(!can_do_sex())
+//	if(!can_do_sex())
 //		to_chat(user, "<span class='warning'>I can't do this.</span>")
 		return
 	var/ourgroin = TRUE
@@ -262,7 +262,7 @@
 	START_PROCESSING(SSsex, src)
 
 /mob/living/carbon/human
-	var/virginity = FALSE
+//	var/virginity = FALSE
 
 /mob/living/carbon/human/proc/on_virgin_loss()
 	virginity = FALSE
@@ -1026,7 +1026,7 @@
 						if(gender == MALE)
 							playsound(owner, 'sound/misc/mat/fap.ogg', 30, TRUE, -2, ignore_walls = FALSE)
 						else
-							playsound(owner, 'modular/sound/misc/mat/fingering.ogg', 30, TRUE, -2, ignore_walls = FALSE)	//Different masturbation sounds - by Gardelin0
+							playsound(owner, 'sound/misc/mat/fingering.ogg', 30, TRUE, -2, ignore_walls = FALSE)	//Different masturbation sounds - by Gardelin0
 						if(prob(33))
 							if(!is_fingering)
 								owner.visible_message("<span class='[!owner.cmode ? "love" : "warning"]'>[owner] faps.</span>")
@@ -1042,7 +1042,7 @@
 						if(gender == MALE)
 							playsound(owner, 'sound/misc/mat/fap.ogg', 30, TRUE, -2, ignore_walls = FALSE)
 						else
-							playsound(owner, 'modular/sound/misc/mat/fingering.ogg', 30, TRUE, -2, ignore_walls = FALSE)	//Different masturbation sounds - by Gardelin0
+							playsound(owner, 'sound/misc/mat/fingering.ogg', 30, TRUE, -2, ignore_walls = FALSE)	//Different masturbation sounds - by Gardelin0
 						if(prob(33))
 							if(!is_fingering)
 								fapping.grabbee.visible_message("<span class='[!owner.cmode ? "love" : "warning"]'>[fapping.grabbee] jerks [owner].</span>")
