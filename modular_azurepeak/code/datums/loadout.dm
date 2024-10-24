@@ -6,6 +6,9 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	var/path
 
 
+//
+
+
 //HATS
 /datum/loadout_item/shalal
 	name = "Keffiyeh"
@@ -14,7 +17,7 @@ GLOBAL_LIST_EMPTY(loadout_items)
 /datum/loadout_item/archercap
 	name = "Archer's cap"
 	path = /obj/item/clothing/head/roguetown/archercap
-	
+
 /datum/loadout_item/strawhat
 	name = "Straw Hat"
 	path = /obj/item/clothing/head/roguetown/strawhat

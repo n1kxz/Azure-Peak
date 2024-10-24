@@ -3,7 +3,7 @@
 	var/name = "Skill"
 	var/desc = ""
 
-	var/dream_cost_base = 2
+	var/dream_cost_base = 1
 	var/dream_cost_per_level = 0.5
 	var/dream_legendary_extra_cost = 1
 	var/list/specific_dream_costs
@@ -25,3 +25,5 @@
 	if(!dreams)
 		return null
 	return pick(dreams)
+
+//

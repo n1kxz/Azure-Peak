@@ -60,6 +60,8 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	desc = "A 50% chance to be given a random flaw, or a 50% chance to have NO flaw."
 	var/nochekk = TRUE
 
+
+//
 /datum/charflaw/randflaw/flaw_on_life(mob/user)
 	if(!nochekk)
 		return
@@ -148,7 +150,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 		H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/spectacles(H), SLOT_WEAR_MASK)
 	else
 		new /obj/item/clothing/mask/rogue/spectacles(get_turf(H))
-	
+
 	// we don't seem to have a mind when on_mob_creation fires, so set up a timer to check when we probably will
 	addtimer(CALLBACK(src, PROC_REF(apply_reading_skill), H), 5 SECONDS)
 

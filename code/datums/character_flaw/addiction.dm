@@ -110,3 +110,6 @@
 	desc = "There is no greater pleasure than the suffering of another."
 	time = 40 MINUTES
 	needsate_text = "I need to hear someone whimper."
+
+
+//

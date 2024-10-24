@@ -30,3 +30,5 @@
 	created_item = /obj/item/dildo/gold
 	createditem_num = 3
 	i_type = "Utilities"
+
+
