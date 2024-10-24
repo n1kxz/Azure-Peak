@@ -292,8 +292,8 @@
 	item_state = "tabi"
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	name = "kilij scimitar"
-	desc = "A scimitar with elegant curves and deadly sharpness."
+	name = "shamshir"
+	desc = "A one-handed sword with elegant curves and deadly sharpness."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -593,7 +593,6 @@
 	sellprice = 140
 
 /obj/item/rogueweapon/sword/rapier/lord
-	force = 20
 	name = "sword of the Mad Duke"
 	desc = "A royal heirloom whose spiraling basket hilt is inlaid with fine cut gems. It bears the burnish of \
 	time, where once sharply defined features have been worn down by so many hands. An old rumor ties this implement \
