@@ -8,10 +8,6 @@
 	var/list/sleep_exp = list()
 	var/datum/mind/mind = null
 
-
-//
-
-
 /datum/sleep_adv/New(datum/mind/passed_mind)
 	. = ..()
 	mind = passed_mind

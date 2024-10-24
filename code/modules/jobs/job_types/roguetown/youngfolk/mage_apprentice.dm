@@ -19,7 +19,7 @@
 
 	min_pq = 0
 	max_pq = null
-  //
+
 /datum/outfit/job/roguetown/wapprentice/pre_equip(mob/living/carbon/human/H)
 	..()
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt

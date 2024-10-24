@@ -87,13 +87,6 @@
 	body_parts_covered = CHEST|GROIN
 	armor_class = ARMOR_CLASS_LIGHT
 
-/obj/item/clothing/suit/roguetown/armor/chainmail/bikini/carpa
-	name= "bikini de cadenas pervertido"
-	desc = "refleja los fetiches de un herrero pervertido.....                          la etica aparenta ser de un tal jano"
-	icon_state = "chainkinisex"
-	item_state = "chainkinisex"
-
-
 /obj/item/clothing/suit/roguetown/armor/plate
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "steel half-plate"

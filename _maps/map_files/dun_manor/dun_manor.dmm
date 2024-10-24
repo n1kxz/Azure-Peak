@@ -527,10 +527,6 @@
 "azh" = (
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor)
-"azp" = (
-/mob/living/simple_animal/cockroach,
-/turf/open/floor/rogue/cobble,
-/area/rogue/under/town/basement)
 "azs" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
 /obj/structure/table/wood{
@@ -5926,7 +5922,6 @@
 /obj/item/clothing/cloak/chasuble,
 /obj/item/rogueweapon/woodstaff/aries,
 /obj/item/scomstone,
-/obj/item/energy_katana,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/church/chapel)
 "gaU" = (
@@ -10400,7 +10395,6 @@
 /obj/item/clothing/gloves/roguetown/angle,
 /obj/item/clothing/wrists/roguetown/bracers/leather,
 /obj/machinery/light/rogue/wallfire/candle/l,
-/obj/item/book/granter/spell/random,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -12177,13 +12171,6 @@
 /obj/structure/fluff/statue/tdummy,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
-"mpq" = (
-/obj/structure/bed/rogue,
-/obj/item/clothing/suit/roguetown/armor/chainmail/bikini/carpa,
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "weird1"
-	},
-/area/rogue/indoors/town/dwarfin)
 "mpE" = (
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/blocks,
@@ -13883,7 +13870,6 @@
 /obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/food/snacks/rogue/crackerscooked,
 /obj/item/rope/chain,
-/obj/item/implant/krav_maga,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/under/town/basement)
 "nYu" = (
@@ -19829,7 +19815,6 @@
 "tOq" = (
 /obj/structure/bookcase,
 /obj/item/book/rogue/necra,
-/obj/item/book/granter/spell/random,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -22906,10 +22891,6 @@
 /obj/effect/decal/mossy,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/town)
-"xeI" = (
-/mob/living/simple_animal/cow,
-/turf/open/floor/rogue/dirt/ambush,
-/area/rogue/under/cave)
 "xeN" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -28317,7 +28298,7 @@ dKO
 uBR
 etD
 hWI
-xeI
+dKO
 dKO
 hWI
 hWI
@@ -28475,7 +28456,7 @@ dKO
 uBR
 uBR
 dKO
-xeI
+dKO
 uBR
 uBR
 uBR
@@ -36091,7 +36072,7 @@ hWI
 hWI
 hWI
 jOv
-mpq
+eTc
 wAU
 jOv
 wAU
@@ -40682,7 +40663,7 @@ tfY
 bBD
 bBD
 jpA
-azp
+bBD
 gLG
 dIf
 pmA

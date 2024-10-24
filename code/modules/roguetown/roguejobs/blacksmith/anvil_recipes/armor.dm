@@ -113,13 +113,6 @@
 	additional_items = list(/obj/item/natural/cloth)
 	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
 
-/datum/anvil_recipe/armor/steel/chainkinisex
-	name = "Chainmail Bikini lewd (+1 Cloth)"
-	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/natural/cloth)
-	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/bikini/carpa
-
-
 /datum/anvil_recipe/armor/steel/hauberk
 	name = "Hauberk (+1 Steel)"
 	req_bar = /obj/item/ingot/steel
@@ -196,7 +189,6 @@
 	createditem_num = 1
 	craftdiff = 3
 
-
 /datum/anvil_recipe/armor/steel/chainleg
 	name = "Chain Chausses"
 	req_bar = /obj/item/ingot/steel
@@ -226,7 +218,7 @@
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/clothing/under/roguetown/platelegs
 	craftdiff = 2
-// aafaga
+
 /datum/anvil_recipe/armor/stee/cuirass
 	name = "Cuirass (+1 Steel)"
 	req_bar = /obj/item/ingot/steel
