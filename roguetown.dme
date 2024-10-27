@@ -412,7 +412,6 @@
 #include "code\datums\recipe.dm"
 #include "code\datums\ruins.dm"
 #include "code\datums\saymode.dm"
-#include "code\datums\sexcon.dm"
 #include "code\datums\shuttles.dm"
 #include "code\datums\soullink.dm"
 #include "code\datums\spawners_menu.dm"
@@ -3593,6 +3592,8 @@
 #include "modular_azurepeak\code\modules\mob\living\simple_animal\rogue\creacher\gethsmane.dm"
 #include "modular_azurepeak\code\modules\mob\living\simple_animal\rogue\creacher\newminotaur.dm"
 #include "modular_azurepeak\code\modules\spells\orison.dm"
+#include "modular_azurepeak\code\modules\spells\pantheon\inhumen\zizo.dm"
+#include "modular_azurepeak\code\modules\spells\pantheon\divine\necra.dm"
 #include "modular_azurepeak\statpacks\agile.dm"
 #include "modular_azurepeak\statpacks\mental.dm"
 #include "modular_azurepeak\statpacks\physical.dm"
@@ -3612,5 +3613,3 @@
 #include "modular_hearthstone\code\modules\reagents\reagent_containers\lux.dm"
 #include "modular_hearthstone\code\modules\spells\roguetown\wizard.dm"
 // END_INCLUDE
-
-// #include "modular_carpa\code\cosovacio"

@@ -9,7 +9,7 @@
 	allowed_races = RACES_ALL_KINDS
 	allowed_ages = list(AGE_ADULT)
 
-	tutorial = "Your master once saw potential in you, something you are uncertain if they still do with your recent studies. The path to using magic is something treacherous and untamed, and you are still decades away from calling yourself even a journeyman in the field. Listen and serve, and someday you will earn your hat."
+	tutorial = "Your master once saw potential in you, although you are uncertain if they still do, given how rigorous and difficult your studies have been. The path to using magic is a treacherous and untamed one, and you are still decades away from calling yourself even a journeyman in the field. Listen and serve, and someday you will earn your hat."
 
 	spells = list(/obj/effect/proc_holder/spell/targeted/touch/prestidigitation, /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
 	outfit = /datum/outfit/job/roguetown/wapprentice
@@ -29,7 +29,7 @@
 	backr = /obj/item/storage/backpack/rogue/satchel
 	r_hand = /obj/item/rogueweapon/woodstaff
 	backpack_contents = list(/obj/item/roguegem/amethyst = 1)
-	if(H.pronouns == SHE_HER)
+	if(H.pronouns == SHE_HER || H.pronouns == THEY_THEM_F)
 		shoes = /obj/item/clothing/shoes/roguetown/sandals
 	else
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes

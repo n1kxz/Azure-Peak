@@ -8,7 +8,7 @@
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
-	tutorial = "Picked out of your political value rather than likely any form of love, you have become the Monarch's most trusted confidant and likely friend throughout your marriage. Your loyalty and perhaps, love, will be tested this day. For the daggers that threaten your beloved are as equally pointed at your own throat."
+	tutorial = "Picked out of your political value rather than likely any form of love, you have become the Monarch's most trusted confidant--and likely friend--throughout your marriage. Your loyalty and perhaps even your love will be tested this day...for the daggers that threaten your beloved are as equally pointed at your own throat."
 
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/servant)
 	outfit = /datum/outfit/job/roguetown/lady
@@ -35,7 +35,7 @@
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
 //		SSticker.rulermob = H
-	if(H.pronouns == SHE_HER)
+	if(H.pronouns == SHE_HER || H.pronouns == THEY_THEM_F)
 		beltl = /obj/item/storage/keyring/royal
 		neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 		belt = /obj/item/storage/belt/rogue/leather/cloth/lady
@@ -78,6 +78,7 @@
 /obj/effect/proc_holder/spell/self/convertrole/servant
 	name = "Recruit Servant"
 	new_role = "Servant"
+	overlay_state = "recruit_servant"
 	recruitment_faction = "Servants"
 	recruitment_message = "Serve the crown, %RECRUIT!"
 	accept_message = "FOR THE CROWN!"

@@ -2,6 +2,7 @@
 	name = null
 	associated_faith = /datum/faith/inhumen
 	undead_hater = FALSE
+	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	confess_lines = list(
 		"PSYDON IS THE DEMIURGE!",
 		"THE TEN ARE WORTHLESS COWARDS!",
@@ -11,9 +12,12 @@
 /datum/patron/inhumen/zizo
 	name = "Zizo"
 	domain = "Advancement, Hubris, Left Hand Magicks"
-	desc = "Snow Elf turned God- banished by the Ten for spreading unholy magicks and forbidden sciences. Her craft taught mortals to bend the natural world to their will, but destroyed the Snow Elf race.."
+	desc = "Snow Elf turned God, who in her endless pursuit of greatness sacrificed her kin for ascension. Zizo revolutionized many a science and magick and taught mortals to bend the natural world to their will."
 	worshippers = "Necromancers, Warlocks, and the Undead"
 	mob_traits = list(TRAIT_CABAL)
+	t1 = /obj/effect/proc_holder/spell/invoked/projectile/profane/miracle
+	t2 = /obj/effect/proc_holder/spell/invoked/raise_lesser_undead/miracle
+	t3 = /obj/effect/proc_holder/spell/invoked/rituos/miracle
 	confess_lines = list(
 		"PRAISE ZIZO!",
 		"LONG LIVE ZIZO!",
