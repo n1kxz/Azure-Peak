@@ -36,3 +36,9 @@ En un servidor de rol, nunca deberías matar a otro jugador como primera opción
 Esto no significa que el Rey no pueda ser corrupto, o que el Caballero o el Guardia no lo puedan ser, pero debería haber algo más que simple violencia sin sentido. Sé creativo e intenta hacer que el juego sea divertido también para los demás.
 
 **Matar a alguien después de respawnear porque mataron a tu personaje anterior no es justificable bajo ningún concepto, y se considera RDM y LRP (Low RolePlay).**
+
+## 4. No provocar conflictos con el fin de iniciar un combate
+
+No provoques a otros jugadores para iniciar un conflicto y luego los ataques inmediatamente sin una razón clara que lo justifique. El combate debe ser la última opción, siempre y cuando sea posible.  
+Tampoco se permite **atacar a alguien mientras está escribiendo o interpretando una acción**.
+**Ejemplo:** No puedes dejar que te roben solo para tener una excusa para atacar al ladrón.
