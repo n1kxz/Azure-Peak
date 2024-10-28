@@ -1,7 +1,7 @@
 # Reglas
 
 ## 1. Roleplay mientras sea factible
-Este es un servidor de Medium RolePlay (MRP). Se espera que rolees tus acciones con otros jugadores siempre que sea posible. Si alguien te ataca de manera puramente "robusta" (es decir, utilizando solo mecánicas del juego) mientras intentas rolear sin una provocación razonable, usa la función de admin-help para informar a un administrador.
+Este es un servidor de Medium Roleplay (MRP). Se espera que rolees tus acciones con otros jugadores siempre que sea posible. Si alguien te ataca de manera puramente "robusta" (es decir, utilizando solo mecánicas del juego) mientras intentas rolear sin una provocación razonable, usa la función de admin-help para informar a un administrador.
 
 ### ¿Qué es una provocación razonable?
 Una provocación razonable incluye situaciones en las que eres demasiado peligroso como para que te permitan hablar, como por ejemplo:
