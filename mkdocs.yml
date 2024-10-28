@@ -2,9 +2,14 @@ site_name: Reino Carpa
 theme:
   name: material
   palette:
-    primary: teal
+    primary: black
+    accent: red
+    
 nav:
   - Inicio: index.md
   - Reglas: rules.md
   - Roles:
+    - roles/index.md
     - Aventurero: roles/adventurer.md
+    - Mercenario: roles/mercenary.md
+    - Guardia Real: roles/royal-guard.md

@@ -1,3 +1,1 @@
 # Reglas
-
-Prueba
