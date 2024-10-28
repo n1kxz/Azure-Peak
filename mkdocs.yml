@@ -9,7 +9,6 @@ nav:
   - Inicio: index.md
   - Reglas: rules.md
   - Roles:
-    - roles/index.md
     - Aventurero: roles/adventurer.md
     - Mercenario: roles/mercenary.md
     - Guardia Real: roles/royal-guard.md
