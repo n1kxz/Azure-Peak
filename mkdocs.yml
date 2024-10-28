@@ -1,6 +1,7 @@
 site_name: Reino Carpa
 theme:
   name: material
+  language: es
   palette:
     primary: black
     accent: red
