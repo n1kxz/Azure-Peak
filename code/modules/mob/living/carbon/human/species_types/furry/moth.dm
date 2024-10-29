@@ -63,6 +63,7 @@
 		/datum/customizer/organ/wings/moth,
 		/datum/customizer/organ/antennas/moth,
 		/datum/customizer/organ/neck_feature/moth_fluff,
+		/datum/customizer/organ/breasts/animal,
 		)
 	body_marking_sets = list(
 		/datum/body_marking_set/moth/reddish,

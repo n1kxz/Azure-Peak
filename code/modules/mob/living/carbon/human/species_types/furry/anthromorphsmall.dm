@@ -73,6 +73,7 @@
 		/datum/customizer/organ/frills/anthro,
 		/datum/customizer/organ/wings/anthro,
 		/datum/customizer/organ/neck_feature/anthro,
+		/datum/customizer/organ/breasts/animal,
 		)
 	body_marking_sets = list(
 		/datum/body_marking_set/none,
