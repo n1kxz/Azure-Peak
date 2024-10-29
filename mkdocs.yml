@@ -1,0 +1,16 @@
+site_name: Reino Carpa
+theme:
+  name: material
+  language: es
+  palette:
+    primary: black
+    accent: red
+    
+nav:
+  - Inicio: index.md
+  - Reglas: rules.md
+  - Roles:
+    - Aventurero: roles/adventurer.md
+    - Mercenario: roles/mercenary.md
+    - Nobleza: roles/nobility.md
+    - Guardia Real: roles/royal-guard.md
