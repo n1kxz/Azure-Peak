@@ -113,16 +113,6 @@
 	additional_items = list(/obj/item/natural/cloth)
 	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
 
-
-// carpa
-/datum/anvil_recipe/armor/steel/chainkinisex
-	name = "Chainmail Bikini lewd (+1 Cloth)"
-	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/natural/cloth)
-	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/bikini/carpa
-
-// fin de carpa
-
 /datum/anvil_recipe/armor/steel/hauberk
 	name = "Hauberk (+1 Steel)"
 	req_bar = /obj/item/ingot/steel
