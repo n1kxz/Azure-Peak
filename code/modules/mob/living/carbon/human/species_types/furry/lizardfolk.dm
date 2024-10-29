@@ -69,6 +69,7 @@
 		/datum/customizer/organ/snout/lizard,
 		/datum/customizer/organ/frills/lizard,
 		/datum/customizer/organ/horns/humanoid/sissean,
+		/datum/customizer/organ/breasts/animal,
 		)
 	body_marking_sets = list(
 		/datum/body_marking_set/none,

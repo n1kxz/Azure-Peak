@@ -75,6 +75,7 @@
 		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/organ/horns/anthro,
 		/datum/customizer/organ/tail/tiefling,
+		/datum/customizer/organ/breasts/human,
 		)
 	body_markings = list(
 		/datum/body_marking/flushed_cheeks,

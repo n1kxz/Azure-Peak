@@ -66,6 +66,8 @@
 		/datum/customizer/organ/tail/vulpkanin,
 		/datum/customizer/organ/snout/vulpkanin,
 		/datum/customizer/organ/ears/vulpkanin,
+		/datum/customizer/organ/breasts/animal,
+
 		)
 	body_marking_sets = list(
 		/datum/body_marking_set/none,

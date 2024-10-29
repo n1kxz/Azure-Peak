@@ -69,6 +69,7 @@
 		/datum/customizer/organ/snout/tabaxi,
 		/datum/customizer/organ/tail/tabaxi,
 		/datum/customizer/organ/ears/tajaran,
+		/datum/customizer/organ/breasts/animal,
 		)
 	body_marking_sets = list(
 		/datum/body_marking_set/none,
