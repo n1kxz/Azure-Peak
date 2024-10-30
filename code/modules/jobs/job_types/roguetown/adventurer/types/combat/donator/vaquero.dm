@@ -11,7 +11,14 @@
 /datum/advclass/vaquero/equipme(mob/living/carbon/human/H)
 	if(H.pronouns == SHE_HER || H.pronouns == THEY_THEM_F)
 		horse = /mob/living/simple_animal/hostile/retaliate/rogue/saiga/tame/saddled
-	return ..() 
+	
+	// Instanciar y colocar el saiga en la ubicación del personaje
+	var/mob/living/simple_animal/hostile/retaliate/rogue/saiga/tame/saddled/saiga = new /mob/living/simple_animal/hostile/retaliate/rogue/saiga/tame/saddled(get_turf(H))
+	
+	// Asegúrate de que el saiga aparezca encima del personaje
+	saiga.loc = get_turf(H) // Coloca el saiga en la misma ubicación que el personaje
+
+	return ..()
 
 /datum/outfit/job/roguetown/adventurer/vaquero/pre_equip(mob/living/carbon/human/H)
 	..()
