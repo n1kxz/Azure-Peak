@@ -11,7 +11,7 @@
 /datum/advclass/vaquero/equipme(mob/living/carbon/human/H)
 	if(H.pronouns == SHE_HER || H.pronouns == THEY_THEM_F)
 		horse = /mob/living/simple_animal/hostile/retaliate/rogue/saiga/tame/saddled
-	return ..()
+	return ..() 
 
 /datum/outfit/job/roguetown/adventurer/vaquero/pre_equip(mob/living/carbon/human/H)
 	..()
