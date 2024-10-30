@@ -7,7 +7,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	"Junkie"=/datum/charflaw/addiction/junkie,
 	"Greedy"=/datum/charflaw/greedy,
 	"Narcoleptic"=/datum/charflaw/narcoleptic,
-	"Nymphomaniac"=/datum/charflaw/addiction/lovefiend,
+	//"Nymphomaniac"=/datum/charflaw/addiction/lovefiend,
 	"Sadist"=/datum/charflaw/addiction/sadist,
 	"Masochist"=/datum/charflaw/masochist,
 	"Paranoid"=/datum/charflaw/paranoid,
@@ -148,7 +148,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 		H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/spectacles(H), SLOT_WEAR_MASK)
 	else
 		new /obj/item/clothing/mask/rogue/spectacles(get_turf(H))
-	
+
 	// we don't seem to have a mind when on_mob_creation fires, so set up a timer to check when we probably will
 	addtimer(CALLBACK(src, PROC_REF(apply_reading_skill), H), 5 SECONDS)
 
