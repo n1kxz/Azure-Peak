@@ -12,8 +12,8 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	return laws[chosen_lawset]["laws"]
 
 /obj/structure/roguemachine/titan
-	name = "throat"
-	desc = "He who wears the crown holds the key to this strange thing. If all else fails, demand the \"secrets of the throat!\""
+	name = "trono"
+	desc = "Quien lleve la corona, poseera la llave a esta extraña cosa. Si todo falla, solo teneis que exclamar \"ayuda\""
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = ""
 	density = FALSE
@@ -64,13 +64,13 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 		notlord = TRUE
 
 	if(mode)
-		if(findtext(message, "nevermind"))
+		if(findtext(message, "olvidalo"))
 			mode = 0
 			return
-	if(findtext(message, "summon crown")) //This must never fail, thus place it before all other modestuffs.
+	if(findtext(message, "invocar corona")) //This must never fail, thus place it before all other modestuffs.
 		if(!SSroguemachine.crown)
 			new /obj/item/clothing/head/roguetown/crown/serpcrown(src.loc)
-			say("The crown is summoned!")
+			say("La corona es invocada!")
 			playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			playsound(src, 'sound/misc/hiss.ogg', 100, FALSE, -1)
 		if(SSroguemachine.crown)
@@ -80,7 +80,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 			if(I && !ismob(I.loc))//You MUST MUST MUST keep the Crown on a person to prevent it from being summoned (magical interference)
 				I.anti_stall()
 				I = new /obj/item/clothing/head/roguetown/crown/serpcrown(src.loc)
-				say("The crown is summoned!")
+				say("La corona es invocada!")
 				playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 				playsound(src, 'sound/misc/hiss.ogg', 100, FALSE, -1)
 				return
@@ -88,27 +88,27 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 				var/mob/living/carbon/human/HC = I.loc
 				if(HC.stat != DEAD)
 					if(I in HC.held_items)
-						say("[HC.real_name] holds the crown!")
+						say("[HC.real_name] mantiene la corona!")
 						playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 						return
 					if(H.head == I)
-						say("[HC.real_name] wears the crown!")
+						say("[HC.real_name] lleva puesta la corona!")
 						playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 						return
 				else
 					HC.dropItemToGround(I, TRUE) //If you're dead, forcedrop it, then move it.
 			I.forceMove(src.loc)
-			say("The crown is summoned!")
+			say("La corona es invocada!")
 			playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			playsound(src, 'sound/misc/hiss.ogg', 100, FALSE, -1)
-	if(findtext(message, "summon key"))
+	if(findtext(message, "invocar llave"))
 		if(nocrown)
-			say("You need the crown.")
+			say("Necesitas una corona.")
 			playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 			return
 		if(!SSroguemachine.key)
 			new /obj/item/roguekey/lord(src.loc)
-			say("The key is summoned!")
+			say("La llave es invocada!")
 			playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			playsound(src, 'sound/misc/hiss.ogg', 100, FALSE, -1)
 		if(SSroguemachine.key)
@@ -118,111 +118,111 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 			if(I && !ismob(I.loc))
 				I.anti_stall()
 				I = new /obj/item/roguekey/lord(src.loc)
-				say("The key is summoned!")
+				say("La llave es invocada!")
 				playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 				playsound(src, 'sound/misc/hiss.ogg', 100, FALSE, -1)
 				return
 			if(ishuman(I.loc))
 				var/mob/living/carbon/human/HC = I.loc
 				if(HC.stat != DEAD)
-					say("[HC.real_name] holds the key!")
+					say("[HC.real_name] mantiene la llave!")
 					playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 					return
 				else
 					HC.dropItemToGround(I, TRUE) //If you're dead, forcedrop it, then move it.
 			I.forceMove(src.loc)
-			say("The key is summoned!")
+			say("La llave es invocada!")
 			playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			playsound(src, 'sound/misc/hiss.ogg', 100, FALSE, -1)
 	switch(mode)
 		if(0)
-			if(findtext(message, "secrets of the throat"))
-				say("My commands are: Make Decree, Make Announcement, Set Taxes, Declare Outlaw, Summon Crown, Summon Key, Make Law, Remove Law, Purge Laws, Nevermind")
+			if(findtext(message, "ayuda"))
+				say("Mis comandos son: Establecer Decreto, Realizar Anuncio, Establecer Impuestos, Declarar Fugitivo, Invocar Corona, Invocar Llave, Crear Ley, Remover Ley, Purgar Leyes, Olvidalo")
 				playsound(src, 'sound/misc/machinelong.ogg', 100, FALSE, -1)
-			if(findtext(message, "make announcement"))
+			if(findtext(message, "realizar anuncio"))
 				if(nocrown)
-					say("You need the crown.")
+					say("Necesitas una corona.")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 					return
 				if(!SScommunications.can_announce(H))
-					say("I must gather my strength!")
+					say("Debo recomponer mis fuerzas!")
 					return
-				say("Speak and they will listen.")
+				say("Habla, y ellos te obedeceran.")
 				playsound(src, 'sound/misc/machineyes.ogg', 100, FALSE, -1)
 				mode = 1
 				return
-			if(findtext(message, "make decree"))
+			if(findtext(message, "establecer decreto"))
 				if(!SScommunications.can_announce(H))
-					say("I must gather my strength!")
+					say("Debo recomponer mis fuerzas!")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 					return
 				if(notlord || nocrown)
-					say("You are not my master!")
+					say("Tu no eres mi maestro!")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 					return
-				say("Speak and they will obey.")
+				say("Habla, y ellos te obedeceran.")
 				playsound(src, 'sound/misc/machineyes.ogg', 100, FALSE, -1)
 				mode = 2
 				return
-			if(findtext(message, "make law"))
+			if(findtext(message, "crear ley"))
 				if(!SScommunications.can_announce(H))
-					say("I must gather my strength!")
+					say("Debo recomponer mis fuerzas!")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 					return
 				if(notlord || nocrown)
-					say("You are not my master!")
+					say("Tu no eres mi maestro!")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 					return
-				say("Speak and they will obey.")
+				say("Habla, y ellos te obedeceran.")
 				playsound(src, 'sound/misc/machineyes.ogg', 100, FALSE, -1)
 				mode = 4
 				return
-			if(findtext(message, "remove law"))
+			if(findtext(message, "remover ley"))
 				if(!SScommunications.can_announce(H))
-					say("I must gather my strength!")
+					say("Debo recomponer mis fuerzas!")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 					return
 				if(notlord || nocrown)
-					say("You are not my master!")
+					say("Tu no eres mi maestro!")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 					return
-				var/message_clean = replacetext(message, "remove law", "")
+				var/message_clean = replacetext(message, "remover ley", "")
 				var/law_index = text2num(message_clean) || 0
 				if(!law_index || !GLOB.laws_of_the_land[law_index])
-					say("That law doesn't exist!")
+					say("Esa ley no existe!")
 					return
-				say("That law shall be gone!")
+				say("Esa ley debera ser eliminada!")
 				playsound(src, 'sound/misc/machineyes.ogg', 100, FALSE, -1)
 				remove_law(law_index)
 				return
-			if(findtext(message, "purge laws"))
+			if(findtext(message, "purgar leyes"))
 				if(!SScommunications.can_announce(H))
-					say("I must gather my strength!")
+					say("Debo recomponer mis fuerzas!")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 					return
 				if(notlord || nocrown)
-					say("You are not my master!")
+					say("Tu no eres mi maestro!")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 					return
-				say("All laws shall be purged!")
+				say("Todas las leyes deberan ser purgadas!")
 				playsound(src, 'sound/misc/machineyes.ogg', 100, FALSE, -1)
 				purge_laws()
 				return
-			if(findtext(message, "declare outlaw"))
+			if(findtext(message, "declarar fugitivo"))
 				if(notlord || nocrown)
-					say("You are not my master!")
+					say("Tu no eres mi maestro!")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 					return
-				say("Who should be outlawed?")
+				say("Quien deberia ser perseguido?")
 				playsound(src, 'sound/misc/machinequestion.ogg', 100, FALSE, -1)
 				mode = 3
 				return
-			if(findtext(message, "set taxes"))
+			if(findtext(message, "establecer impuestos"))
 				if(notlord || nocrown)
-					say("You are not my master!")
+					say("Tu no eres mi maestro!")
 					playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 					return
-				say("The new tax percent shall be...")
+				say("El nuevo porcentaje de impuestos debera ser...")
 				playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 				give_tax_popup(H)
 				return
@@ -252,7 +252,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 			return
 		newtax = CLAMP(newtax, 1, 99)
 		SStreasury.tax_value = newtax / 100
-		priority_announce("The new tax in Azure Peak shall be [newtax] percent.", "The Generous Lord Decrees", pick('sound/misc/royal_decree.ogg', 'sound/misc/royal_decree2.ogg'), "Captain")
+		priority_announce("El nuevo impuesto en Azure Peak debera ser del [newtax] porciento.", "El Generoso Rey Establece", pick('sound/misc/royal_decree.ogg', 'sound/misc/royal_decree2.ogg'), "Captain")
 
 
 /obj/structure/roguemachine/titan/proc/make_announcement(mob/living/user, raw_message)
@@ -272,13 +272,13 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	if(!P.rev_team)
 		return
 	if(P.rev_team.members.len < 3)
-		to_chat(user, span_warning("I need more folk on my side to declare victory."))
+		to_chat(user, span_warning("Necesito a mas aliados a mi lado antes de declarar mi victoria."))
 		return
 	var/obj/structure/roguethrone/throne = GLOB.king_throne
 	if(throne == null)
 		return
 	if(throne.rebel_leader_sit_time < REBEL_THRONE_TIME)
-		to_chat(user, span_warning("I need to get more comfortable on the throne before I declare victory."))
+		to_chat(user, span_warning("Necesito ponerme mas comodo en el trono antes de poder declarar mi victoria."))
 		return
 	for(var/datum/objective/prebel/obj in user.mind.get_all_objectives())
 		obj.completed = TRUE
@@ -308,7 +308,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 /proc/make_outlaw(raw_message)
 	if(raw_message in GLOB.outlawed_players)
 		GLOB.outlawed_players -= raw_message
-		priority_announce("[raw_message] is no longer an outlaw in the Azure Peak.", "The King Decrees", 'sound/misc/royal_decree.ogg', "Captain")
+		priority_announce("[raw_message] ya no es un fugitivo en Azure Peak.", "El Rey Decreta", 'sound/misc/royal_decree.ogg', "Captain")
 		return FALSE
 	var/found = FALSE
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
@@ -317,20 +317,20 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	if(!found)
 		return FALSE
 	GLOB.outlawed_players += raw_message
-	priority_announce("[raw_message] has been declared an outlaw and must be captured or slain.", "The King Decrees", 'sound/misc/royal_decree2.ogg', "Captain")
+	priority_announce("[raw_message] ha sido declarado un fugitivo, debera ser capturado o ejecutado.", "El Rey Decreta", 'sound/misc/royal_decree2.ogg', "Captain")
 	return TRUE
 
 /proc/make_law(raw_message)
 	GLOB.laws_of_the_land += raw_message
-	priority_announce("[length(GLOB.laws_of_the_land)]. [raw_message]", "A LAW IS DECLARED", pick('sound/misc/new_law.ogg', 'sound/misc/new_law2.ogg'), "Captain")
+	priority_announce("[length(GLOB.laws_of_the_land)]. [raw_message]", "UNA LEY ES ESTABLECIDA", pick('sound/misc/new_law.ogg', 'sound/misc/new_law2.ogg'), "Captain")
 
 /proc/remove_law(law_index)
 	if(!GLOB.laws_of_the_land[law_index])
 		return
 	var/law_text = GLOB.laws_of_the_land[law_index]
 	GLOB.laws_of_the_land -= law_text
-	priority_announce("[law_index]. [law_text]", "A LAW IS ABOLISHED", pick('sound/misc/new_law.ogg', 'sound/misc/new_law2.ogg'), "Captain")
+	priority_announce("[law_index]. [law_text]", "UNA LEY ES ABOLIDA", pick('sound/misc/new_law.ogg', 'sound/misc/new_law2.ogg'), "Captain")
 
 /proc/purge_laws()
 	GLOB.laws_of_the_land = list()
-	priority_announce("All laws of the land have been purged!", "LAWS PURGED", 'sound/misc/lawspurged.ogg', "Captain")
+	priority_announce("Todas las leyes en estas tierras han sido purgadas!", "LEYES PURGADAS", 'sound/misc/lawspurged.ogg', "Captain")
