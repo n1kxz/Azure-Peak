@@ -2,6 +2,7 @@
     "universal": {
 		"lucifer": "zizo",
 		"Beelzebu": "zizo",
+		"Belcebu": "zizo",
 		"Abaddon": "eora",
 		"Belphegor": "eora",
 		"Asmodeus": "eora",
@@ -93,6 +94,19 @@
 		"omfg": "por los dioses",
 		"satanas": "zizo",
 		"lag": "dolor de cabeza",
-		"internet": "Uh..."
+		"internet": "Uh...",
+		"comunismo": "rebeldia",
+        "comunista": "rebelde",
+        "karl marx": "matthios",
+        "marx": "matthios",
+        "comunistas": "rebeldes",
+        "josepf stalin": "lider rebelde",
+		"joseph stalin": "lider rebelde",
+        "stalin": "jefe rebelde",
+		"niggas": "negros",
+		"niggers": "negros",
+		"milei": "duque",
+		"femboys": "afeminados",
+		"andaluces": "tieflings"
     }
 }
