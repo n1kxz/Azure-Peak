@@ -7,13 +7,13 @@
 /datum/emote/living/blush
 	key = "blush"
 	key_third_person = "blushes"
-	message = "blushes."
+	message = "se sonroja."
 
 
 /datum/emote/living/pray
 	key = "pray"
 	key_third_person = "prays"
-	message = "prays something."
+	message = "reza algo."
 	restraint_check = FALSE
 	emote_type = EMOTE_VISIBLE
 
@@ -27,7 +27,7 @@
 	if(isliving(user))
 		var/mob/living/L = user
 		var/area/C = get_area(user)
-		var/msg = input("Whisper your prayer:", "Prayer") as text|null
+		var/msg = input("Susurra tu plegaria:", "Prayer") as text|null
 		if(msg)
 			L.whisper(msg)
 			L.roguepray(msg)
@@ -63,7 +63,7 @@
 			L.add_stress(/datum/stressevent/psyprayer)
 			return TRUE
 	else
-		to_chat(L, span_danger("My prayer was kinda short..."))
+		to_chat(L, span_danger("Mi plegaria fue algo corta..."))
 
 /mob/living/proc/check_prayer_underworld(mob/living/L,message)
 	if(!L || !message)
@@ -81,25 +81,25 @@
 			var/turf/pickedturf = safepick(turfs)
 			if(!pickedturf)
 				return
-			to_chat(L, "<font color='yellow'>INSOLENT WRETCH, YOUR STRUGGLE IS DESERVED.</font>")
+			to_chat(L, "<font color='yellow'>INSOLENTE, TU PROBLEMA ES MERECIDO.</font>")
 			L.forceMove(pickedturf)
 			return FALSE
 	if(length(message) > 15)
 		if(findtext(message, "[M.patron.name]"))
 			L.playsound_local(L, 'sound/misc/notice (2).ogg', 100, FALSE)
-			to_chat(L, "<font color='yellow'>I, [M.patron.name], have heard your prayer and yet cannot aid you.</font>")
+			to_chat(L, "<font color='yellow'>I, [M.patron.name], ha escuchado tu plegaria, sin embargo no puede ayudarte.</font>")
 			/*var/obj/item/underworld/coin/C = new
 			L.put_in_active_hand(C)*/
 			return TRUE
 		else
 			return TRUE
 	else
-		to_chat(L, span_danger("My prayer was kinda short..."))
+		to_chat(L, span_danger("Mi plegaria fue algo corta..."))
 
 /datum/emote/living/meditate
 	key = "meditate"
 	key_third_person = "meditate"
-	message = "meditates."
+	message = "medita."
 	restraint_check = FALSE
 	emote_type = EMOTE_VISIBLE
 
@@ -112,17 +112,17 @@
 /datum/emote/living/meditate/run_emote(mob/user, params, type_override, intentional)
 	if(isliving(user))
 		if(!COOLDOWN_FINISHED(user, schizohelp_cooldown))
-			to_chat(user, span_warning("I need to wait before meditating again."))
+			to_chat(user, span_warning("Tengo que esperar antes de poder meditar otra vez."))
 			return
-		var/msg = input("Say your meditation:", "Voices in your head") as text|null
+		var/msg = input("Di tu meditacion:", "Voices in your head") as text|null
 		if(msg)
 			user.schizohelp(msg)
 
 /datum/emote/living/bow
 	key = "bow"
 	key_third_person = "bows"
-	message = "bows."
-	message_param = "bows to %t."
+	message = "se inclina."
+	message_param = "se inclina ante %t."
 	restraint_check = TRUE
 	emote_type = EMOTE_VISIBLE
 
@@ -135,8 +135,8 @@
 /datum/emote/living/burp
 	key = "burp"
 	key_third_person = "burps"
-	message = "burps."
-	message_muffled = "makes a muffled noise."
+	message = "eructa."
+	message_muffled = "hace un sonido apagado."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -149,7 +149,7 @@
 /datum/emote/living/choke
 	key = "choke"
 	key_third_person = "chokes"
-	message = "chokes!"
+	message = "se atraganta!"
 	emote_type = EMOTE_AUDIBLE
 	ignore_silent = TRUE
 	show_runechat = FALSE
@@ -163,7 +163,7 @@
 /datum/emote/living/cross
 	key = "crossarms"
 	key_third_person = "crossesarms"
-	message = "crosses their arms."
+	message = "cruza sus brazos."
 	restraint_check = TRUE
 	emote_type = EMOTE_VISIBLE
 
@@ -176,7 +176,7 @@
 /datum/emote/living/collapse
 	key = "collapse"
 	key_third_person = "collapses"
-	message = "collapses."
+	message = "colapsa." //como yo si sigo haciendome esto a mi mismo
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -189,8 +189,8 @@
 /datum/emote/living/whisper
 	key = "whisper"
 	key_third_person = "whispers"
-	message = "whispers."
-	message_mime = "appears to whisper."
+	message = "susurra."
+	message_mime = "parece susurrar algo."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -205,8 +205,8 @@
 /datum/emote/living/cough
 	key = "cough"
 	key_third_person = "coughs"
-	message = "coughs."
-	message_muffled = "makes a muffled noise."
+	message = "tose."
+	message_muffled = "hace un sonido apagado."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -219,8 +219,8 @@
 /datum/emote/living/clearthroat
 	key = "clearthroat"
 	key_third_person = "clearsthroat"
-	message = "clears their throat."
-	message_muffled = "makes a muffled noise."
+	message = "se aclara la garganta."
+	message_muffled = "hace un sonido apagado."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -233,7 +233,7 @@
 /datum/emote/living/dance
 	key = "dance"
 	key_third_person = "dances"
-	message = "dances."
+	message = "baila."
 	restraint_check = TRUE
 	emote_type = EMOTE_VISIBLE
 
@@ -246,13 +246,13 @@
 /datum/emote/living/deathgasp
 	key = ""
 	key_third_person = ""
-	message = "gasps out their last breath."
-	message_robot = "shudders violently for a moment before falling still, its eyes slowly darkening."
+	message = "suspira su ultimo aliento."
+	message_robot = "se agita violentamente antes de quedarse tieso, sus ojos poco a poco se vuelven negros."
 	message_AI = "screeches, its screen flickering as its systems slowly halt."
-	message_alien = "lets out a waning guttural screech, and collapses onto the floor..."
-	message_larva = "lets out a sickly hiss of air and falls limply to the floor..."
-	message_monkey = "lets out a faint chimper as it collapses and stops moving..."
-	message_simple =  "falls limp."
+	message_alien = "tiene unos cuantos espasmos antes de llegar a su destino final..."
+	message_larva = "suelta un grito para caer rendido en el suelo..."
+	message_monkey = "suelta un leve lloriqueo antes de ahogarse en la miseria..."
+	message_simple =  "cae al suelo como un muñeco de trapo."
 	stat_allowed = UNCONSCIOUS
 
 /datum/emote/living/deathgasp/run_emote(mob/user, params, type_override, intentional)
@@ -271,7 +271,7 @@
 /datum/emote/living/drool
 	key = "drool"
 	key_third_person = "drools"
-	message = "drools."
+	message = "babea."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_drool()
@@ -283,7 +283,7 @@
 /datum/emote/living/faint
 	key = "faint"
 	key_third_person = "faints"
-	message = "faints."
+	message = "se desmaya."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_faint()
@@ -305,7 +305,7 @@
 /datum/emote/living/flap
 	key = "flap"
 	key_third_person = "flaps"
-	message = "flaps their wings."
+	message = "agita sus alas."
 	restraint_check = TRUE
 	var/wing_time = 20
 
@@ -315,7 +315,7 @@
 /datum/emote/living/flap/aflap
 	key = "aflap"
 	key_third_person = "aflaps"
-	message = "flaps their wings ANGRILY!"
+	message = "agita sus alas AGRESIVAMENTE!"
 	restraint_check = TRUE
 	wing_time = 10
 
@@ -325,7 +325,7 @@
 /datum/emote/living/frown
 	key = "frown"
 	key_third_person = "frowns"
-	message = "frowns."
+	message = "frunce el ceño."
 	emote_type = EMOTE_VISIBLE
 /mob/living/carbon/human/verb/emote_frown()
 	set name = "Frown"
@@ -336,7 +336,7 @@
 /datum/emote/living/gag
 	key = "gag"
 	key_third_person = "gags"
-	message = "gags."
+	message = "suelta una arcada."
 	emote_type = EMOTE_AUDIBLE
 	ignore_silent = TRUE
 	show_runechat = FALSE
@@ -350,8 +350,8 @@
 /datum/emote/living/gasp
 	key = "gasp"
 	key_third_person = "gasps"
-	message = "gasps!"
-	message_muffled = "makes a muffled noise."
+	message = "jadea!"
+	message_muffled = "hace un sonido apagado."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
 	show_runechat = FALSE
@@ -365,16 +365,16 @@
 /datum/emote/living/breathgasp
 	key = "breathgasp"
 	key_third_person = "breathgasps"
-	message = "gasps for air!"
+	message = "jadea en busca de aire!"
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /datum/emote/living/giggle
 	key = "giggle"
 	key_third_person = "giggles"
-	message = "giggles."
-	message_mime = "giggles silently!"
-	message_muffled = "makes a muffled giggle."
+	message = "se rie levemente."
+	message_mime = "se rie levemente, y silenciosamente!"
+	message_muffled = "hace un sonido apagado."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -387,8 +387,8 @@
 /datum/emote/living/chuckle
 	key = "chuckle"
 	key_third_person = "chuckles"
-	message = "chuckles."
-	message_muffled = "makes a muffled chuckle."
+	message = "se rie brevemente."
+	message_muffled = "hace un sonido apagado."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -401,8 +401,8 @@
 /datum/emote/living/glare
 	key = "glare"
 	key_third_person = "glares"
-	message = "glares."
-	message_param = "glares at %t."
+	message = "mira despiadadamente."
+	message_param = "mira de forma despiadada a %t."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_glare()
@@ -414,7 +414,7 @@
 /datum/emote/living/grin
 	key = "grin"
 	key_third_person = "grins"
-	message = "grins."
+	message = "guiña el ojo."
 	emote_type = EMOTE_VISIBLE
 /mob/living/carbon/human/verb/emote_grin()
 	set name = "Grin"
@@ -425,8 +425,8 @@
 /datum/emote/living/groan
 	key = "groan"
 	key_third_person = "groans"
-	message = "groans."
-	message_muffled = "makes a muffled groan."
+	message = "gime."
+	message_muffled = "hace un sonido apagado."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -439,7 +439,7 @@
 /datum/emote/living/grimace
 	key = "grimace"
 	key_third_person = "grimaces"
-	message = "grimaces."
+	message = "hace una mueca."
 	emote_type = EMOTE_VISIBLE
 /mob/living/carbon/human/verb/emote_grimace()
 	set name = "Grimace"
@@ -463,8 +463,8 @@
 /datum/emote/living/kiss
 	key = "kiss"
 	key_third_person = "kisses"
-	message = "blows a kiss."
-	message_param = "kisses %t."
+	message = "lanza un beso."
+	message_param = "besa a %t."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_kiss()
@@ -488,25 +488,25 @@
 				do_change = TRUE
 		if(do_change)
 			if(H.zone_selected == BODY_ZONE_PRECISE_MOUTH)
-				message_param = "kisses %t deeply."
+				message_param = "besa a %t profundamente."
 			else if(H.zone_selected == BODY_ZONE_PRECISE_EARS)
-				message_param = "kisses %t on the ear."
+				message_param = "besa a %t en la oreja."
 				var/mob/living/carbon/human/E = target
 				if(iself(E) || ishalfelf(E))
 					if(!E.cmode)
-						to_chat(target, span_love("It tickles..."))
+						to_chat(target, span_love("Hace cosquillas..."))
 			else if(H.zone_selected == BODY_ZONE_PRECISE_R_EYE || H.zone_selected == BODY_ZONE_PRECISE_L_EYE)
-				message_param = "kisses %t on the brow."
+				message_param = "besa a %t en la ceja."
 			else
-				message_param = "kisses %t on \the [parse_zone(H.zone_selected)]."
+				message_param = "besa a %t en [parse_zone(H.zone_selected)]."
 	playsound(target.loc, pick('sound/vo/kiss (1).ogg','sound/vo/kiss (2).ogg'), 100, FALSE, -1)
 
 
 /datum/emote/living/spit
 	key = "spit"
 	key_third_person = "spits"
-	message = "spits on the ground."
-	message_param = "spits on %t."
+	message = "escupe en el suelo."
+	message_param = "le escupe a %t."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_spit()
@@ -541,7 +541,7 @@
 	key = "hug"
 	key_third_person = "hugs"
 	message = ""
-	message_param = "hugs %t."
+	message_param = "da un abrazo a %t."
 	emote_type = EMOTE_VISIBLE
 	restraint_check = TRUE
 
@@ -554,7 +554,7 @@
 /datum/emote/living/holdbreath
 	key = "hold"
 	key_third_person = "holds"
-	message = "begins to hold their breath."
+	message = "empieza aguantar la respiracion."
 	stat_allowed = SOFT_CRIT
 
 /mob/living/carbon/human/verb/emote_hold()
@@ -566,7 +566,7 @@
 /datum/emote/living/holdbreath/can_run_emote(mob/living/user, status_check = TRUE, intentional)
 	. = ..()
 	if(. && intentional && !HAS_TRAIT(user, TRAIT_HOLDBREATH) && !HAS_TRAIT(user, TRAIT_PARALYSIS))
-		to_chat(user, span_warning("I'm not desperate enough to do that."))
+		to_chat(user, span_warning("No estoy tan desesperado como hacer eso."))
 		return FALSE
 
 /datum/emote/living/holdbreath/run_emote(mob/user, params, type_override, intentional)
@@ -580,13 +580,13 @@
 /datum/emote/living/holdbreath/select_message_type(mob/user, intentional)
 	. = ..()
 	if(HAS_TRAIT(user, TRAIT_HOLDBREATH))
-		. = "stops holding their breath."
+		. = "deja de aguantar la respiracion."
 
 /datum/emote/living/slap
 	key = "slap"
 	key_third_person = "slaps"
 	message = ""
-	message_param = "slaps %t in the face."
+	message_param = "le da un guantazo a %t en la cara."
 	emote_type = EMOTE_VISIBLE
 	restraint_check = TRUE
 
@@ -597,7 +597,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.zone_selected == BODY_ZONE_PRECISE_GROIN)
-			message_param = "slaps %t's ass!"
+			message_param = "le da un cachetazo %t en el culo!"
 	// RATWOOD MODULAR END
 	..()
 
@@ -621,7 +621,7 @@
 	key = "pinch"
 	key_third_person = "pinches"
 	message = ""
-	message_param = "pinches %t."
+	message_param = "le mete un pellizco a %t."
 	emote_type = EMOTE_VISIBLE
 	restraint_check = TRUE
 
@@ -644,9 +644,9 @@
 /datum/emote/living/laugh
 	key = "laugh"
 	key_third_person = "laughs"
-	message = "laughs."
-	message_mime = "laughs silently!"
-	message_muffled = "makes a muffled laugh."
+	message = "se rie."
+	message_mime = "se rie silenciosamente!"
+	message_muffled = "hace una risa enlatada."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -665,14 +665,14 @@
 /datum/emote/living/look
 	key = "look"
 	key_third_person = "looks"
-	message = "stares blankly."
-	message_param = "looks at %t."
+	message = "mira de forma vacia."
+	message_param = "mira hacia %t."
 
 /datum/emote/living/nod
 	key = "nod"
 	key_third_person = "nods"
-	message = "nods."
-	message_param = "nods at %t."
+	message = "asiente."
+	message_param = "le asiente a %t."
 	emote_type = EMOTE_VISIBLE
 /mob/living/carbon/human/verb/emote_nod()
 	set name = "Nod"
@@ -683,8 +683,8 @@
 /datum/emote/living/point
 	key = "point"
 	key_third_person = "points"
-	message = "points."
-	message_param = "points at %t."
+	message = "señala."
+	message_param = "señala a %t."
 	restraint_check = TRUE
 
 /datum/emote/living/point/run_emote(mob/user, params, type_override, intentional)
@@ -703,16 +703,16 @@
 /datum/emote/living/pout
 	key = "pout"
 	key_third_person = "pouts"
-	message = "pouts."
+	message = "hace pucheros."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /datum/emote/living/scream
 	key = "scream"
 	key_third_person = "screams"
-	message = "screams!"
-	message_mime = "acts out a scream!"
-	message_muffled = "makes a muffled noise in attempt to scream!"
+	message = "grita!"
+	message_mime = "finge un grito"
+	message_muffled = "hace un sonido apagado, intentando soltar un grito!"
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -728,12 +728,12 @@
 		var/mob/living/carbon/C = user
 		if(intentional)
 			if(!C.rogfat_add(10))
-				to_chat(C, span_warning("I try to scream but my voice fails me."))
+				to_chat(C, span_warning("Intento gritar pero la voz me falla."))
 				. = FALSE
 
 /datum/emote/living/scream/painscream
 	key = "painscream"
-	message = "screams in pain!"
+	message = "grita de dolor!"
 	emote_type = EMOTE_AUDIBLE
 	only_forced_audio = TRUE
 	show_runechat = FALSE
@@ -749,7 +749,7 @@
 
 /datum/emote/living/scream/agony
 	key = "agony"
-	message = "screams in agony!"
+	message = "grita en agonia!"
 	emote_type = EMOTE_AUDIBLE
 	only_forced_audio = TRUE
 	show_runechat = FALSE
@@ -861,14 +861,14 @@
 
 /datum/emote/living/haltyell
 	key = "haltyell"
-	message = "shouts a halt!"
+	message = "ordena que te pares!"
 	emote_type = EMOTE_AUDIBLE
 	only_forced_audio = TRUE
 	show_runechat = FALSE
 
 /datum/emote/living/rage
 	key = "rage"
-	message = "screams in rage!"
+	message = "grita de furia!"
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -880,8 +880,8 @@
 
 /datum/emote/living/attnwhistle
 	key = "attnwhistle"
-	message = "whistles for attention!"
-	message_muffled = "makes a muffled noise."
+	message = "silba buscando atencion!"
+	message_muffled = "hace un sonido apagado."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -894,21 +894,21 @@
 /datum/emote/living/choke
 	key = "choke"
 	key_third_person = "chokes"
-	message = "chokes!"
+	message = "se atraganta!"
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /datum/emote/living/scowl
 	key = "scowl"
 	key_third_person = "scowls"
-	message = "scowls."
+	message = "frunce el ceño."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /datum/emote/living/shakehead
 	key = "shakehead"
 	key_third_person = "shakeshead"
-	message = "shakes their head."
+	message = "agita la cabeza."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_shakehead()
@@ -921,7 +921,7 @@
 /datum/emote/living/shiver
 	key = "shiver"
 	key_third_person = "shiver"
-	message = "shivers."
+	message = "tiembla."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_shiver()
@@ -934,8 +934,8 @@
 /datum/emote/living/sigh
 	key = "sigh"
 	key_third_person = "sighs"
-	message = "sighs."
-	message_muffled = "makes a muffled sigh."
+	message = "suspira."
+	message_muffled = "hace un suspiro apagado."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -948,8 +948,8 @@
 /datum/emote/living/whistle
 	key = "whistle"
 	key_third_person = "whistles"
-	message = "whistles."
-	message_muffled = "makes a muffled noise."
+	message = "silba."
+	message_muffled = "hace un sonido apagado."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -962,8 +962,8 @@
 /datum/emote/living/hmm
 	key = "hmm"
 	key_third_person = "hmms"
-	message = "hmms."
-	message_muffled = "makes a muffled hmm."
+	message = "hace 'hmm...'"
+	message_muffled = "hace 'hmm...' de forma apagada."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -976,7 +976,7 @@
 /datum/emote/living/huh
 	key = "huh"
 	key_third_person = "huhs"
-	message_muffled = "makes a muffled noise."
+	message_muffled = "hace un sonido apagado."
 	emote_type = EMOTE_AUDIBLE
 	nomsg = TRUE
 	show_runechat = FALSE
@@ -990,9 +990,9 @@
 /datum/emote/living/hum
 	key = "hum"
 	key_third_person = "hums"
-	message = "hums."
+	message = "tararea."
 	emote_type = EMOTE_AUDIBLE
-	message_muffled = "makes a muffled hum."
+	message_muffled = "tararea de forma apagada."
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_hum()
@@ -1004,7 +1004,7 @@
 /datum/emote/living/smile
 	key = "smile"
 	key_third_person = "smiles"
-	message = "smiles."
+	message = "sonrie."
 	emote_type = EMOTE_VISIBLE
 /mob/living/carbon/human/verb/emote_smile()
 	set name = "Smile"
@@ -1015,16 +1015,16 @@
 /datum/emote/living/sneeze
 	key = "sneeze"
 	key_third_person = "sneezes"
-	message = "sneezes."
-	message_muffled = "makes a muffled sneeze."
+	message = "estornuda."
+	message_muffled = "hace un estornudo apagado."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /datum/emote/living/shh
 	key = "shh"
 	key_third_person = "shhs"
-	message = "shooshes."
-	message_muffled = "makes a muffled shh."
+	message = "manda a callar."
+	message_muffled = "hace un 'shh' apagado."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -1037,20 +1037,20 @@
 /datum/emote/living/smug
 	key = "smug"
 	key_third_person = "smugs"
-	message = "grins smugly."
+	message = "hace una mueca sonriente."
 
 /datum/emote/living/sniff
 	key = "sniff"
 	key_third_person = "sniffs"
-	message = "sniffs."
+	message = "olfatea."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /datum/emote/living/snore
 	key = "snore"
 	key_third_person = "snores"
-	message = "snores."
-	message_mime = "sleeps soundly."
+	message = "ronca."
+	message_mime = "ronca silenciosamente."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
 	snd_range = -4
@@ -1059,51 +1059,51 @@
 /datum/emote/living/stare
 	key = "stare"
 	key_third_person = "stares"
-	message = "stares."
-	message_param = "stares at %t."
+	message = "fija la mirada."
+	message_param = "mira fijamente a %t."
 
 /datum/emote/living/strech
 	key = "stretch"
 	key_third_person = "stretches"
-	message = "stretches their arms."
+	message = "estira sus brazos."
 
 /datum/emote/living/sulk
 	key = "sulk"
 	key_third_person = "sulks"
-	message = "sulks down sadly."
+	message = "se enfurruña."
 
 /datum/emote/living/sway
 	key = "sway"
 	key_third_person = "sways"
-	message = "sways around dizzily."
+	message = "se balancea vertiginosamente."
 
 /datum/emote/living/tremble
 	key = "tremble"
 	key_third_person = "trembles"
-	message = "trembles in fear!"
+	message = "tiembla de miedo!"
 
 /datum/emote/living/twitch
 	key = "twitch"
 	key_third_person = "twitches"
-	message = "twitches violently."
+	message = "se agita violentamente!"
 
 /datum/emote/living/twitch_s
 	key = "twitch_s"
-	message = "twitches."
+	message = "se agita!"
 	stat_allowed = UNCONSCIOUS
 	mob_type_ignore_stat_typecache = list(/mob/living/carbon/human)
 
 /datum/emote/living/wave
 	key = "wave"
 	key_third_person = "waves"
-	message = "waves."
+	message = "saluda con la mano."
 
 /datum/emote/living/whimper
 	key = "whimper"
 	key_third_person = "whimpers"
-	message = "whimpers."
-	message_mime = "appears hurt."
-	message_muffled = "makes a muffled whimper."
+	message = "lloriquea."
+	message_mime = "parece estar herido."
+	message_muffled = "lloriquea de forma apagada."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -1116,13 +1116,13 @@
 /datum/emote/living/wsmile
 	key = "wsmile"
 	key_third_person = "wsmiles"
-	message = "smiles weakly."
+	message = "sonrie debilmente."
 
 /datum/emote/living/yawn
 	key = "yawn"
 	key_third_person = "yawns"
-	message = "yawns."
-	message_muffled = "makes a muffled yawn."
+	message = "bosteza."
+	message_muffled = "hace un bostezo apagado."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -1145,13 +1145,13 @@
 
 /datum/emote/living/custom/proc/check_invalid(mob/user, input)
 	. = TRUE
-	if(copytext(input,1,5) == "says")
+	if(copytext(input,1,5) == "dice")
 		to_chat(user, span_danger("Invalid emote."))
-	else if(copytext(input,1,9) == "exclaims")
+	else if(copytext(input,1,9) == "exclama")
 		to_chat(user, span_danger("Invalid emote."))
-	else if(copytext(input,1,6) == "yells")
+	else if(copytext(input,1,6) == "grita")
 		to_chat(user, span_danger("Invalid emote."))
-	else if(copytext(input,1,5) == "asks")
+	else if(copytext(input,1,5) == "pregunta")
 		to_chat(user, span_danger("Invalid emote."))
 	else
 		. = FALSE
@@ -1261,7 +1261,7 @@
 /datum/emote/living/shake
 	key = "shake"
 	key_third_person = "shakes"
-	message = "shakes their head."
+	message = "agita su cabeza."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_shake()
@@ -1273,7 +1273,7 @@
 /datum/emote/living/squint
 	key = "squint"
 	key_third_person = "squints"
-	message = "squints their eyes."
+	message = "entrecierra sus ojos."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_squint()

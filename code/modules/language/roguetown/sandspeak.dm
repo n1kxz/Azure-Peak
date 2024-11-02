@@ -1,9 +1,9 @@
 /datum/language/celestial
 	name = "Celestial"
 	desc = ""
-	speech_verb = "says"
-	ask_verb = "asks"
-	exclaim_verb = "yells"
+	speech_verb = "dice"
+	ask_verb = "pregunta"
+	exclaim_verb = "grita"
 	key = "c"
 	flags = LANGUAGE_HIDE_ICON_IF_UNDERSTOOD | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
 	space_chance = 60

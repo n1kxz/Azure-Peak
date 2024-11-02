@@ -244,7 +244,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 /obj/structure/roguemachine/titan/proc/give_tax_popup(mob/living/carbon/human/user)
 	if(!Adjacent(user))
 		return
-	var/newtax = input(user, "Set a new tax percentage (1-99)", src, SStreasury.tax_value*100) as null|num
+	var/newtax = input(user, "Establecer nuevo porcentaje de impuesto (1-99)", src, SStreasury.tax_value*100) as null|num
 	if(newtax)
 		if(!Adjacent(user))
 			return

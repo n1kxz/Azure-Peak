@@ -2,10 +2,10 @@
 /datum/language/common
 	name = "Imperial"
 	desc = ""
-	speech_verb = "says"
-	whisper_verb = "whispers"
-	exclaim_verb = "yells"
-	ask_verb = "asks"
+	speech_verb = "dice"
+	whisper_verb = "susurra"
+	exclaim_verb = "grita"
+	ask_verb = "pregunta"
 	key = "i"
 	flags = LANGUAGE_HIDE_ICON_IF_UNDERSTOOD | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
 	default_priority = 100

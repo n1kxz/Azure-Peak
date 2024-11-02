@@ -437,7 +437,7 @@ GLOBAL_VAR_INIT(mobids, 1)
 		return
 
 	if(is_blind(src))
-		to_chat(src, span_warning("Something is there but I can't see it!"))
+		to_chat(src, span_warning("Hay algo ahi pero no puedo verlo!"))
 		return
 
 	if(isliving(src))
@@ -446,11 +446,11 @@ GLOBAL_VAR_INIT(mobids, 1)
 		if(!isturf(A))
 			if(A == src)
 				message = "[src] mira por encima de"
-				target = "simismo"
+				target = "si mismo"
 			else if(A.loc == src)
 				target = "[src.p_their()] [A.name]"
 			else if(A.loc.loc == src)
-				message = "[src] looks into"
+				message = "[src] mira a"
 				target = "[src.p_their()] [A.loc.name]"
 			else if(isliving(A) && src.cmode)
 				var/mob/living/T = A

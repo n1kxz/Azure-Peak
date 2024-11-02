@@ -277,16 +277,16 @@
 	// Bleeding
 	var/bleed_rate = get_bleed_rate()
 	if(bleed_rate)
-		var/bleed_wording = "sangrando"
+		var/bleed_wording = "Sangrando"
 		switch(bleed_rate)
 			if(0 to 1)
-				bleed_wording = "sangrando ligeramente"
+				bleed_wording = "Sangrando ligeramente"
 			if(1 to 5)
-				bleed_wording = "sangrando"
+				bleed_wording = "Sangrando"
 			if(5 to 10)
-				bleed_wording = "sangrando mucho"
+				bleed_wording = "Sangrando mucho"
 			if(10 to INFINITY)
-				bleed_wording = "sangrando profundamente"
+				bleed_wording = "Sangrando profundamente"
 		var/list/bleeding_limbs = list()
 		var/static/list/bleed_zones = list(
 			BODY_ZONE_HEAD,
