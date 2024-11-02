@@ -79,11 +79,11 @@
 	if(name != GetVoice())
 		switch(voice_type)
 			if(VOICE_TYPE_FEM)
-				return "Unknown Woman"
+				return "Mujer Desconocida"
 			if(VOICE_TYPE_MASC)
-				return "Unknown Man"
+				return "Hombre Desconocido"
 			if(VOICE_TYPE_ANDR)
-				return "Unknown Person"
+				return "Persona Desconocida"
 
 /mob/living/carbon/human/proc/forcesay(list/append) //this proc is at the bottom of the file because quote fuckery makes notepad++ cri
 	if(stat == CONSCIOUS)

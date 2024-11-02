@@ -93,8 +93,8 @@
 	H.verbs |= /mob/proc/haltyell
 
 /obj/effect/proc_holder/spell/self/convertrole
-	name = "Recruit Beggar"
-	desc = "Recruit someone to your cause."
+	name = "Reclutar Beggar"
+	desc = "Recluta a alguien para los Beggars."
 	overlay_state = "recruit_bog"
 	antimagic_allowed = TRUE
 	charge_max = 100
@@ -103,13 +103,13 @@
 	/// Faction shown to the user in the recruitment prompt
 	var/recruitment_faction = "Beggars"
 	/// Message the recruiter gives
-	var/recruitment_message = "Serve the beggars, %RECRUIT!"
+	var/recruitment_message = "Sirve a los vagabundos, %RECRUIT!"
 	/// Range to search for potential recruits
 	var/recruitment_range = 3
 	/// Say message when the recruit accepts
-	var/accept_message = "I will serve!"
+	var/accept_message = "SERVIRE!"
 	/// Say message when the recruit refuses
-	var/refuse_message = "I refuse."
+	var/refuse_message = "Me niego."
 
 /obj/effect/proc_holder/spell/self/convertrole/cast(list/targets,mob/user = usr)
 	. = ..()
@@ -168,13 +168,13 @@
 	return TRUE
 
 /obj/effect/proc_holder/spell/self/convertrole/guard
-	name = "Recruit Guardsmen"
+	name = "Reclutar Guardias"
 	new_role = "Watchman"
 	overlay_state = "recruit_guard"
 	recruitment_faction = "Watchman"
-	recruitment_message = "Serve the town guard, %RECRUIT!"
-	accept_message = "FOR THE CROWN!"
-	refuse_message = "I refuse."
+	recruitment_message = "Sirve a la guardia del pueblo, %RECRUIT!"
+	accept_message = "POR LA CORONA!"
+	refuse_message = "Me niego."
 
 /obj/effect/proc_holder/spell/self/convertrole/guard/convert(mob/living/carbon/human/recruit, mob/living/carbon/human/recruiter)
 	. = ..()

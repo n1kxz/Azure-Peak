@@ -284,23 +284,23 @@
 		var/obj/item/I = get_active_held_item()
 		if(I && dropItemToGround(I, silent = FALSE))
 			playsound(loc, 'sound/blank.ogg', 25, TRUE, -1)
-			visible_message(span_danger("[M] disarmed [src]!"), \
-							span_danger("[M] disarmed you!"), span_hear("I hear aggressive shuffling!"), null, M)
-			to_chat(M, span_danger("I disarm [src]!"))
+			visible_message(span_danger("[M] ha desarmado a [src]!"), \
+							span_danger("[M] te ha desarmado!"), span_hear("Oigo un placaje agresivo!"), null, M)
+			to_chat(M, span_danger("Desarmo a [src]!"))
 		else if(!M.client || prob(5)) // only natural monkeys get to stun reliably, (they only do it occasionaly)
 			playsound(loc, 'sound/blank.ogg', 25, TRUE, -1)
 			if (src.IsKnockdown() && !src.IsParalyzed())
 				Paralyze(40)
 				log_combat(M, src, "pinned")
-				visible_message(span_danger("[M] pins [src] down!"), \
-								span_danger("[M] pins you down!"), span_hear("I hear shuffling and a muffled groan!"), null, M)
-				to_chat(M, span_danger("I pin [src] down!"))
+				visible_message(span_danger("[M] pone contra el suelo a [src]!"), \
+								span_danger("[M] te pone contra el suelo!"), span_hear("Oigo un placaje agresivo, y sonidos apagados!"), null, M)
+				to_chat(M, span_danger("Pongo a [src] contra el suelo!"))
 			else
 				Knockdown(30)
 				log_combat(M, src, "tackled")
-				visible_message(span_danger("[M] tackles [src] down!"), \
-								span_danger("[M] tackles you down!"), span_hear("I hear aggressive shuffling followed by a loud thud!"), null, M)
-				to_chat(M, span_danger("I tackle [src] down!"))
+				visible_message(span_danger("[M] tira al suelo a [src]!"), \
+								span_danger("[M] te tira al suelo!"), span_hear("Oigo un forcejeo intenso y un sonido fuerte!"), null, M)
+				to_chat(M, span_danger("He tirado a [src] al suelo!"))
 
 	if(M.limb_destroyer)
 		dismembering_strike(M, affecting.body_zone)
@@ -316,9 +316,9 @@
 
 /mob/living/carbon/human/attack_alien(mob/living/carbon/alien/humanoid/M)
 	if(check_shields(M, 0, "the M.name"))
-		visible_message(span_danger("[M] attempts to touch [src]!"), \
-						span_danger("[M] attempts to touch you!"), span_hear("I hear a swoosh!"), null, M)
-		to_chat(M, span_warning("I attempt to touch [src]!"))
+		visible_message(span_danger("[M] intenta tocar a [src]!"), \
+						span_danger("[M] intenta tocarte!"), span_hear("Oigo un sonido fuerte!"), null, M)
+		to_chat(M, span_warning("Intento tocar a [src]!"))
 		return 0
 
 	if(..())
@@ -328,9 +328,9 @@
 			var/damage = prob(90) ? 20 : 0
 			if(!damage)
 				playsound(loc, 'sound/blank.ogg', 50, TRUE, -1)
-				visible_message(span_danger("[M] lunges at [src]!"), \
-								span_danger("[M] lunges at you!"), span_hear("I hear a swoosh!"), null, M)
-				to_chat(M, span_danger("I lunge at [src]!"))
+				visible_message(span_danger("[M] se lanza hacia [src]!"), \
+								span_danger("[M] se lanza hacia ti!"), span_hear("Oigo un sonido fuerte!"), null, M)
+				to_chat(M, span_danger("Me lanzo hacia [src]!"))
 				return 0
 			var/obj/item/bodypart/affecting = get_bodypart(ran_zone(M.zone_selected))
 			if(!affecting)
@@ -338,9 +338,9 @@
 			var/armor_block = run_armor_check(affecting, "slash","","",10)
 
 			playsound(loc, 'sound/blank.ogg', 25, TRUE, -1)
-			visible_message(span_danger("[M] slashes at [src]!"), \
-							span_danger("[M] slashes at you!"), span_hear("I hear a sickening sound of a slice!"), null, M)
-			to_chat(M, span_danger("I slash at [src]!"))
+			visible_message(span_danger("[M] corta a [src]!"), \
+							span_danger("[M] te corta!"), span_hear("Oigo el sonido agresivo de un hoja!"), null, M)
+			to_chat(M, span_danger("He cortado a[src]!"))
 			log_combat(M, src, "attacked")
 			if(!dismembering_strike(M, M.zone_selected)) //Dismemberment successful
 				return 1
@@ -350,16 +350,16 @@
 			var/obj/item/I = get_active_held_item()
 			if(I && dropItemToGround(I))
 				playsound(loc, 'sound/blank.ogg', 25, TRUE, -1)
-				visible_message(span_danger("[M] disarms [src]!"), \
-								span_danger("[M] disarms you!"), span_hear("I hear aggressive shuffling!"), null, M)
+				visible_message(span_danger("[M] desarma a[src]!"), \
+								span_danger("[M] te desarma"), span_hear("Oigo un forcejeo intenso!"), null, M)
 				to_chat(M, span_danger("I disarm [src]!"))
 			else
 				playsound(loc, 'sound/blank.ogg', 25, TRUE, -1)
 				Paralyze(100)
 				log_combat(M, src, "tackled")
-				visible_message(span_danger("[M] tackles [src] down!"), \
-								span_danger("[M] tackles you down!"), span_hear("I hear aggressive shuffling followed by a loud thud!"), null, M)
-				to_chat(M, span_danger("I tackle [src] down!"))
+				visible_message(span_danger("[M] tira al suelo a [src]"), \
+								span_danger("[M] te tira al suelo!"), span_hear("Oigo un forcejeo intenso seguido de un sonido fuerte!"), null, M)
+				to_chat(M, span_danger("He tirado a [src] al suelo!"))
 
 
 /mob/living/carbon/human/attack_larva(mob/living/carbon/alien/larva/L)
@@ -399,7 +399,7 @@
 		var/nodmg = FALSE
 		if(!apply_damage(damage, M.melee_damage_type, affecting, armor))
 			nodmg = TRUE
-			next_attack_msg += " <span class='warning'>Armor stops the damage.</span>"
+			next_attack_msg += " <span class='warning'>La Armadura Para El Daño.</span>"
 		else
 			affecting.bodypart_attacked_by(M.a_intent.blade_class, damage - armor, M, dam_zone, crit_message = TRUE)
 		visible_message(span_danger("\The [M] [pick(M.a_intent.attack_verb)] [src]![next_attack_msg.Join()]"), \
@@ -433,7 +433,7 @@
 
 	if(M.occupant.used_intent.type == INTENT_HARM)
 		if(HAS_TRAIT(M.occupant, TRAIT_PACIFISM))
-			to_chat(M.occupant, span_warning("I don't want to harm other living beings!"))
+			to_chat(M.occupant, span_warning("No quiero hacerle daño a otros seres vivos!"))
 			return
 		M.do_attack_animation(src)
 		if(M.damtype == "brute")
@@ -461,9 +461,9 @@
 				update_damage_overlays()
 			updatehealth()
 
-		visible_message(span_danger("[M.name] hits [src]!"), \
-						span_danger("[M.name] hits you!"), span_hear("I hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, M)
-		to_chat(M, span_danger("I hit [src]!"))
+		visible_message(span_danger("[M.name] ataca a [src]!"), \
+						span_danger("[M.name] te ataca!"), span_hear("Oigo un sonido repugnante de carne golpeando carne!"), COMBAT_MESSAGE_RANGE, M)
+		to_chat(M, span_danger("Ataco a[src]!"))
 		log_combat(M.occupant, src, "attacked", M, "(INTENT: [uppertext(M.occupant.used_intent)]) (DAMTYPE: [uppertext(M.damtype)])")
 
 	else
@@ -771,43 +771,43 @@
 		m1 = "I am"
 		if(!deep_examination)
 			deep_examination = HAS_TRAIT(src, TRAIT_SELF_AWARE)
-		examination += span_notice("Let's see how I am doing.")
+		examination += span_notice("Veamos como me va.")
 		if(!stat && !silent)
 			user.visible_message(span_notice("[src] examines [p_them()]self."), \
-				span_notice("I check myself for injuries."))
+				span_notice("Me miro a mi mismo en busca de heridas."))
 	else if(user)
 		m1 = "[p_they(TRUE)] [p_are()]"
 		if(!deep_examination)
 			deep_examination = HAS_TRAIT(user, TRAIT_EMPATH)
-		examination += span_notice("Let's see how [src] is doing.")
+		examination += span_notice("Veamos como le va a[src].")
 		if(!user.stat && !silent)
-			user.visible_message(span_notice("[user] examines [src]."), \
-				span_notice("I check [src] for injuries."))
+			user.visible_message(span_notice("[user] examina a [src]."), \
+				span_notice("Examino a [src] en busca de heridas."))
 
 	if(stat < DEAD)
-		examination += "[m1] still alive."
+		examination += "Con vida."
 		if(stat >= UNCONSCIOUS)
-			examination += "[m1] [IsSleeping() ? "asleep" : "unconscious"]."
+			examination += "Esta [IsSleeping() ? "durmiendo" : "inconsciente"]."
 	else
-		examination += span_dead("[m1] dead.")
+		examination += span_dead("Esta muerto.")
 
 	switch(blood_volume)
 		if(-INFINITY to BLOOD_VOLUME_SURVIVE)
-			examination += span_artery("<B>[m1] extremely anemic.</B>")
+			examination += span_artery("<B>Extremadamente anemico/a.</B>")
 		if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
-			examination += span_artery("<B>[m1] very anemic.</B>")
+			examination += span_artery("<B>Extremadamente anemico/a.</B>")
 		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
-			examination += span_artery("[m1] anemic.")
+			examination += span_artery("Anemico/a.")
 		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
-			examination += span_artery("[m1] a little anemic.")
+			examination += span_artery("Ligeramente anemico/.")
 
 	if(HAS_TRAIT(src, TRAIT_PARALYSIS))
 		if(HAS_TRAIT(src, TRAIT_NO_BITE))
-			examination += span_danger("[m1] PARALYZED!")
+			examination += span_danger("PARALIZADO!")
 		else
-			examination += span_danger("[m1] TETRAPLEGIC!")
+			examination += span_danger("TETRAPLEGICO!")
 	else if(HAS_TRAIT(src, TRAIT_PARALYSIS_R_LEG) && HAS_TRAIT(src, TRAIT_PARALYSIS_L_LEG))
-		examination += span_warning("[m1] PARAPLEGIC!")
+		examination += span_warning("PARAPLEGICO!")
 
 	var/static/list/body_zones = list(
 		BODY_ZONE_HEAD,

@@ -9,7 +9,7 @@
 	duration = 5 MINUTES
 
 /atom/movable/screen/alert/status_effect/buff/drunk
-	name = "Drunk"
+	name = "Borracho"
 	desc = ""
 	icon_state = "drunk"
 
@@ -21,7 +21,7 @@
 	duration = 10 MINUTES
 
 /atom/movable/screen/alert/status_effect/buff/foodbuff
-	name = "Great Meal"
+	name = "Buena Comida"
 	desc = ""
 	icon_state = "foodbuff"
 
@@ -57,7 +57,7 @@
 	. = ..()
 
 /atom/movable/screen/alert/status_effect/buff/druqks
-	name = "High"
+	name = "Colocado"
 	desc = ""
 	icon_state = "acid"
 
@@ -134,7 +134,7 @@
 	. = ..()
 
 /atom/movable/screen/alert/status_effect/buff/weed
-	name = "Dazed"
+	name = "Fumado"
 	desc = ""
 	icon_state = "weed"
 
@@ -154,12 +154,12 @@
 	. = ..()
 
 /atom/movable/screen/alert/status_effect/buff/vitae
-	name = "Invigorated"
-	desc = "I have supped on the finest of delicacies: life!"
+	name = "Revitalizado"
+	desc = "He cenado el más fino de los manjares: la vida!"
 
 /atom/movable/screen/alert/status_effect/buff/featherfall
-	name = "Featherfall"
-	desc = "I am somewhat protected against falling from heights."
+	name = "Caida De Pluma"
+	desc = "Estoy algo protegido contra caer desde las alturas."
 	icon_state = "buff"
 
 /datum/status_effect/buff/featherfall
@@ -178,8 +178,8 @@
 	REMOVE_TRAIT(owner, TRAIT_NOFALLDAMAGE2, MAGIC_TRAIT)
 
 /atom/movable/screen/alert/status_effect/buff/darkvision
-	name = "Darkvision"
-	desc = "I can see in the dark somewhat."
+	name = "Vision Nocturna"
+	desc = "Puedo ver ligeramente en la luz."
 	icon_state = "buff"
 
 /datum/status_effect/buff/darkvision
@@ -198,8 +198,8 @@
 	REMOVE_TRAIT(owner, TRAIT_DARKVISION, MAGIC_TRAIT)
 
 /atom/movable/screen/alert/status_effect/buff/haste
-	name = "Haste"
-	desc = "I am magically hastened."
+	name = "Prisa"
+	desc = "Estoy magicamente apresurado."
 	icon_state = "buff"
 
 /datum/status_effect/buff/haste
@@ -212,8 +212,8 @@
 	return 0.85
 
 /atom/movable/screen/alert/status_effect/buff/longstrider
-	name = "Longstrider"
-	desc = "I can easily walk through rough terrain."
+	name = "Senderista"
+	desc = "Puedo caminar por terrenos duros."
 	icon_state = "buff"
 
 /datum/status_effect/buff/longstrider
@@ -233,8 +233,8 @@
 
 
 /atom/movable/screen/alert/status_effect/buff/guardbuffone
-	name = "Vigilant Guardsman"
-	desc = "My home. I watch vigilantly and respond swiftly."
+	name = "Guardia Vigilante"
+	desc = "Mi hogar. Vigilo de forma aguda los entornos por los que estoy familiarizado."
 	icon_state = "buff"
 
 /datum/status_effect/buff/guardbuffone
@@ -251,8 +251,8 @@
 		owner.remove_status_effect(/datum/status_effect/buff/guardbuffone)
 
 /atom/movable/screen/alert/status_effect/buff/healing
-	name = "Healing Miracle"
-	desc = "Divine intervention relieves me of my ailments."
+	name = "Milago De La Curacion!"
+	desc = "La intervencion divina me cura de mis males."
 	icon_state = "buff"
 
 #define MIRACLE_HEALING_FILTER "miracle_heal_glow"
@@ -291,8 +291,8 @@
 	owner.remove_filter(MIRACLE_HEALING_FILTER)
 	
 /atom/movable/screen/alert/status_effect/buff/fortify
-	name = "Fortifying Miracle"
-	desc = "Divine intervention bolsters me and aids my recovery."
+	name = "Milagro Fortificante"
+	desc = "La intervencion divina me fortalece y ayuda en mi recuperacion.."
 	icon_state = "buff"
 
 /datum/status_effect/buff/fortify //Increases all healing while it lasts.

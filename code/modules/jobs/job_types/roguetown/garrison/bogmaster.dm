@@ -78,13 +78,13 @@
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 
 /obj/effect/proc_holder/spell/self/convertrole/bog
-	name = "Recruit Bogmen"
+	name = "Reclutar Bogmen"
 	new_role = "Bog Guard"
 	overlay_state = "recruit_bog"
 	recruitment_faction = "Bog Guard"
-	recruitment_message = "Serve the bog, %RECRUIT!"
-	accept_message = "FOR THE BOG!"
-	refuse_message = "I refuse."
+	recruitment_message = "Sirve al bog, %RECRUIT!"
+	accept_message = "POR EL BOG!"
+	refuse_message = "Me niego."
 
 /obj/effect/proc_holder/spell/self/convertrole/bog/convert(mob/living/carbon/human/recruit, mob/living/carbon/human/recruiter)
 	. = ..()

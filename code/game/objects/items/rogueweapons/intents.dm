@@ -357,7 +357,7 @@
 	candodge = TRUE
 	canparry = TRUE
 	blade_class = BCLASS_PUNCH
-	miss_text = "swings a fist at the air!"
+	miss_text = "lanza un puñetazo al aire!"
 	miss_sound = "punchwoosh"
 	item_d_type = "blunt"
 

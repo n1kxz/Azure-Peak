@@ -441,12 +441,12 @@ GLOBAL_VAR_INIT(mobids, 1)
 		return
 
 	if(isliving(src))
-		var/message = "[src] looks at"
-		var/target = "\the [A]"
+		var/message = "[src] mira a"
+		var/target = "[A]"
 		if(!isturf(A))
 			if(A == src)
-				message = "[src] looks over"
-				target = "themselves"
+				message = "[src] mira por encima de"
+				target = "simismo"
 			else if(A.loc == src)
 				target = "[src.p_their()] [A.name]"
 			else if(A.loc.loc == src)
@@ -479,7 +479,7 @@ GLOBAL_VAR_INIT(mobids, 1)
   * overridden here and in /mob/dead/observer for different point span classes and sanity checks
   */
 /mob/verb/pointed(atom/A as mob|obj|turf in view())
-	set name = "Point To"
+	set name = "Señala a"
 	set hidden = 1
 	if(!src || !isturf(src.loc) || !(A in view(client.view, src)))
 		return FALSE
@@ -516,9 +516,9 @@ GLOBAL_VAR_INIT(mobids, 1)
 	lastpoint = world.time
 	var/obj/I = get_active_held_item()
 	if(I)
-		src.visible_message(span_info("[src] points [I] at [A]."), span_info("I point [I] at [A]."))
+		src.visible_message(span_info("[src] apunta [I] hacia [A]."), span_info("Apunto [I] hacia [A]."))
 	else
-		src.visible_message(span_info("[src] points at [A]."), span_info("I point at [A]."))
+		src.visible_message(span_info("[src] apunta hacia [A]."), span_info("Apunto hacia [A]."))
 
 	return TRUE
 

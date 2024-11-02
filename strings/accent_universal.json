@@ -90,6 +90,14 @@
 		"lolth": "graggar",
 		"wolfpit": "volfpit",
 		"PQ": "reputation",
-		"sergant":  "sargent"
+		"sergant":  "sargent",
+		"comunismo": "rebeldia",
+		"comunista": "rebelde",
+		"karl marx": "matthios",
+		"marx": "matthios",
+		"comunistas": "rebeldes",
+		"josepf stalin": "jefe rebelde",
+		"stalin": "jefe rebelde"
+		
     }
 }
