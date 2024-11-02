@@ -154,21 +154,21 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	if(num_players() >= 10) // Need at least a handful of people before we start throwing ne'er-do-wells into the mix.
 		var/major_roll = rand(1,100)
 		switch(major_roll)
-			/* rebels depend a little too much on the main players being exceedingly good roleplayers and lends itself to bad conduct too much to be spawning automatically
-			if(1 to 35)
+			 //rebels depend a little too much on the main players being exceedingly good roleplayers and lends itself to bad conduct too much to be spawning automatically
+			if(15 to 35)
 				pick_rebels()
 				log_game("Major Antagonist: Rebellion")
-			*/
-			if(1 to 33)
+			
+			if(15 to 33)
 				pick_bandits()
 				pick_aspirants()
 				log_game("Antagonists: Bandits & Aspirants")
-			if(34 to 66)
+			if(15 to 66)
 				//"pick_vampires() was removed from here, normally they spawn together
 				pick_werewolves()
 				pick_bandits()
 				log_game("Antagonists: Werewolves & Bandits")
-			if(67 to 100)
+			if(15 to 100)
 				pick_werewolves()
 				pick_aspirants()
 				log_game("Antagonists: Werewolves & Aspirants")
@@ -177,7 +177,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 				log_game("Major Antagonist: Extended") //gotta put something here.
 			*/
 
-		/* removing the "minor antagonist" system as we currently need them as major antagonist gamemodes while waiting for our own custom antags
+		// removing the "minor antagonist" system as we currently need them as major antagonist gamemodes while waiting for our own custom antags
 		if(prob(45))
 			pick_bandits()
 			log_game("Minor Antagonist: Bandit")
@@ -188,7 +188,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 		if(prob(10))
 			pick_maniac()
 			log_game("Minor Antagonist: Maniac")
-		*/
+		
 
 	return TRUE
 
