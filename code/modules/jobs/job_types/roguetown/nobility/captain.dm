@@ -168,7 +168,7 @@
 	return TRUE
 
 /obj/effect/proc_holder/spell/self/convertrole/guard
-	name = "Reclutar Guardias"
+	name = "Reclutar Vigilante"
 	new_role = "Watchman"
 	overlay_state = "recruit_guard"
 	recruitment_faction = "Watchman"

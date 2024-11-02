@@ -13,7 +13,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 
 /obj/structure/roguemachine/titan
 	name = "trono"
-	desc = "Quien lleve la corona, poseera la llave a esta extraña cosa. Si todo falla, solo teneis que exclamar \"ayuda\""
+	desc = "Quien lleve la corona, poseera la llave a esta extraña cosa. Si todo falla, solo teneis que exclamar \"secretos del trono\""
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = ""
 	density = FALSE
@@ -136,7 +136,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 			playsound(src, 'sound/misc/hiss.ogg', 100, FALSE, -1)
 	switch(mode)
 		if(0)
-			if(findtext(message, "ayuda"))
+			if(findtext(message, "secretos del trono"))
 				say("Mis comandos son: Establecer Decreto, Realizar Anuncio, Establecer Impuestos, Declarar Fugitivo, Invocar Corona, Invocar Llave, Crear Ley, Remover Ley, Purgar Leyes, Olvidalo")
 				playsound(src, 'sound/misc/machinelong.ogg', 100, FALSE, -1)
 			if(findtext(message, "realizar anuncio"))
