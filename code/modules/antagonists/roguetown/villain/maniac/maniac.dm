@@ -22,6 +22,7 @@
 		TRAIT_EMPATH,
 		TRAIT_NOROGSTAM,
 		TRAIT_NOPAIN,
+		TRAIT_NOPAINSTUN,
 		TRAIT_STEELHEARTED,
 		TRAIT_NOMOOD,
 		TRAIT_HARDDISMEMBER,
@@ -30,8 +31,8 @@
 		TRAIT_STABLEHEART,
 		TRAIT_STABLELIVER,
 		TRAIT_ANTIMAGIC,
-		TRAIT_ANTISCRYING,
 		TRAIT_SCHIZO_AMBIENCE,
+		TRAIT_BLOODLOSS_IMMUNE,
 	)
 	/// Traits that only get applied in the final sequence
 	var/static/list/final_traits = list(
@@ -93,17 +94,15 @@
 			owner.adjust_skillrank(/datum/skill/combat/knives, 6, TRUE)
 			owner.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
 			owner.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
-			owner.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
-			owner.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 			var/medicine_skill = dreamer.mind.get_skill_level(/datum/skill/misc/medicine)
 			if(medicine_skill < 3)// Bumps his skill up to 3 for surgery, not higher
 				owner.adjust_skillrank(/datum/skill/misc/medicine, 3 - medicine_skill, TRUE)
 			STASTR = dreamer.STASTR
 			STACON = dreamer.STACON
 			STAEND = dreamer.STAEND
-			dreamer.STASTR = 15
-			dreamer.STACON = 15
-			dreamer.STAEND = 15
+			dreamer.STASTR = 20
+			dreamer.STACON = 20
+			dreamer.STAEND = 20
 		for(var/trait in applied_traits)
 			ADD_TRAIT(owner.current, trait, "[type]")
 	LAZYINITLIST(owner.learned_recipes)

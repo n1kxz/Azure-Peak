@@ -62,6 +62,6 @@
 			return TRUE
 
 /datum/objective/maniac
-	name = "DESPIERTA"
-	explanation_text = "SEGUIR mi CORAZON debera ser la UNICA LEY."
+	name = "WAKE UP"
+	explanation_text = "FOLLOWING my HEART shall be the WHOLE of the law."
 	flavor = "Dream"

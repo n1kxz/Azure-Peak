@@ -162,7 +162,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_XYLIX = span_info("Sé hablar en código que sólo otros seguidores de Xylix pueden entender."),
 	TRAIT_CABAL = span_info("En secreto, he estudiado los caminos de su ascensión, y conozco a otros miembros de la Cabala."),
 	TRAIT_HORDE = span_info("DE SANGRE Y HUESO. SOY DEVOTO DE GRAGGAR! SIENTO LA FUERZA EN OTROS QUE SON IGUALES."),
-	TRAIT_DEPRAVED = span_info("El lánguido olor de su libertinaje me resulta conocido, y puedo detectar su sórdida presencia en los demás.")
+	TRAIT_DEPRAVED = span_info("TEl lánguido olor de su libertinaje me resulta conocido, y puedo detectar su sórdida presencia en los demás.")
 ))
 
 // trait accessor defines
