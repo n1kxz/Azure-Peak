@@ -18,6 +18,7 @@
 	noble_income = 22
 	min_pq = 5
 	max_pq = null
+	round_contrib_points = 3
 
 /datum/job/roguetown/exlady //just used to change the ladys title
 	title = "Consort Dowager"
@@ -76,11 +77,11 @@
 		H.change_stat("fortune", 5)
 
 /obj/effect/proc_holder/spell/self/convertrole/servant
-	name = "Recruit Servant"
+	name = "Reclutar Sirviente"
 	new_role = "Servant"
 	overlay_state = "recruit_servant"
 	recruitment_faction = "Servants"
-	recruitment_message = "Serve the crown, %RECRUIT!"
-	accept_message = "FOR THE CROWN!"
-	refuse_message = "I refuse."
+	recruitment_message = "Sirve a la corona, %RECRUIT!"
+	accept_message = "POR LA CORONA!"
+	refuse_message = "Me niego."
 	charge_max = 100

@@ -40,7 +40,7 @@
 			return 300
 
 /datum/skill/combat/knives
-	name = "Knife-fighting"
+	name = "Cuchillos"
 	dreams = list(
 		"...A barkeep whistles as he cleans glasses and a drunkard snores, passed out on the counter. The rest of the tavern is focussed on you with bated breath as your dagger darts between your fingers in an impressive display of legerdemain...",
 		"...a flash of steel through the sky, and another, and another. Blades pass between your juggling hands as if you were pulling on singular, thick rope...",
@@ -49,21 +49,21 @@
 
 
 /datum/skill/combat/swords
-	name = "Sword-fighting"
+	name = "Espadas"
 	dreams = list(
 		"...your heart beats wildly as your swords clash, you parry your opponent and finish him off with a decisive slash...",
 		"...a shining length of ivory steel. A token. A symbol. More than just a weapon. Blood runs thick in the wash-bin. Sparks fly from the grinding stone. You maintain the blade, and it maintains your honour..."
 	)
 
 /datum/skill/combat/polearms
-	name = "Polearms"
+	name = "Armas De Asta"
 	dreams = list(
 	"...the pale volf snaps its jaws, but to no avail. Your weapon has the superior reach, and you jab at it until it bleeds and retreats back into the woods...",
 	"...the only thing that makes the humid, fetid bogs tolerable is your trusty polearm. You hook it behind rocks, pull yourself from the mud, and keep up your pace..."
 	)
 
 /datum/skill/combat/maces
-	name = "Maces"
+	name = "Mazas"
 	dreams = list(
 	"...darkness envelops you. You smash, smash and smash again against the walls, terrible banging seizing your hearing. Light cracks through the walls, and with another smash, you are free....",
 	"...'I am ineffable. I am unpiercable.' The wicked white gaurdian says. And so, you shatter its skull with your mace, for it was not unbludgeonable...",
@@ -72,7 +72,7 @@
 	)
 
 /datum/skill/combat/axes
-	name = "Axes"
+	name = "Hachas"
 	dreams = list(
 	"...like trees, like bones, the bigger they are, the harder they fall. With a monstrous swing, the skeleton is decapitated and you have saved the town from its evil...",
 	"...stuck in the flesh, you rip away at your weapon. It comes loose. Blood splatters across your armor and cloak and the side of your face. Hunting is no easy job, but the old man's teachings are effective...",
@@ -82,14 +82,14 @@
 	)
 
 /datum/skill/combat/whipsflails
-	name = "Whips & Flails"
+	name = "Latigos y mayales"
 	dreams = list(
 	"...the sing-song of your flail through the air awakens something primal, but the down swing of your hand quickly puts it to sleep...",
 	"...with a whistle and a snap and a crack, another bruise is left on flesh. You pull the whip back, and strike down again. You will tame them..."
 	)
 
 /datum/skill/combat/bows
-	name = "Archery"
+	name = "Tiro Al Arco"
 	dreams = list(
 	"...the cold wind on the balcony bristles against your left, so you adjust your aim towards it. Your fingers relax and your bow exhales. Your mark drops to the cobblestone streets below, dead...",
 	"...your fingers sting as you let loose another arrow, and it glances off the pale knight's breastplate. You aim at their visor, and pray to whatever gods you hold dear that this one will make it through...",
@@ -97,28 +97,28 @@
 	)
 
 /datum/skill/combat/crossbows
-	name = "Crossbows"
+	name = "Ballestas"
 	dreams = list(
 	"...you put your foot down and pull on the string. You give winding the crossbow all your might. It feels like the thing is mocking you, impossible to pull taut. Only when a librarian reminds you to pull from your back, and not your knees, do you make progress...",
 	"...this weapon is a deadly marvel of engineering, and all you need to do is aim. You steady your breath and lay your finger upon its trigger, your shot becoming surer by the second..."
 	)
 
 /datum/skill/combat/wrestling
-	name = "Wrestling"
+	name = "Lucha"
 	dreams = list(
 	"...you grab him by the shirt and twist your hand with a mighty shove, working your opponent to the ground. He coughs as he impacts the floor, with an approving smile on his face...",
 	"...the dirt gets in your lungs and you can feel your legs quiver. You can't stand. You hear the clanking of plate, and see mighty boots stop in front of you. With a yank at their leg, your would-be killer is brought to the ground..."
 	)
 
 /datum/skill/combat/unarmed
-	name = "Unarmed"
+	name = "Desarmado"
 	dreams = list(
 	"...the wet and harsh sound of skin against bone and clattering teeth reaches your ears before your mind processes what just happened. You got knocked out with a mighty blow to the jaw...",
 	"...your nails are claws, your hands are weapons, your bones are blades. A silent watcher in pale plate armor nods approvingly at your ferocity..."
 	)
 
 /datum/skill/combat/shields
-	name = "Shields"
+	name = "Escudos"
 	dreams = list(
 	"...a terrible lizard spews fire unto you. And yet, you stand fast, for you wield a tower's worth of metal...",
 	"...the half-moon crest upon your shield shines, even in the bright of Astrata's day. You catch a gleam on it, and reflexively pull it upwards. An arrow bounces off..."

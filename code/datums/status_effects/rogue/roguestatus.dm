@@ -7,7 +7,7 @@
 	alert_type = /atom/movable/screen/alert/status_effect/moodbad
 
 /atom/movable/screen/alert/status_effect/moodbad
-	name = "Stressed"
+	name = "Estresado"
 	desc = ""
 	icon_state = "stressb"
 
@@ -17,7 +17,7 @@
 	alert_type = /atom/movable/screen/alert/status_effect/moodvbad
 
 /atom/movable/screen/alert/status_effect/moodvbad
-	name = "Max Stress"
+	name = "Maximo Estres"
 	desc = ""
 	icon_state = "stressvb"
 
@@ -27,7 +27,7 @@
 	alert_type = /atom/movable/screen/alert/status_effect/moodgood
 
 /atom/movable/screen/alert/status_effect/moodgood
-	name = "Inner Peace"
+	name = "Paz Interior"
 	desc = ""
 	icon_state = "stressg"
 
@@ -37,6 +37,6 @@
 	alert_type = /atom/movable/screen/alert/status_effect/moodvgood
 
 /atom/movable/screen/alert/status_effect/moodvgood
-	name = "Max Peace"
+	name = "Maxima Paz"
 	desc = ""
 	icon_state = "stressvg"

@@ -1,12 +1,12 @@
 /datum/wound/fracture
 	name = "fracture"
-	check_name = span_bone("<B>FRACTURE</B>")
+	check_name = span_bone("<B>FRACTURA</B>")
 	severity = WOUND_SEVERITY_SEVERE
 	crit_message = list(
-		"The bone shatters!",
-		"The bone is broken!",
-		"The %BODYPART is mauled!",
-		"The bone snaps through the skin!",
+		"El hueso revienta!",
+		"El hueso esta roto!",
+		"El %BODYPART esta desfigurado!",
+		"El hueso sale por la piel!",
 	)
 	sound_effect = "wetbreak"
 	whp = 40

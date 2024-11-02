@@ -12,11 +12,11 @@
 	var/mob/pulledby = null
 	var/initial_language_holder = /datum/language_holder
 	var/datum/language_holder/language_holder
-	var/verb_say = "says"
-	var/verb_ask = "asks"
-	var/verb_exclaim = "exclaims"
-	var/verb_whisper = "whispers"
-	var/verb_yell = "yells"
+	var/verb_say = "dice"
+	var/verb_ask = "pregunta"
+	var/verb_exclaim = "exclama"
+	var/verb_whisper = "susurra"
+	var/verb_yell = "grita"
 	var/speech_span
 	var/inertia_dir = 0
 	var/atom/inertia_last_loc

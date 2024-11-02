@@ -1,2 +1,2 @@
 /datum/skill/misc/tracking
-	name = "Tracking"
+	name = "Rastreacion"

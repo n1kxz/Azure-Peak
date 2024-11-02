@@ -60,15 +60,15 @@
 	var/dmg_overlay_type //the type of damage overlay (if any) to use when this bodypart is bruised/burned.
 
 	//Damage messages used by help_shake_act()
-	var/heavy_brute_msg = "MANGLED"
-	var/medium_brute_msg = "battered"
-	var/light_brute_msg = "bruised"
-	var/no_brute_msg = "unbruised"
+	var/heavy_brute_msg = "DESFIGURADO"
+	var/medium_brute_msg = "abollado"
+	var/light_brute_msg = "magullado"
+	var/no_brute_msg = "sin rasguño"
 
-	var/heavy_burn_msg = "CHARRED"
-	var/medium_burn_msg = "peeling"
-	var/light_burn_msg = "blistered"
-	var/no_burn_msg = "unburned"
+	var/heavy_burn_msg = "CARBONIZADO"
+	var/medium_burn_msg = "descamacion"
+	var/light_burn_msg = "ampollado"
+	var/no_burn_msg = "sin quemaduras"
 
 	var/add_extra = FALSE
 	var/offset

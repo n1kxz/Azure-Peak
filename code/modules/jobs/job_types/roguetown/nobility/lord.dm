@@ -2,7 +2,8 @@ GLOBAL_VAR(lordsurname)
 GLOBAL_LIST_EMPTY(lord_titles)
 
 /datum/job/roguetown/lord
-	title = "Monarch"
+	title = "Grand Duke"
+	f_title = "Grand Duchess"
 	flag = LORD
 	department_flag = NOBLEMEN
 	faction = "Station"
@@ -26,12 +27,14 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	whitelist_req = FALSE
 	min_pq = 10
 	max_pq = null
+	round_contrib_points = 4
 	give_bank_account = 1000
 	required = TRUE
 	cmode_music = 'sound/music/combat_fancy.ogg'
 
 /datum/job/roguetown/exlord //just used to change the lords title
-	title = "Monarch Emeritus"
+	title = "Duke Emeritus"
+	f_title = "Duchess Emeritus"
 	flag = LORD
 	department_flag = NOBLEMEN
 	faction = "Station"
@@ -51,7 +54,14 @@ GLOBAL_LIST_EMPTY(lord_titles)
 		else
 			GLOB.lordsurname = "of [L.real_name]"
 		SSticker.rulermob = L
-		to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Monarch of Azure Peak.</span></span></b>")
+		switch(L.pronouns)
+			if(SHE_HER)
+				SSticker.rulertype = "Grand Duchess"
+			if(THEY_THEM_F)
+				SSticker.rulertype = "Grand Duchess"
+			else
+				SSticker.rulertype = "Grand Duke"
+		to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is [SSticker.rulertype] of Azure Peak.</span></span></b>")
 		if(STATION_TIME_PASSED() <= 10 MINUTES) //Late to the party? Stuck with default colors, sorry!
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
 
@@ -149,8 +159,8 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	return family_guy.real_name
 
 /obj/effect/proc_holder/spell/self/grant_title
-	name = "Grant Title"
-	desc = "Grant someone a title of honor... Or shame."
+	name = "Conceder Titulo"
+	desc = "Da un titulo de honor... O verguenza."
 	overlay_state = "recruit_titlegrant"
 	antimagic_allowed = TRUE
 	charge_max = 100
@@ -161,7 +171,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 
 /obj/effect/proc_holder/spell/self/grant_title/cast(list/targets, mob/user = usr)
 	. = ..()
-	var/granted_title = input(user, "What title do you wish to grant?", "[name]") as null|text
+	var/granted_title = input(user, "Que titulo quieres conceder?", "[name]") as null|text
 	granted_title = reject_bad_text(granted_title, title_length)
 	if(!granted_title)
 		return
@@ -172,17 +182,17 @@ GLOBAL_LIST_EMPTY(lord_titles)
 			continue
 		recruitment[village_idiot.name] = village_idiot
 	if(!length(recruitment))
-		to_chat(user, span_warning("There are no potential honoraries in range."))
+		to_chat(user, span_warning("No hay honorarios potenciales en tu rango."))
 		return
-	var/inputty = input(user, "Select an honorary!", "[name]") as anything in recruitment
+	var/inputty = input(user, "Selecciona a un honorario!", "[name]") as anything in recruitment
 	if(inputty)
 		var/mob/living/carbon/human/recruit = recruitment[inputty]
 		if(!QDELETED(recruit) && (recruit in get_hearers_in_view(title_range, user)))
 			INVOKE_ASYNC(src, PROC_REF(village_idiotify), recruit, user, granted_title)
 		else
-			to_chat(user, span_warning("Honorific failed!"))
+			to_chat(user, span_warning("Honorarios fallados!"))
 	else
-		to_chat(user, span_warning("Honorific cancelled."))
+		to_chat(user, span_warning("Honorarios cancelados."))
 
 /obj/effect/proc_holder/spell/self/grant_title/proc/can_title(mob/living/carbon/human/recruit)
 	//wtf
@@ -200,9 +210,9 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	if(QDELETED(recruit) || QDELETED(recruiter) || !granted_title)
 		return FALSE
 	if(GLOB.lord_titles[recruit.real_name])
-		recruiter.say("I HEREBY STRIP YOU, [uppertext(recruit.name)], OF THE TITLE OF [uppertext(GLOB.lord_titles[recruit.real_name])]!")
+		recruiter.say("POR LA PRESENTE TE DESPOJO, [uppertext(recruit.name)], DE EL TITULO DE [uppertext(GLOB.lord_titles[recruit.real_name])]!")
 		GLOB.lord_titles -= recruit.real_name
 		return FALSE
-	recruiter.say("I HEREBY GRANT YOU, [uppertext(recruit.name)], THE TITLE OF [uppertext(granted_title)]!")
+	recruiter.say("POR LA PRESENTE TE CONCEDO, [uppertext(recruit.name)], EL TITULO DE [uppertext(granted_title)]!")
 	GLOB.lord_titles[recruit.real_name] = granted_title
 	return TRUE

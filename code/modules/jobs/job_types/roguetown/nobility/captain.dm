@@ -9,7 +9,7 @@
 	allowed_races = RACES_ALL_KINDS
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-	tutorial = "Your lineage is noble, and generations of strong, loyal knights have come before you. You served your time gracefully as knight of his royal majesty, and now you've grown into a role which many men can only dream of becoming. Lead your men to victory--and keep them in line--and you will see this kingdom prosper under a thousand suns."
+	tutorial = "Your lineage is noble, and generations of strong, loyal knights have come before you. You served your time gracefully as knight of his royal majesty, and now you've grown into a role which many men can only dream of becoming. Lead your men to victory--and keep them in line--and you will see this realm prosper under a thousand suns."
 	display_order = JDO_GUARD_CAPTAIN
 	whitelist_req = FALSE
 
@@ -20,6 +20,7 @@
 	noble_income = 16
 	min_pq = 5
 	max_pq = null
+	round_contrib_points = 3
 	cmode_music = 'sound/music/combat_knight.ogg'
 
 /datum/job/roguetown/captain/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
@@ -92,8 +93,8 @@
 	H.verbs |= /mob/proc/haltyell
 
 /obj/effect/proc_holder/spell/self/convertrole
-	name = "Recruit Beggar"
-	desc = "Recruit someone to your cause."
+	name = "Reclutar Beggar"
+	desc = "Recluta a alguien para los Beggars."
 	overlay_state = "recruit_bog"
 	antimagic_allowed = TRUE
 	charge_max = 100
@@ -102,13 +103,13 @@
 	/// Faction shown to the user in the recruitment prompt
 	var/recruitment_faction = "Beggars"
 	/// Message the recruiter gives
-	var/recruitment_message = "Serve the beggars, %RECRUIT!"
+	var/recruitment_message = "Sirve a los vagabundos, %RECRUIT!"
 	/// Range to search for potential recruits
 	var/recruitment_range = 3
 	/// Say message when the recruit accepts
-	var/accept_message = "I will serve!"
+	var/accept_message = "SERVIRE!"
 	/// Say message when the recruit refuses
-	var/refuse_message = "I refuse."
+	var/refuse_message = "Me niego."
 
 /obj/effect/proc_holder/spell/self/convertrole/cast(list/targets,mob/user = usr)
 	. = ..()
@@ -167,13 +168,13 @@
 	return TRUE
 
 /obj/effect/proc_holder/spell/self/convertrole/guard
-	name = "Recruit Guardsmen"
+	name = "Reclutar Guardias"
 	new_role = "Watchman"
 	overlay_state = "recruit_guard"
 	recruitment_faction = "Watchman"
-	recruitment_message = "Serve the town guard, %RECRUIT!"
-	accept_message = "FOR THE KING!"
-	refuse_message = "I refuse."
+	recruitment_message = "Sirve a la guardia del pueblo, %RECRUIT!"
+	accept_message = "POR LA CORONA!"
+	refuse_message = "Me niego."
 
 /obj/effect/proc_holder/spell/self/convertrole/guard/convert(mob/living/carbon/human/recruit, mob/living/carbon/human/recruiter)
 	. = ..()

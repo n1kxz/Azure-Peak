@@ -110,7 +110,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/outdoors/mountains/deception
 	name = "deception"
 	icon_state = "deception"
-	first_time_text = "THE CANYON OF DECEPTION"
+	first_time_text = "EL CAÑON DEL ENGAÑO"
 
 /area/rogue/outdoors/mountains/decap
 	name = "mt decapitation"
@@ -124,7 +124,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound = 'sound/music/area/decap.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
-	first_time_text = "MOUNT DECAPITATION"
+	first_time_text = "MONTE DECAPITACION"
 	ambush_times = list("night","dawn","dusk","day")
 	converted_type = /area/rogue/indoors/shelter/mountains/decap
 /area/rogue/indoors/shelter/mountains/decap
@@ -175,7 +175,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 40,
 				/mob/living/carbon/human/species/skeleton/npc/ambush = 10,
 				/mob/living/carbon/human/species/goblin/npc/ambush = 30)
-	first_time_text = "THE AZURE GROVE"
+	first_time_text = "EL BOSQUE DE AZURE"
 	converted_type = /area/rogue/indoors/shelter/woods
 /area/rogue/indoors/shelter/woods
 	icon_state = "woods"
@@ -218,7 +218,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/bogtroll = 20,
 				/mob/living/simple_animal/hostile/retaliate/rogue/spider = 40,
 				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 30)
-	first_time_text = "THE TERRORBOG"
+	first_time_text = "EL BOG"
 	converted_type = /area/rogue/indoors/shelter/bog
 
 /area/rogue/indoors/shelter/bog
@@ -260,7 +260,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 30,
 				/mob/living/carbon/human/species/human/northern/searaider/ambush = 10,
 				/mob/living/carbon/human/species/goblin/npc/ambush/sea = 40)
-	first_time_text = "THE AZURE COAST"
+	first_time_text = "LA COSTA DE AZURE"
 	converted_type = /area/rogue/indoors/shelter/woods
 
 //// UNDER AREAS (no indoor rain sound usually)
@@ -309,7 +309,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/under/cavewet
 	name = "cavewet"
 	icon_state = "cavewet"
-	first_time_text = "The Undersea"
+	first_time_text = "El Undersea"
 	ambientsounds = AMB_CAVEWATER
 	ambientnight = AMB_CAVEWATER
 	spookysounds = SPOOKY_CAVE
@@ -328,7 +328,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	converted_type = /area/rogue/outdoors/caves
 
 /area/rogue/under/cavewet/bogcaves
-	first_time_text = "The Undergrove"
+	first_time_text = "El Undergrove"
 
 /area/rogue/under/cave/spider
 	icon_state = "spider"
@@ -363,7 +363,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/under/cavelava
 	name = "cavelava"
 	icon_state = "cavelava"
-	first_time_text = "MOUNT DECAPITATION"
+	first_time_text = "MONTE DECAPITACION"
 	ambientsounds = AMB_CAVELAVA
 	ambientnight = AMB_CAVELAVA
 	spookysounds = SPOOKY_CAVE
@@ -397,7 +397,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/under/cave/dungeon1
 	name = "smalldungeon1"
 	icon_state = "spider"
-	first_time_text = "THE ABANDONED FORTRESS"
+	first_time_text = "EL FUERTE ABANDONADO"
 	droning_sound = 'sound/music/area/dungeon.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
@@ -413,7 +413,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/under/cave/mazedungeon
 	name = "mazedungeon"
 	icon_state = "under"
-	first_time_text = "TEMPLE OF THE SHATTERED GOD"
+	first_time_text = "TEMPLO DEL DIOS CORROMPIDO"
 	droning_sound = 'sound/music/area/dungeon2.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
@@ -422,7 +422,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/under/cave/orcdungeon
 	name = "orcdungeon"
 	icon_state = "under"
-	first_time_text = "OLD RUIN"
+	first_time_text = "VIEJA RUINA"
 	droning_sound = 'sound/music/area/dungeon.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
@@ -431,7 +431,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/under/cave/dukecourt
 	name = "dukedungeon"
 	icon_state = "duke"
-	first_time_text = "FORGOTTEN COURT"
+	first_time_text = "CORTE OLVIDADA"
 	droning_sound = 'sound/music/area/dungeon2.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
@@ -469,7 +469,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
-	first_time_text = "THE KEEP OF AZURE PEAK"
+	first_time_text = "LA FORTALEZA DE AZURE PEAK"
 /area/rogue/outdoors/exposed/manorgarri
 	icon_state = "manorgarri"
 	droning_sound = 'sound/music/area/manorgarri.ogg'
@@ -570,7 +570,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 
 /area/rogue/indoors/town/church/chapel
 	icon_state = "chapel"
-	first_time_text = "THE HOUSE OF THE TEN"
+	first_time_text = "LA CASA DE LOS DIEZ"
 
 /area/rogue/indoors/town/fire_chamber
 	name = "incinerator"
@@ -603,7 +603,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound = 'sound/music/area/dwarf.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
-	first_time_text = "The Dwarven Quarter"
+	first_time_text = "El Barrio De Los Dwarfs"
 	converted_type = /area/rogue/outdoors/exposed/dwarf
 /area/rogue/outdoors/exposed/dwarf
 	icon_state = "dwarf"
@@ -621,7 +621,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
 	converted_type = /area/rogue/indoors/shelter/town
-	first_time_text = "THE TOWN OF AZURE PEAK"
+	first_time_text = "LA CIUDAD DE AZURE PEAK"
 	town_area = TRUE
 
 /area/rogue/indoors/shelter/town
@@ -671,7 +671,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound = 'sound/music/area/dwarf.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
-	first_time_text = "The Dwarven Quarter"
+	first_time_text = "El Barrio De Los Dwarfs"
 	soundenv = 16
 	converted_type = /area/rogue/indoors/shelter/town/dwarf
 /area/rogue/indoors/shelter/town/dwarf
@@ -757,4 +757,4 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound = 'sound/music/area/underworlddrone.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
-	first_time_text = "The Forest of Repentence"
+	first_time_text = "El Bosque Del Arrepentimiento"

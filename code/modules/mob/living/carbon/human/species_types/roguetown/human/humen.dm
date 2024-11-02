@@ -14,7 +14,7 @@
 	are dominant in their species... \
 	+1 Intelligence."
 
-	skin_tone_wording = "Ancestry"
+	skin_tone_wording = "Ascendencia"
 
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)

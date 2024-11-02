@@ -62,7 +62,7 @@
 			fou = TRUE
 			break
 	if(!fou)
-		to_chat(user, "<b>It is a dead end.</b>")
+		to_chat(user, "<b>Fin del camino.</b>")
 
 
 /obj/structure/fluff/traveltile/attack_hand(mob/user)
@@ -77,7 +77,7 @@
 				return
 			if(user.pulledby)
 				return
-			to_chat(user, "<b>I begin to travel...</b>")
+			to_chat(user, "<b>Empiezo a viajar...</b>")
 			if(do_after(user, 50, needhand = FALSE, target = src))
 				var/mob/living/L = user
 				var/atom/movable/pullingg = L.pulling
@@ -91,7 +91,7 @@
 			fou = TRUE
 			break
 	if(!fou)
-		to_chat(user, "<b>It is a dead end.</b>")
+		to_chat(user, "<b>Fin del camino.</b>")
 	. = ..()
 
 /obj/structure/fluff/traveltile/proc/can_go(atom/movable/AM)
@@ -104,11 +104,11 @@
 		if(HAS_TRAIT(L, required_trait))
 			for(var/mob/living/carbon/human/H in hearers(6,src))
 				if(!HAS_TRAIT(H, required_trait))
-					to_chat(H, "<b>I discover a well hidden entrance</b>")
+					to_chat(H, "<b>He descubierto una entrada bien escondida.</b>")
 					ADD_TRAIT(H, required_trait, TRAIT_GENERIC)
 			return TRUE
 		else
-			to_chat(L, "<b>It is a dead end.</b>")
+			to_chat(L, "<b>Fin del camino.</b>")
 			return FALSE
 
 /atom/movable
@@ -129,7 +129,7 @@
 				return
 			if(AM.pulledby)
 				return
-			to_chat(AM, "<b>I begin to travel...</b>")
+			to_chat(AM, "<b>Empiezo a viajar...</b>")
 			if(do_after(AM, 50, needhand = FALSE, target = src))
 				if(!can_go(AM))
 					return
@@ -145,7 +145,7 @@
 			fou = TRUE
 			break
 	if(!fou)
-		to_chat(AM, "<b>It is a dead end.</b>")
+		to_chat(AM, "<b>Fin del camino.</b>")
 
 /obj/structure/fluff/traveltile/bandit
 	required_trait = TRAIT_BANDITCAMP
@@ -153,7 +153,7 @@
 	required_trait = TRAIT_VAMPMANSION
 /obj/structure/fluff/traveltile/dungeon
 	name = "gate"
-	desc = "This gate's enveloping darkness is so opressive you dread to step through it."
+	desc = "La el aura de esta puerta es tan oscuro que temes abrila."
 	icon = 'icons/roguetown/misc/portal.dmi'
 	icon_state = "portal"
 	density = FALSE

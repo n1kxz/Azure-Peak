@@ -10,8 +10,8 @@
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/hungryt1
-	name = "Hungry"
-	desc = "Hunger weakens this living body."
+	name = "Hambre"
+	desc = "El hambre debilita el cuerpo."
 	icon_state = "hunger1"
 
 /datum/status_effect/debuff/hungryt2
@@ -21,8 +21,8 @@
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/hungryt2
-	name = "Hungry"
-	desc = "This living body suffers heavily from hunger."
+	name = "Hambriento"
+	desc = "Este cuerpo viviente sufre de los efectos de la inanicion."
 	icon_state = "hunger2"
 
 /datum/status_effect/debuff/hungryt3
@@ -32,8 +32,8 @@
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/hungryt3
-	name = "Hungry"
-	desc = "My body can barely hold it!"
+	name = "Inanicion"
+	desc = "Te estas muriendo de hambre, literalmente."
 	icon_state = "hunger3"
 
 //SILVER DAGGER EFFECT
@@ -45,8 +45,8 @@
 	duration = 45 SECONDS
 
 /atom/movable/screen/alert/status_effect/debuff/silver_curse
-	name = "Silver Curse"
-	desc = "My BANE!"
+	name = "Maldicion De Plata"
+	desc = "Mi debilitud!"
 	icon_state = "hunger3"
 
 ////////////////////
@@ -59,8 +59,8 @@
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/thirstyt1
-	name = "Thirsty"
-	desc = "I need water."
+	name = "Algo de sed"
+	desc = "Necesito agua."
 	icon_state = "thirst1"
 
 /datum/status_effect/debuff/thirstyt2
@@ -70,8 +70,8 @@
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/thirstyt2
-	name = "Thirsty"
-	desc = "My mouth feels much drier."
+	name = "Sediento"
+	desc = "Mi boca se siente bastante seca."
 	icon_state = "thirst2"
 
 /datum/status_effect/debuff/thirstyt3
@@ -81,8 +81,8 @@
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/thirstyt3
-	name = "Thirsty"
-	desc = "I urgently need water!"
+	name = "Deshidratacion"
+	desc = "Necesito agua de forma urgente!"
 	icon_state = "thirst3"
 
 /////////
@@ -144,7 +144,7 @@
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/bleedingt1
-	name = "Dizzy"
+	name = "Mareado"
 	desc = ""
 	icon_state = "bleed1"
 
@@ -155,7 +155,7 @@
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/bleedingt2
-	name = "Faint"
+	name = "Debil"
 	desc = ""
 	icon_state = "bleed2"
 
@@ -166,7 +166,7 @@
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/bleedingt3
-	name = "Drained"
+	name = "Drenado"
 	desc = ""
 	icon_state = "bleed3"
 
@@ -175,8 +175,8 @@
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/sleepytime
 
 /atom/movable/screen/alert/status_effect/debuff/sleepytime
-	name = "Tired"
-	desc = "I should get some rest."
+	name = "Cansado"
+	desc = "Deberia de irme a dormir." //Como yo, son las 6:37, es 2/11/2024. Y llevo dos dias sin dormir, y como no queda mas que hacer solo me dedico a codear y codear hasta que me reviente una puta encema del cerebro y los liquidos que mantienen el pensamiento humano se rebocen por las grietas de mi craneo llenado el cuarto con mi esencia cerebral, es un poco asi como va esta mierda supongo, total ya no se ni que escribo, me he quedado pensando por que estoy escuchando musica de ascensor para ver si me entra algo de sueño y me he quedado embobado con la letra de la cancion asi que no se me ocurre que poner en la siguiente traduccion, solo estoy divagando y divagando hasta que salga la puta siguiente cancion. La verdad es que llevo un dia de mierda, yo queria hacer algo por halloween pero entre el cansancio y que no hay nada por mi pueblo pues no he hecho nada, lo que hice por halloween es codear el erp fix que a dia de hoy, a las 6:41 am del 2/11/24 no esta aceptado. Lo gracioso es que la update de no erp no funciona sin ese parche, dije que se me habia olvidado pero realmente es que soy tan putamente inepto e inultil que al final se me olvido incluir comentar la funcion que hace que al arrastrar MMD hacia un player te abra el erp panel, entonces lo que borre fue solo lo que te pedia consentimiento para abrir el panel, convirtiendo asi la erp update en la rape update. Y esa es la analogia de mi vida, intento cambiar cosas pero no puedo y acabo convirtiendolas en lo que estaba intentando que no fueran, solo codeo por que ya no se que hacer conmigo, no tengo amigos, tampoco una relacion muy buena con mi familia. Y miento, si tengo "un" amigo, el resto me han dejado de lado por que soy un alcoholico y siempre me pongo intrusivo y agresivo con ellos cuando bebo. No me queda nada mas que hacer salvo codear para este server de mierda que probablemente morira en dos meses. Cuanto mas me doy cuenta de mi situacion creo que me hago mas agresivo por que no puedo lidiar con la realidad de mi existencia, tengo miedo a morir por que creo que lo unico que hay es esta mierda. y lo que ya hay no me gusta asi que lo otro debe de ser peor, o peor que el que sea peor, la nada. si la vida se reduce a esto entonces que sentido tiene que me esfuerce en estas mierdas si de aqui a un año nadie va a usar la mierda de codigo que he hecho para este server por que nadie va a jugar aqui. Solo quiero buscar algo que me distraiga de no pensar en estas cosas, pero ironicamente la unica forma que tengo ahora de expresarme es precisamente la misma cosa que he estado usando para distraerme. Atentamente- Zip.
 	icon_state = "sleepy"
 
 /datum/status_effect/debuff/muscle_sore
@@ -185,8 +185,8 @@
 	effectedstats = list("strength" = -1, "endurance" = -1)
 
 /atom/movable/screen/alert/status_effect/debuff/muscle_sore
-	name = "Muscle Soreness"
-	desc = "My muscles need some sleep to recover."
+	name = "Dolor Muscular"
+	desc = "Mis musculos necesitan dormir para revitalizarse."
 	icon_state = "muscles"
 
 /datum/status_effect/debuff/devitalised
@@ -196,16 +196,16 @@
 	duration = 20 MINUTES
 
 /atom/movable/screen/alert/status_effect/debuff/devitalised
-	name = "Devitalised"
-	desc = "Something has been taken from me, and it will take time to recover."
+	name = "Desvitalizado"
+	desc = "Algo ha sido arrancado de mi, y tomara tiempo recuperarse de ello."
 
 /datum/status_effect/debuff/vamp_dreams
 	id = "sleepytime"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/vamp_dreams
 
 /atom/movable/screen/alert/status_effect/debuff/vamp_dreams
-	name = "Insight"
-	desc = "With some sleep in a coffin I feel like I could become better."
+	name = "Introspectiva"
+	desc = "Con algo de sueño en un ataud creo que podre convertirme en mejor persona."
 	icon_state = "sleepy"
 
 /// SURRENDERING DEBUFFS
@@ -224,8 +224,8 @@
 	REMOVE_TRAIT(owner, TRAIT_CRITICAL_RESISTANCE, id)
 
 /atom/movable/screen/alert/status_effect/debuff/breedable
-	name = "Obedient"
-	desc = "They won't hurt me too much..."
+	name = "Obediente"
+	desc = "No me haran mucho daño..."
 
 /datum/status_effect/debuff/submissive
 	id = "submissive"
@@ -241,8 +241,8 @@
 	owner.remove_movespeed_modifier("SUBMISSIVE")
 
 /atom/movable/screen/alert/status_effect/debuff/submissive
-	name = "Compliant"
-	desc = "Falling in line is my only choice."
+	name = "Sumiso"
+	desc = "Seguir la fila es mi unica eleccion."
 
 /datum/status_effect/debuff/chilled
 	id = "chilled"
@@ -251,6 +251,6 @@
 	duration = 15 SECONDS
 
 /atom/movable/screen/alert/status_effect/debuff/chilled
-	name = "Chilled"
-	desc = "I can barely feel my limbs!"
+	name = "Enfriado"
+	desc = "Casi ni puedo sentir mi cuerpo!"
 	icon_state = "chilled"

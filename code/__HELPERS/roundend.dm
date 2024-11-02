@@ -196,9 +196,9 @@
 /datum/controller/subsystem/ticker/proc/declare_completion()
 	set waitfor = FALSE
 
-	log_game("The round has ended.")
+	log_game("La ronda ha terminado.")
 
-	to_chat(world, "<BR><BR><BR><span class='reallybig'>So ends this tale on Azure Peak.</span>")
+	to_chat(world, "<BR><BR><BR><span class='reallybig'>Y asi acaba una historia mas en Azure Peak.</span>")
 	get_end_reason()
 
 	var/list/key_list = list()
@@ -214,6 +214,12 @@
 		if(H.stat != DEAD)
 			if(H.get_triumphs() < 0)
 				H.adjust_triumphs(1)
+		if(GLOB.round_join_times[H.ckey] && H.job && H.allmig_reward)
+			if((GLOB.round_join_times[H.ckey] + 45 MINUTES) < world.time)
+				var/datum/job/job = SSjob.GetJob(H.job)
+				if(job && job.round_contrib_points)
+					to_chat(H, "\n<font color='purple'><b>[job.round_contrib_points]</b> ROUND CONTRIBUTOR POINTS AWARDED. Thank you for playing!</font>")
+					add_roundpoints(job.round_contrib_points, H.ckey)
 	add_roundplayed(key_list)
 //	SEND_SOUND(world, sound(pick('sound/misc/roundend1.ogg','sound/misc/roundend2.ogg')))
 //	SEND_SOUND(world, sound('sound/misc/roundend.ogg'))
@@ -309,7 +315,7 @@
 						"Our actors hang up their masks. A new cast begins to rehearse.",
 						"Thus the week's events have taken place. Eventful or mundane, life continues.",
 						"Pawns of gods, preachers of nite, all come together to recite this tale.",
-						"Whether with loss or life, kingdom survives... for now.",
+						"Whether with loss or life, the duchy survives... for now.",
 						"The people of Azure prepare to look forward; their actions locked in the impermeable past.")
 //		if(C.not_enough_players)
 //			end_reason = "The town was abandoned."
@@ -378,11 +384,11 @@
 /datum/controller/subsystem/ticker/proc/stats_report()
 	var/list/shit = list()
 	shit += "<br><span class='bold'>Δ--------------------Δ</span><br>"
-	shit += "<br><font color='#9b6937'><span class='bold'>Deaths:</span></font> [deaths]"
-	shit += "<br><font color='#af2323'><span class='bold'>Blood spilt:</span></font> [round(blood_lost / 100, 1)]L"
-	shit += "<br><font color='#36959c'><span class='bold'>TRIUMPH(s) Awarded:</span></font> [tri_gained]"
-	shit += "<br><font color='#a02fa4'><span class='bold'>TRIUMPH(s) Stolen:</span></font> [tri_lost * -1]"
-	shit += "<br><font color='#ffd4fd'><span class='bold'>Pleasures:</span></font> [cums]"
+	shit += "<br><font color='#9b6937'><span class='bold'>Muertes:</span></font> [deaths]"
+	shit += "<br><font color='#af2323'><span class='bold'>Sangre Derramada:</span></font> [round(blood_lost / 100, 1)]L"
+	shit += "<br><font color='#36959c'><span class='bold'>TRIUNFOS(s) Ganados:</span></font> [tri_gained]"
+	shit += "<br><font color='#a02fa4'><span class='bold'>TRIUNFOS(s) Robados:</span></font> [tri_lost * -1]"
+	shit += "<br><font color='#ffd4fd'><span class='bold'>Degenerados Que Han Encontrado La Forma De Hacer ERP (me cago en tus putos muertos):</span></font> [cums]"
 	if(GLOB.confessors.len)
 		shit += "<br><font color='#93cac7'><span class='bold'>Confessors:</span></font> "
 		for(var/x in GLOB.confessors)

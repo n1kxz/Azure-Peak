@@ -240,22 +240,22 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/used_title
 	switch(current_tab)
 		if (0) // Character Settings#
-			used_title = "Character Sheet"
+			used_title = "Ficha De Personaje"
 
 			// Top-level menu table
 			dat += "<table style='width: 100%; line-height: 20px;'>"
 			// NEXT ROW
 			dat += "<tr>"
 			dat += "<td style='width:33%;text-align:left'>"
-			dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;'>Change Character</a>"
+			dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;'>Cambiar Personaje</a>"
 			dat += "</td>"
 
 			dat += "<td style='width:33%;text-align:center'>"
-			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Class Selection</a>"
+			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Elegir Clase</a>"
 			dat += "</td>"
 
 			dat += "<td style='width:33%;text-align:right'>"
-			dat += "<a href='?_src_=prefs;preference=keybinds;task=menu'>Keybinds</a>"
+			dat += "<a href='?_src_=prefs;preference=keybinds;task=menu'>Atajos De Teclado</a>"
 			dat += "</td>"
 			dat += "</tr>"
 
@@ -265,7 +265,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "</td>"
 
 			dat += "<td style='width:33%;text-align:center'>"
-			dat += "<a href='?_src_=prefs;preference=antag;task=menu'>Villain Selection</a>"
+			dat += "<a href='?_src_=prefs;preference=antag;task=menu'>Elegir Villanos</a>"
 			dat += "</td>"
 
 			dat += "<td style='width:33%;text-align:right'>"
@@ -302,13 +302,13 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<td width=40% valign='top'>"
 
 // 			-----------START OF IDENT TABLE-----------
-			dat += "<h2>Identity</h2>"
+			dat += "<h2>Identidad</h2>"
 			dat += "<table width='100%'><tr><td width='75%' valign='top'>"
 			if(is_banned_from(user.ckey, "Appearance"))
 				dat += "<b>Thou are banned from using custom names and appearances. Thou can continue to adjust thy characters, but thee will be randomised once thee joins the game.</b><br>"
 //			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_NAME]'>Always Random Name: [(randomise[RANDOM_NAME]) ? "Yes" : "No"]</a>"
 //			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_NAME_ANTAG]'>When Antagonist: [(randomise[RANDOM_NAME_ANTAG]) ? "Yes" : "No"]</a>"
-			dat += "<b>Name:</b> "
+			dat += "<b>Nombre:</b> "
 			if(check_nameban(user.ckey))
 				dat += "<a href='?_src_=prefs;preference=name;task=input'>NAMEBANNED</a><BR>"
 			else
@@ -316,14 +316,14 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			// LETHALSTONE EDIT BEGIN: add pronoun prefs
 			dat += "<BR>"
-			dat += "<b>Pronouns:</b> <a href='?_src_=prefs;preference=pronouns;task=input'>[pronouns]</a><BR>"
+			dat += "<b>Pronombres:</b> <a href='?_src_=prefs;preference=pronouns;task=input'>[pronouns]</a><BR>"
 			// LETHALSTONE EDIT END
 
 			dat += "<BR>"
-			dat += "<b>Race:</b> <a href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a>[spec_check(user) ? "" : " (!)"]<BR>"
+			dat += "<b>Raza:</b> <a href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a>[spec_check(user) ? "" : " (!)"]<BR>"
 
 			// LETHALSTONE EDIT BEGIN: add statpack selection
-			dat += "<b>Statpack:</b> <a href='?_src_=prefs;preference=statpack;task=input'>[statpack.name]</a><BR>"
+			dat += "<b>Pack De Estadisticas:</b> <a href='?_src_=prefs;preference=statpack;task=input'>[statpack.name]</a><BR>"
 //			dat += "<a href='?_src_=prefs;preference=species;task=random'>Random Species</A> "
 //			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SPECIES]'>Always Random Species: [(randomise[RANDOM_SPECIES]) ? "Yes" : "No"]</A><br>"
 
@@ -335,16 +335,16 @@ GLOBAL_LIST_EMPTY(chosen_names)
 					dispGender = "Feminine" // LETHALSTONE EDIT: repurpose gender as bodytype, display accordingly
 				else
 					dispGender = "Other"
-				dat += "<b>Body Type:</b> <a href='?_src_=prefs;preference=gender'>[dispGender]</a><BR>"
+				dat += "<b>Tipo De Cuerpo:</b> <a href='?_src_=prefs;preference=gender'>[dispGender]</a><BR>"
 				if(randomise[RANDOM_BODY] || randomise[RANDOM_BODY_ANTAG]) //doesn't work unless random body
 					dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER]'>Always Random Bodytype: [(randomise[RANDOM_GENDER]) ? "Yes" : "No"]</A>"
 					dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER_ANTAG]'>When Antagonist: [(randomise[RANDOM_GENDER_ANTAG]) ? "Yes" : "No"]</A>"
 
 			// LETHALSTONE EDIT BEGIN: add voice type prefs
-			dat += "<b>Voice Type</b>: <a href='?_src_=prefs;preference=voicetype;task=input'>[voice_type]</a><BR>"
+			dat += "<b>Tipo De Voz</b>: <a href='?_src_=prefs;preference=voicetype;task=input'>[voice_type]</a><BR>"
 			// LETHALSTONE EDIT END
 
-			dat += "<b>Age:</b> <a href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
+			dat += "<b>Edad:</b> <a href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
 
 //			dat += "<br><b>Age:</b> <a href='?_src_=prefs;preference=age;task=input'>[age]</a>"
 //			if(randomise[RANDOM_BODY] || randomise[RANDOM_BODY_ANTAG]) //doesn't work unless random body
@@ -352,12 +352,12 @@ GLOBAL_LIST_EMPTY(chosen_names)
 //				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_AGE_ANTAG]'>When Antagonist: [(randomise[RANDOM_AGE_ANTAG]) ? "Yes" : "No"]</A>"
 
 //			dat += "<b><a href='?_src_=prefs;preference=name;task=random'>Random Name</A></b><BR>"
-			dat += "<b>Flaw:</b> <a href='?_src_=prefs;preference=charflaw;task=input'>[charflaw]</a><BR>"
+			dat += "<b>Defecto:</b> <a href='?_src_=prefs;preference=charflaw;task=input'>[charflaw]</a><BR>"
 			var/datum/faith/selected_faith = GLOB.faithlist[selected_patron?.associated_faith]
-			dat += "<b>Faith:</b> <a href='?_src_=prefs;preference=faith;task=input'>[selected_faith?.name || "FUCK!"]</a><BR>"
+			dat += "<b>Fe</b> <a href='?_src_=prefs;preference=faith;task=input'>[selected_faith?.name || "FUCK!"]</a><BR>"
 			dat += "<b>Patron:</b> <a href='?_src_=prefs;preference=patron;task=input'>[selected_patron?.name || "FUCK!"]</a><BR>"
 //			dat += "<b>Family:</b> <a href='?_src_=prefs;preference=family'>Unknown</a><BR>" // Disabling until its working
-			dat += "<b>Dominance:</b> <a href='?_src_=prefs;preference=domhand'>[domhand == 1 ? "Left-handed" : "Right-handed"]</a><BR>"
+			dat += "<b>Mano Dominante:</b> <a href='?_src_=prefs;preference=domhand'>[domhand == 1 ? "Left-handed" : "Right-handed"]</a><BR>"
 
 /*
 			dat += "<br><br><b>Special Names:</b><BR>"
@@ -389,7 +389,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 //			-----------START OF BODY TABLE-----------
 			dat += "<table width='100%'><tr><td width='1%' valign='top'>"
-			dat += "<b>Update feature colors with change:</b> <a href='?_src_=prefs;preference=update_mutant_colors;task=input'>[update_mutant_colors ? "Yes" : "No"]</a><BR>"
+			dat += "<b>Cambiar colores de customizacion con cambios:</b> <a href='?_src_=prefs;preference=update_mutant_colors;task=input'>[update_mutant_colors ? "Yes" : "No"]</a><BR>"
 			var/use_skintones = pref_species.use_skintones
 			if(use_skintones)
 
@@ -405,22 +405,22 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				dat += "<b>Mutant Color #3:</b><span style='border: 1px solid #161616; background-color: #[features["mcolor3"]];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color3;task=input'>Change</a><BR>"
 
 
-			dat += "<b>Voice Color: </b><a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
-			dat += "<br><b>Voice Pitch: </b><a href='?_src_=prefs;preference=voice_pitch;task=input'>[voice_pitch]</a>"
-			dat += "<br><b>Accent:</b> <a href='?_src_=prefs;preference=char_accent;task=input'>[char_accent]</a>"
-			dat += "<br><b>Features:</b> <a href='?_src_=prefs;preference=customizers;task=menu'>Change</a>"
-			dat += "<br><b>Markings:</b> <a href='?_src_=prefs;preference=markings;task=menu'>Change</a>"
-			dat += "<br><b>Descriptors:</b> <a href='?_src_=prefs;preference=descriptors;task=menu'>Change</a>"
+			dat += "<b>Color De Voz: </b><a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
+			dat += "<br><b>Tono De Voz: </b><a href='?_src_=prefs;preference=voice_pitch;task=input'>[voice_pitch]</a>"
+			dat += "<br><b>Acento:</b> <a href='?_src_=prefs;preference=char_accent;task=input'>[char_accent]</a>"
+			dat += "<br><b>Customizacion:</b> <a href='?_src_=prefs;preference=customizers;task=menu'>Change</a>"
+			dat += "<br><b>Marcas:</b> <a href='?_src_=prefs;preference=markings;task=menu'>Change</a>"
+			dat += "<br><b>Descriptores:</b> <a href='?_src_=prefs;preference=descriptors;task=menu'>Change</a>"
 
-			dat += "<br><b>Headshot:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
+			dat += "<br><b>Foto De Cara:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
 			if(headshot_link != null)
 				dat += "<br><img src='[headshot_link]' width='100px' height='100px'>"
 
-			dat += "<br><b>Flavortext:</b> <a href='?_src_=prefs;preference=flavortext;task=input'>Change</a>"
+			dat += "<br><b>Texto De Descripcion:</b> <a href='?_src_=prefs;preference=flavortext;task=input'>Change</a>"
 
-			dat += "<br><b>OOC Notes:</b> <a href='?_src_=prefs;preference=ooc_notes;task=input'>Change</a>"
+			dat += "<br><b>Notas OOC:</b> <a href='?_src_=prefs;preference=ooc_notes;task=input'>Change</a>"
 
-			dat += "<br><b>Loadout Item:</b> <a href='?_src_=prefs;preference=loadout_item;task=input'>[loadout ? loadout.name : "None"]</a>"
+			dat += "<br><b>Que Has Escondido?:</b> <a href='?_src_=prefs;preference=loadout_item;task=input'>[loadout ? loadout.name : "None"]</a>"
 			dat += "</td>"
 
 
@@ -666,8 +666,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 
 	if(!IsGuestKey(user.key))
-		dat += "<a href='?_src_=prefs;preference=save'>Save</a><br>"
-		dat += "<a href='?_src_=prefs;preference=load'>Undo</a><br>"
+		dat += "<a href='?_src_=prefs;preference=save'>Guardar</a><br>"
+		dat += "<a href='?_src_=prefs;preference=load'>Deshacer</a><br>"
 
 	// well.... one empty slot here for something I suppose lol
 	dat += "<table width='100%'>"
@@ -676,27 +676,27 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	dat += "<td width='33%' align='center'>"
 	var/mob/dead/new_player/N = user
 	if(istype(N))
-		dat += "<a href='?_src_=prefs;preference=bespecial'><b>[next_special_trait ? "<font color='red'>SPECIAL</font>" : "Be Special"]</b></a><BR>"
+		dat += "<a href='?_src_=prefs;preference=bespecial'><b>[next_special_trait ? "<font color='red'>ESPECIAL</font>" : "Ser Especial"]</b></a><BR>"
 		if(SSticker.current_state <= GAME_STATE_PREGAME)
 			switch(N.ready)
 				if(PLAYER_NOT_READY)
-					dat += "<b>UNREADY</b> <a href='byond://?src=[REF(N)];ready=[PLAYER_READY_TO_PLAY]'>READY</a>"
+					dat += "<b>NO LISTO</b> <a href='byond://?src=[REF(N)];ready=[PLAYER_READY_TO_PLAY]'>LISTO</a>"
 				if(PLAYER_READY_TO_PLAY)
-					dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_NOT_READY]'>UNREADY</a> <b>READY</b>"
+					dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_NOT_READY]'>NO LISTO</a> <b>LISTO</b>"
 		else
 			if(!is_active_migrant())
-				dat += "<a href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
+				dat += "<a href='byond://?src=[REF(N)];late_join=1'>UNIRSE TARDE</a>"
 			else
-				dat += "<a class='linkOff' href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
-			dat += " - <a href='?_src_=prefs;preference=migrants'>MIGRATION</a>"
-			dat += "<br><a href='?_src_=prefs;preference=manifest'>ACTORS</a>"
-			dat += " - <a href='?_src_=prefs;preference=observe'>VOYEUR</a>"
+				dat += "<a class='linkOff' href='byond://?src=[REF(N)];late_join=1'>UNIRSE TARDE</a>"
+			dat += " - <a href='?_src_=prefs;preference=migrants'>MIGRACION</a>"
+			dat += "<br><a href='?_src_=prefs;preference=manifest'>JUGADORES</a>"
+			dat += " - <a href='?_src_=prefs;preference=observe'>ESPECTAR</a>"
 	else
 		dat += "<a href='?_src_=prefs;preference=finished'>DONE</a>"
 
 	dat += "</td>"
 	dat += "<td width='33%' align='right'>"
-	dat += "<b>Be voice:</b> <a href='?_src_=prefs;preference=schizo_voice'>[(toggles & SCHIZO_VOICE) ? "Enabled":"Disabled"]</a>"
+	dat += "<b>Ser Voz:</b> <a href='?_src_=prefs;preference=schizo_voice'>[(toggles & SCHIZO_VOICE) ? "Habilitado":"Deshabilitado"]</a>"
 	dat += "</td>"
 	dat += "</tr>"
 	dat += "</table>"
@@ -869,7 +869,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 <div class="tutorialhover"><font>[used_name]</font>
 <span class="tutorial">[job.tutorial]<br>
-Slots: [job.spawn_positions]</span>
+Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contrib_points]" : ""]</span>
 </div>
 
 			"}
@@ -1537,12 +1537,12 @@ Slots: [job.spawn_positions]</span>
 						if(!faith.name)
 							continue
 						faiths_named[faith.name] = faith
-					var/faith_input = input(user, "Choose your character's faith", "Faith") as null|anything in faiths_named
+					var/faith_input = input(user, "Elige la fe de tu personaje", "Faith") as null|anything in faiths_named
 					if(faith_input)
 						var/datum/faith/faith = faiths_named[faith_input]
-						to_chat(user, "<font color='yellow'>Faith: [faith.name]</font>")
-						to_chat(user, "Background: [faith.desc]")
-						to_chat(user, "<font color='red'>Likely Worshippers: [faith.worshippers]</font>")
+						to_chat(user, "<font color='yellow'>Fe: [faith.name]</font>")
+						to_chat(user, "Historia: [faith.desc]")
+						to_chat(user, "<font color='red'>Posibles Seguidores: [faith.worshippers]</font>")
 						selected_patron = GLOB.patronlist[faith.godhead] || GLOB.patronlist[pick(GLOB.patrons_by_faith[faith_input])]
 
 				if("patron")
@@ -1557,9 +1557,9 @@ Slots: [job.spawn_positions]</span>
 					if(god_input)
 						selected_patron = patrons_named[god_input]
 						to_chat(user, "<font color='yellow'>Patron: [selected_patron]</font>")
-						to_chat(user, "<font color='#FFA500'>Domain: [selected_patron.domain]</font>")
-						to_chat(user, "Background: [selected_patron.desc]")
-						to_chat(user, "<font color='red'>Likely Worshippers: [selected_patron.worshippers]</font>")
+						to_chat(user, "<font color='#FFA500'>Dominio: [selected_patron.domain]</font>")
+						to_chat(user, "Historia: [selected_patron.desc]")
+						to_chat(user, "<font color='red'>Posibles Seguidores: [selected_patron.worshippers]</font>")
 
 				if("bdetail")
 					var/list/loly = list("Not yet.","Work in progress.","Don't click me.","Stop clicking this.","Nope.","Be patient.","Sooner or later.")
@@ -1567,18 +1567,18 @@ Slots: [job.spawn_positions]</span>
 					return
 
 				if("voice")
-					var/new_voice = input(user, "Choose your character's voice color:", "Character Preference","#"+voice_color) as color|null
+					var/new_voice = input(user, "Elige el color de la voz de tu personaje:", "Character Preference","#"+voice_color) as color|null
 					if(new_voice)
 						if(color_hex2num(new_voice) < 230)
-							to_chat(user, "<font color='red'>This voice color is too dark for mortals.</font>")
+							to_chat(user, "<font color='red'>Este color de voz es demasiado oscuro para los mortales.</font>")
 							return
 						voice_color = sanitize_hexcolor(new_voice)
 
 				if("voice_pitch")
-					var/new_voice_pitch = input(user, "Choose your character's voice pitch ([MIN_VOICE_PITCH] to [MAX_VOICE_PITCH], lower is deeper):", "Voice Pitch") as null|num
+					var/new_voice_pitch = input(user, "Elige el tono de voz de tu personaje de ([MIN_VOICE_PITCH] hasta [MAX_VOICE_PITCH], cuanto mas bajo mas grave):", "Voice Pitch") as null|num
 					if(new_voice_pitch)
 						if(new_voice_pitch < MIN_VOICE_PITCH || new_voice_pitch > MAX_VOICE_PITCH)
-							to_chat(user, "<font color='red'>Value must be between [MIN_VOICE_PITCH] and [MAX_VOICE_PITCH].</font>")
+							to_chat(user, "<font color='red'>Valor entre [MIN_VOICE_PITCH] y [MAX_VOICE_PITCH].</font>")
 							return
 						voice_pitch = new_voice_pitch
 
@@ -1831,8 +1831,8 @@ Slots: [job.spawn_positions]</span>
 					if(next_special_trait)
 						print_special_text(user, next_special_trait)
 						return
-					to_chat(user, span_boldwarning("You will become special for one round, this could be something negative, positive or neutral and could have a high impact on your character and your experience. You cannot back out from or reroll this, and it will not carry over to other rounds."))
-					var/result = alert(user, "You'll receive a unique trait for one round\n You cannot back out from or reroll this\nDo you really want to be special?", "Be Special", "Yes", "No")
+					to_chat(user, span_boldwarning("Te volveras especial durante una ronda, esto podria ser algo negativo, positivo o neutral y podría tener un gran impacto en tu personaje y tu experiencia. No puedes deshacerte de esto ni repetirlo, y no se trasladara a otras rondas.."))
+					var/result = alert(user, "Recibiras un rasgo unico durante la ronda\n NO PUEDES DAR MARCHA ATRAS NI VOLVER A INTENTARLO\nRealmente quieres ser especial?", "Ser Especial", "Yes", "No")
 					if(result != "Yes")
 						return
 					if(next_special_trait)
@@ -1842,8 +1842,8 @@ Slots: [job.spawn_positions]</span>
 						log_game("SPECIALS: Rolled [next_special_trait] for ckey: [user.ckey]")
 						print_special_text(user, next_special_trait)
 						user.playsound_local(user, 'sound/misc/alert.ogg', 100)
-						to_chat(user, span_warning("This will be applied on your next game join."))
-						to_chat(user, span_warning("You may switch your character and choose any role, if you don't meet the requirements (if any are specified) it won't be applied"))
+						to_chat(user, span_warning("Esto se aplicara la próxima vez que te unas al juego."))
+						to_chat(user, span_warning("Puedes cambiar de personaje y elegir cualquier rol, si no cumples con los requisitos (si se especifica alguno) no se aplicara."))
 
 				if("family")
 					var/list/loly = list("Not yet.","Work in progress.","Don't click me.","Stop clicking this.","Nope.","Be patient.","Sooner or later.")
@@ -2040,11 +2040,11 @@ Slots: [job.spawn_positions]</span>
 				if("schizo_voice")
 					toggles ^= SCHIZO_VOICE
 					if(toggles & SCHIZO_VOICE)
-						to_chat(user, "<span class='warning'>You are now a voice.\n\
-										As a voice, you will receive meditations from players asking about game mechanics!\n\
-										Good voices will be rewarded with PQ for answering meditations, while bad ones are punished at the discretion of The Management.</span>")
+						to_chat(user, "<span class='warning'>Ahora Eres Una Voz.\n\
+										Como voz, recibirás meditaciones de los jugadores que pregunten sobre la mecánica del juego.\n\
+                                        Las buenas voces seran recompensadas con PQ por responder meditaciones, mientras que las malas seran castigadas a discrecion de los Admins.</span>")
 					else
-						to_chat(user, span_warning("You are no longer a voice."))
+						to_chat(user, span_warning("Ya no eres una voz."))
 
 				if("migrants")
 					migrant.show_ui()

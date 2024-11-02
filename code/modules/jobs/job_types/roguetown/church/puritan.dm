@@ -11,7 +11,7 @@
 		/datum/patron/old_god,
 		ALL_DIVINE_PATRONS,
 	) //gets set to old god.
-	tutorial = "You worship and pay credence to the old god, Psydon--in heretical contrast to the church of the Ten. However, both the crown and church have emboldened your radical sect. Your fervor allows you to root out cultists, the cursed night beasts, and other agents of the darkness using your practice of extracting involuntary 'sin confessions.' Remember, though; they tolerate you only so long as you have a common enemy..."
+	tutorial = "Adorais y rindes culto al antiguo dios Psydon, en contraste heretico con la Iglesia de los Diez. Sin embargo, tanto la Corona como la Iglesia han envalentonado a vuestra secta radical. Vuestro fervor os permite erradicar a los cultistas, las malditas bestias nocturnas y otros agentes de la oscuridad mediante vuestra práctica de extraer 'confesiones de pecado' involuntarias. Pero recordad: os toleraran silo mientras tengais un enemigo comun..."
 	whitelist_req = TRUE
 
 	outfit = /datum/outfit/job/roguetown/puritan
@@ -19,6 +19,7 @@
 	give_bank_account = 36
 	min_pq = 6 //Only for those bold of spirit, sure of mind, hard of pintle...and should probably know Psydon from Zizo. Not a crucial role, and rather prone to people instigating excessive conflict
 	max_pq = null
+	round_contrib_points = 2
 
 /datum/job/roguetown/puritan/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
@@ -75,7 +76,7 @@
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
 /mob/living/carbon/human/proc/torture_victim()
-	set name = "Extract Confession"
+	set name = "Extraer Confesion"
 	set category = "Inquisition"
 
 	var/obj/item/grabbing/I = get_active_held_item()
@@ -84,28 +85,28 @@
 		return
 	H = I.grabbed
 	if(H == src)
-		to_chat(src, span_warning("I already torture myself."))
+		to_chat(src, span_warning("Ya me torturo a mi mismo."))
 		return
 	var/painpercent = (H.get_complex_pain() / (H.STAEND * 10)) * 100
 	if(H.add_stress(/datum/stressevent/tortured))
 		if(!H.stat)
 			var/static/list/torture_lines = list(
-				"CONFESS!",
-				"TELL ME YOUR SECRETS!",
-				"SPEAK!",
-				"YOU WILL SPEAK!",
-				"TELL ME!",
-				"THE PAIN HAS ONLY BEGUN, CONFESS!",
+				"CONFIESA!",
+				"DIME TUS SECRETOS!",
+				"HABLA!",
+				"VAS A HABLAR!",
+				"DIMELO!",
+				"EL DOLOR SOLO HA COMENZADO, CONFIESA!",
 			)
 			say(pick(torture_lines), spans = list("torture"))
 			if(painpercent >= 100)
 				H.emote("painscream")
 				H.confession_time("antag")
 				return
-	to_chat(src, span_warning("Not ready to speak yet."))
+	to_chat(src, span_warning("No esta listo para hablar."))
 
 /mob/living/carbon/human/proc/faith_test()
-	set name = "Test Faith"
+	set name = "Comprobar su fe"
 	set category = "Inquisition"
 
 	var/obj/item/grabbing/I = get_active_held_item()
@@ -114,33 +115,33 @@
 		return
 	H = I.grabbed
 	if(H == src)
-		to_chat(src, span_warning("I already torture myself."))
+		to_chat(src, span_warning("Ya me torturo a mi mismo."))
 		return
 	var/painpercent = (H.get_complex_pain() / (H.STAEND * 10)) * 100
 	if(H.add_stress(/datum/stressevent/tortured))
 		if(!H.stat)
 			var/static/list/faith_lines = list(
-				"DO YOU DENY THE TEN?",
-				"WHO IS YOUR GOD?",
-				"ARE YOU FAITHFUL?",
-				"WHO IS YOUR SHEPHERD?",
+				"NIEGAS A LOS DIEZ?",
+				"QUIEN ES TU DIOS?",
+				"ERES FIEL?",
+				"QUIEN ES TU PASTOR?",
 			)
 			say(pick(faith_lines), spans = list("torture"))
 			if(painpercent >= 100)
 				H.emote("painscream")
 				H.confession_time("patron")
 				return
-	to_chat(src, span_warning("Not ready to speak yet."))
+	to_chat(src, span_warning("No esta listo para hablar."))
 
 /mob/living/carbon/human/proc/confession_time(confession_type = "antag")
 	var/timerid = addtimer(CALLBACK(src, PROC_REF(confess_sins)), 6 SECONDS, TIMER_STOPPABLE)
-	var/responsey = alert(src, "Resist torture? (1 TRI)", "TORTURE", "Yes","No")
+	var/responsey = alert(src, "Resistir tortura? (1 TRI)", "TORTURA", "Yes","No")
 	if(!responsey)
 		responsey = "No"
 	if(SStimer.timer_id_dict[timerid])
 		deltimer(timerid)
 	else
-		to_chat(src, span_warning("Too late..."))
+		to_chat(src, span_warning("Demasiado tarde..."))
 		return
 	if(responsey == "Yes")
 		adjust_triumphs(-1)
@@ -150,12 +151,12 @@
 
 /mob/living/carbon/human/proc/confess_sins(confession_type = "antag", resist)
 	var/static/list/innocent_lines = list(
-		"I DON'T KNOW!",
-		"STOP THE PAIN!!",
-		"I DON'T DESERVE THIS!",
-		"THE PAIN!",
-		"I HAVE NOTHING TO SAY...!",
-		"WHY ME?!",
+		"NO LO SE",
+		"PARA EL DOLOR!!",
+		"NO MEREZCO ESTO!",
+		"EL DOLOR!",
+		"NO TENGO NADA QUE DECIR...!",
+		"POR QUE YO?!",
 	)
 	if(!resist)
 		var/list/confessions = list()

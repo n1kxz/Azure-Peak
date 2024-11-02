@@ -27,8 +27,8 @@
 	var/m2 = "[t_his]"
 	var/m3 = "[t_He] [t_has]"
 	if(user == src)
-		m1 = "I am"
-		m2 = "my"
+		m1 = "Estoy"
+		m2 = "mi"
 		m3 = "I have"
 
 	if(isliving(user))
@@ -37,9 +37,9 @@
 			obscure_name = TRUE
 
 	var/static/list/unknown_names = list(
-		"Unknown",
-		"Unknown Man",
-		"Unknown Woman",
+		"Desconocido",
+		"Hombre Desconocido",
+		"Mujer Desconocida",
 	)
 	if(get_visible_name() in unknown_names)
 		obscure_name = TRUE
@@ -48,7 +48,7 @@
 		obscure_name = FALSE
 
 	if(obscure_name)
-		. = list("<span class='info'>ø ------------ ø\nThis is <EM>Unknown</EM>.")
+		. = list("<span class='info'>ø ------------ ø\nEs <EM>Desconocido</EM>.")
 	else
 		on_examine_face(user)
 		var/used_name = name
@@ -68,58 +68,58 @@
 			if(islatejoin)
 				is_returning = TRUE
 		if(display_as_wanderer)
-			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the wandering [race_name].")
+			. = list("<span class='info'>ø ------------ ø\nEs <EM>[used_name]</EM>, no es de por aqui... Es [race_name].")
 		else if(used_title)
-			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [is_returning ? "returning " : ""][race_name] [used_title].")
+			. = list("<span class='info'>ø ------------ ø\nEs <EM>[used_name]</EM>, [is_returning ? "" : ""][race_name] [used_title]. Parece que esta de regreso.")
 		else
-			. = list("<span class='info'>ø ------------ ø\nThis is the <EM>[used_name]</EM>, the [race_name].")
+			. = list("<span class='info'>ø ------------ ø\nEs <EM>[used_name]</EM>, [race_name].")
 
 		if(GLOB.lord_titles[name])
-			. += span_notice("[m3] been granted the title of \"[GLOB.lord_titles[name]]\".")
+			. += span_notice("[m3] se le ha concedido el titulo de \"[GLOB.lord_titles[name]]\".")
 
 		if(HAS_TRAIT(src, TRAIT_NOBLE) && HAS_TRAIT(user, TRAIT_NOBLE))
-			. += span_notice("A fellow noble.")
+			. += span_notice("Exhala un aire de nobleza.")
 
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			if(H.marriedto == name)
-				. += span_love("It's my spouse.")
+				. += span_love("Estamos casados.")
 
 		if(name in GLOB.excommunicated_players)
-			. += span_userdanger("HERETIC! SHAME!")
+			. += span_userdanger("HEREJE!")
 
 		if(name in GLOB.outlawed_players)
-			. += span_userdanger("OUTLAW!")
+			. += span_userdanger("FUGITIVO!")
 
 
 		var/commie_text
 		if(mind)
 			if(mind.special_role == "Bandit")
 				if(HAS_TRAIT(user, TRAIT_COMMIE))
-					commie_text = span_notice("Free man!")
+					commie_text = span_notice("Un hombre libre como yo!")
 				/*else
 					commie_text = span_userdanger("BANDIT!")*/
 			if(mind.special_role == "Vampire Lord")
-				. += span_userdanger("A MONSTER!")
+				. += span_userdanger("UN MONSTRUO!")
 			if(mind.assigned_role == "Lunatic")
-				. += span_userdanger("LUNATIC!")
+				. += span_userdanger("LUNATICO!")
 
 		if(HAS_TRAIT(src, TRAIT_MANIAC_AWOKEN))
-			. += span_userdanger("MANIAC!")
+			. += span_userdanger("ES EL MANIACO!")
 
 		if(commie_text)
 			. += commie_text
 		else if(HAS_TRAIT(src, TRAIT_COMMIE) && HAS_TRAIT(user, TRAIT_COMMIE))
-			. += span_notice("Comrade!")
+			. += span_notice("Un Aliado de Matthios!")
 		else if(HAS_TRAIT(src, TRAIT_CABAL) && HAS_TRAIT(user, TRAIT_CABAL))
-			. += span_notice("Another of the Cabal!")
+			. += span_notice("Un fiel discipulo de Zizo, como yo!")
 		else if(HAS_TRAIT(src, TRAIT_HORDE) && HAS_TRAIT(user, TRAIT_HORDE))
-			. += span_notice("Anointed!")
+			. += span_notice("Un fiel devoto de Graggar, al igual que yo!")
 		else if(HAS_TRAIT(src, TRAIT_DEPRAVED) && HAS_TRAIT(user, TRAIT_DEPRAVED))
-			. += span_notice("Debased!")
+			. += span_notice("Puedo sentir el aura de Baotha en su interior!")
 
 	if(leprosy == 1)
-		. += span_necrosis("A LEPER...")
+		. += span_necrosis("Un leproso...")
 
 	if(user != src)
 		var/datum/mind/Umind = user.mind
@@ -130,7 +130,7 @@
 					if(shit)
 						. += shit
 			if(user.mind.has_antag_datum(/datum/antagonist/vampirelord) || user.mind.has_antag_datum(/datum/antagonist/vampire))
-				. += span_userdanger("Blood Volume: [blood_volume]")
+				. += span_userdanger("Volumen De Sangre: [blood_volume]")
 
 	var/list/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
@@ -255,38 +255,38 @@
 		// Damage
 		switch(temp)
 			if(5 to 25)
-				msg += "[m1] a little wounded."
+				msg += "Ligeramente herido/a."
 			if(25 to 50)
-				msg += "[m1] wounded."
+				msg += "Herido/a."
 			if(50 to 100)
-				msg += "<B>[m1] severely wounded.</B>"
+				msg += "<B>Severamente herido/a.</B>"
 			if(100 to INFINITY)
-				msg += span_danger("[m1] gravely wounded.")
+				msg += span_danger("Gravemente herido/a.")
 
 	// Blood volume
 	switch(blood_volume)
 		if(-INFINITY to BLOOD_VOLUME_SURVIVE)
-			msg += span_artery("<B>[m1] extremely pale and sickly.</B>")
+			msg += span_artery("<B>Extremadamente palido/a y enfermizo/a.</B>")
 		if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
-			msg += span_artery("<B>[m1] very pale.</B>")
+			msg += span_artery("<B>Muy palido/a.</B>")
 		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
-			msg += span_artery("[m1] pale.")
+			msg += span_artery("Palido/a.")
 		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
-			msg += span_artery("[m1] a little pale.")
+			msg += span_artery("Ligeramente palido/a.")
 
 	// Bleeding
 	var/bleed_rate = get_bleed_rate()
 	if(bleed_rate)
-		var/bleed_wording = "bleeding"
+		var/bleed_wording = "Sangrando"
 		switch(bleed_rate)
 			if(0 to 1)
-				bleed_wording = "bleeding slightly"
+				bleed_wording = "Sangrando ligeramente"
 			if(1 to 5)
-				bleed_wording = "bleeding"
+				bleed_wording = "Sangrando"
 			if(5 to 10)
-				bleed_wording = "bleeding a lot"
+				bleed_wording = "Sangrando mucho"
 			if(10 to INFINITY)
-				bleed_wording = "bleeding profusely"
+				bleed_wording = "Sangrando profundamente"
 		var/list/bleeding_limbs = list()
 		var/static/list/bleed_zones = list(
 			BODY_ZONE_HEAD,
@@ -303,14 +303,14 @@
 			bleeding_limbs += parse_zone(bleeder.body_zone)
 		if(length(bleeding_limbs))
 			if(bleed_rate >= 5)
-				msg += span_bloody("<B>[capitalize(m2)] [english_list(bleeding_limbs)] [bleeding_limbs.len > 1 ? "are" : "is"] [bleed_wording]!</B>")
+				msg += span_bloody("<B>[capitalize(m2)] [english_list(bleeding_limbs)] [bleeding_limbs.len > 1 ? "estan" : "esta"] [bleed_wording]!</B>")
 			else
-				msg += span_bloody("[capitalize(m2)] [english_list(bleeding_limbs)] [bleeding_limbs.len > 1 ? "are" : "is"] [bleed_wording]!")
+				msg += span_bloody("[capitalize(m2)] [english_list(bleeding_limbs)] [bleeding_limbs.len > 1 ? "estan" : "esta"] [bleed_wording]!")
 		else
 			if(bleed_rate >= 5)
-				msg += span_bloody("<B>[m1] [bleed_wording]</B>!")
+				msg += span_bloody("<B>[bleed_wording]</B>!")
 			else
-				msg += span_bloody("[m1] [bleed_wording]!")
+				msg += span_bloody("[bleed_wording]!")
 
 	// Missing limbs
 	var/missing_head = FALSE
@@ -321,7 +321,7 @@
 		missing_limbs += parse_zone(missing_zone)
 
 	if(length(missing_limbs))
-		var/missing_limb_message = "<B>[capitalize(m2)] [english_list(missing_limbs)] [missing_limbs.len > 1 ? "are" : "is"] gone.</B>"
+		var/missing_limb_message = "<B>[capitalize(m2)] [english_list(missing_limbs)] [missing_limbs.len > 1 ? "estan" : "esta"] amputado.</B>"
 		if(missing_head)
 			missing_limb_message = span_dead("[missing_limb_message]")
 		else
@@ -330,11 +330,11 @@
 
 	//Grabbing
 	if(pulledby && pulledby.grab_state)
-		msg += "[m1] being grabbed by [pulledby]."
+		msg += "Esta siendo agarrado/a por [pulledby]."
 
 	//Nutrition
 	if(nutrition < (NUTRITION_LEVEL_STARVING - 50))
-		msg += "[m1] looking starved."
+		msg += "Parece hambriento/a."
 //	else if(nutrition >= NUTRITION_LEVEL_FAT)
 //		if(user.nutrition < NUTRITION_LEVEL_STARVING - 50)
 //			msg += "[t_He] [t_is] plump and delicious looking - Like a fat little piggy. A tasty piggy."
@@ -343,9 +343,9 @@
 
 	//Fire/water stacks
 	if(fire_stacks > 0)
-		msg += "[m1] covered in something flammable."
+		msg += "Cubierto/a en algo inflamable."
 	else if(fire_stacks < 0)
-		msg += "[m1] soaked."
+		msg += "Mojado/a."
 
 	//Status effects
 	var/list/status_examines = status_effect_examines()
@@ -363,68 +363,68 @@
 			//Disgust
 			switch(disgust)
 				if(DISGUST_LEVEL_SLIGHTLYGROSS to DISGUST_LEVEL_GROSS)
-					msg += "[m1] a little disgusted."
+					msg += "Ligeramente asqueado/a."
 				if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)
-					msg += "[m1] disgusted."
+					msg += "Asqueado/a."
 				if(DISGUST_LEVEL_VERYGROSS to DISGUST_LEVEL_DISGUSTED)
-					msg += "[m1] really disgusted."
+					msg += "Muy asqueado/a."
 				if(DISGUST_LEVEL_DISGUSTED to INFINITY)
-					msg += "<B>[m1] extremely disgusted.</B>"
+					msg += "<B>Extremadamente asqueado/a.</B>"
 
 			//Drunkenness
 			switch(drunkenness)
 				if(11 to 21)
-					msg += "[m1] slightly flushed."
+					msg += "Ligeramente sonrojado/a."
 				if(21.01 to 41) //.01s are used in case drunkenness ends up to be a small decimal
-					msg += "[m1] flushed."
+					msg += "Sonrojado/a."
 				if(41.01 to 51)
-					msg += "[m1] quite flushed and [m2] breath smells of alcohol."
+					msg += "Muy sonrojado/a, el aliento huele a alcohol."
 				if(51.01 to 61)
-					msg += "[m1] very flushed, with breath reeking of alcohol."
+					msg += "Bastante sonrojado/a, el aliento apesta a alcohol."
 				if(61.01 to 91)
-					msg += "[m1] looking like a drunken mess."
+					msg += "Cantantado y apestando a alcohol por todos lados."
 				if(91.01 to INFINITY)
-					msg += "[m1] a shitfaced, slobbering wreck."
+					msg += "A punto de tener un coma etilico."
 
 			//Stress
 			var/stress = get_stress_amount()
 			if(HAS_TRAIT(user, TRAIT_EMPATH))
 				switch(stress)
 					if(20 to INFINITY)
-						msg += "[m1] extremely stressed."
+						msg += "Extremadamente estresado/a."
 					if(10 to 19)
-						msg += "[m1] very stressed."
+						msg += "Muy estresado/a."
 					if(1 to 9)
-						msg += "[m1] a little stressed."
+						msg += "Ligeramente estresado/a."
 					if(-9 to 0)
-						msg += "[m1] not stressed."
+						msg += "Para nada estresado/a."
 					if(-19 to -10)
-						msg += "[m1] somewhat at peace."
+						msg += "Algo relajado/a."
 					if(-20 to INFINITY)
-						msg += "[m1] at peace inside."
+						msg += "Bastante relajado/a."
 			else if(stress > 10)
-				msg += "[m3] stress all over [m2] face."
+				msg += "Esta abrumado/a por el estres."
 
 		//Jitters
 		switch(jitteriness)
 			if(300 to INFINITY)
-				msg += "<B>[m1] convulsing violently!</B>"
+				msg += "<B>[m1] convulsiona violentamente!</B>"
 			if(200 to 300)
-				msg += "[m1] extremely jittery."
+				msg += "[m1] extremadamente nervioso/a."
 			if(100 to 200)
-				msg += "[m1] twitching ever so slightly."
+				msg += "[m1] tiene ligeros espamos."
 
 		if(InCritical())
-			msg += span_warning("[m1] barely conscious.")
+			msg += span_warning("[m1] vagamente consciente.")
 		else
 			if(stat >= UNCONSCIOUS)
-				msg += "[m1] [IsSleeping() ? "sleeping" : "unconscious"]."
+				msg += "[m1] [IsSleeping() ? "sleeping" : "inconsciente"]."
 			else if(eyesclosed)
-				msg += "[capitalize(m2)] eyes are closed."
+				msg += "[capitalize(m2)] ojos estan cerrados."
 			else if(has_status_effect(/datum/status_effect/debuff/sleepytime))
-				msg += "[m1] looking a little tired."
+				msg += "Parece algo cansado/a."
 	else
-		msg += "[m1] unconscious."
+		msg += "Inconsciente."
 //		else
 //			if(HAS_TRAIT(src, TRAIT_DUMB))
 //				msg += "[m3] a stupid expression on [m2] face."
@@ -447,15 +447,15 @@
 		var/strength_diff = final_str - L.STASTR
 		switch(strength_diff)
 			if(5 to INFINITY)
-				. += span_warning("<B>[t_He] look[p_s()] much stronger than I.</B>")
+				. += span_warning("<B>Es mucho mas fuerte que yo.</B>")
 			if(1 to 5)
-				. += span_warning("[t_He] look[p_s()] stronger than I.")
+				. += span_warning("Es mas fuerte que yo.")
 			if(0)
-				. += "[t_He] look[p_s()] about as strong as I."
+				. += "Es igual de fuerte que yo."
 			if(-5 to -1)
-				. += span_warning("[t_He] look[p_s()] weaker than I.")
+				. += span_warning("Es mas debil que yo.")
 			if(-INFINITY to -5)
-				. += span_warning("<B>[t_He] look[p_s()] much weaker than I.</B>")
+				. += span_warning("<B>Es mucho mas debil que yo.</B>")
 
 	if(maniac)
 		var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
@@ -476,16 +476,16 @@
 				var/obj/item/bodypart/bodypart = get_bodypart(zone)
 				if(!bodypart)
 					continue
-				. += "<a href='?src=[REF(src)];inspect_limb=[zone]'>Inspect [parse_zone(zone)]</a>"
-			. += "<a href='?src=[REF(src)];check_hb=1'>Check Heartbeat</a>"
+				. += "<a href='?src=[REF(src)];inspect_limb=[zone]'>Inspeccionar [parse_zone(zone)]</a>"
+			. += "<a href='?src=[REF(src)];check_hb=1'>Comprobar pulso</a>"
 		else
 			var/checked_zone = check_zone(user.zone_selected)
-			. += "<a href='?src=[REF(src)];inspect_limb=[checked_zone]'>Inspect [parse_zone(checked_zone)]</a>"
+			. += "<a href='?src=[REF(src)];inspect_limb=[checked_zone]'>Inspeccionar [parse_zone(checked_zone)]</a>"
 			if(!(mobility_flags & MOBILITY_STAND) && user != src && (user.zone_selected == BODY_ZONE_CHEST))
-				. += "<a href='?src=[REF(src)];check_hb=1'>Listen to Heartbeat</a>"
+				. += "<a href='?src=[REF(src)];check_hb=1'>Escuchar latido</a>"
 
 	if(!obscure_name && (flavortext || headshot_link || ooc_notes))
-		. += "<a href='?src=[REF(src)];task=view_headshot;'>Examine closer</a>"
+		. += "<a href='?src=[REF(src)];task=view_headshot;'>Examinar de cerca</a>"
 
 	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)
 	for(var/line in lines)
@@ -506,9 +506,9 @@
 			var/cyberimp_detect
 			for(var/obj/item/organ/cyberimp/CI in internal_organs)
 				if(CI.status == ORGAN_ROBOTIC && !CI.syndicate_implant)
-					cyberimp_detect += "[name] is modified with a [CI.name]."
+					cyberimp_detect += "[name] esta modificado con un [CI.name]."
 			if(cyberimp_detect)
-				. += "Detected cybernetic modifications:"
+				. += "Modificaciones ciberneticas detectadas:"
 				. += cyberimp_detect
 			if(R)
 				var/health_r = R.fields["p_stat"]

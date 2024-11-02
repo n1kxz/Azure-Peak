@@ -244,7 +244,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 /obj/structure/roguemachine/titan/proc/give_tax_popup(mob/living/carbon/human/user)
 	if(!Adjacent(user))
 		return
-	var/newtax = input(user, "Set a new tax percentage (1-99)", src, SStreasury.tax_value*100) as null|num
+	var/newtax = input(user, "Establecer nuevo porcentaje de impuesto (1-99)", src, SStreasury.tax_value*100) as null|num
 	if(newtax)
 		if(!Adjacent(user))
 			return
@@ -252,7 +252,8 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 			return
 		newtax = CLAMP(newtax, 1, 99)
 		SStreasury.tax_value = newtax / 100
-		priority_announce("El nuevo impuesto en Azure Peak debera ser del [newtax] porciento.", "El Generoso Rey Establece", pick('sound/misc/royal_decree.ogg', 'sound/misc/royal_decree2.ogg'), "Captain")
+		priority_announce("El nuevo impuesto en Azure Peak debera ser del [newtax] porciento.", "El Generoso Duque Establece", pick('sound/misc/royal_decree.ogg', 'sound/misc/royal_decree2.ogg'), "Captain")
+
 
 
 /obj/structure/roguemachine/titan/proc/make_announcement(mob/living/user, raw_message)
@@ -308,7 +309,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 /proc/make_outlaw(raw_message)
 	if(raw_message in GLOB.outlawed_players)
 		GLOB.outlawed_players -= raw_message
-		priority_announce("[raw_message] ya no es un fugitivo en Azure Peak.", "El Rey Decreta", 'sound/misc/royal_decree.ogg', "Captain")
+		priority_announce("[raw_message] ya no es un fugitivo en Azure Peak.", "El Duque Decreta", 'sound/misc/royal_decree.ogg', "Captain")
 		return FALSE
 	var/found = FALSE
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
@@ -317,7 +318,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	if(!found)
 		return FALSE
 	GLOB.outlawed_players += raw_message
-	priority_announce("[raw_message] ha sido declarado un fugitivo, debera ser capturado o ejecutado.", "El Rey Decreta", 'sound/misc/royal_decree2.ogg', "Captain")
+	priority_announce("[raw_message] ha sido declarado un fugitivo, debera ser capturado o ejecutado.", "El Duque Decreta", 'sound/misc/royal_decree2.ogg', "Captain")
 	return TRUE
 
 /proc/make_law(raw_message)

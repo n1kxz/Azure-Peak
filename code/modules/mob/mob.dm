@@ -437,20 +437,20 @@ GLOBAL_VAR_INIT(mobids, 1)
 		return
 
 	if(is_blind(src))
-		to_chat(src, span_warning("Something is there but I can't see it!"))
+		to_chat(src, span_warning("Hay algo ahi pero no puedo verlo!"))
 		return
 
 	if(isliving(src))
-		var/message = "[src] looks at"
-		var/target = "\the [A]"
+		var/message = "[src] mira a"
+		var/target = "[A]"
 		if(!isturf(A))
 			if(A == src)
-				message = "[src] looks over"
-				target = "themselves"
+				message = "[src] mira por encima de"
+				target = "si mismo"
 			else if(A.loc == src)
 				target = "[src.p_their()] [A.name]"
 			else if(A.loc.loc == src)
-				message = "[src] looks into"
+				message = "[src] mira a"
 				target = "[src.p_their()] [A.loc.name]"
 			else if(isliving(A) && src.cmode)
 				var/mob/living/T = A
@@ -479,7 +479,7 @@ GLOBAL_VAR_INIT(mobids, 1)
   * overridden here and in /mob/dead/observer for different point span classes and sanity checks
   */
 /mob/verb/pointed(atom/A as mob|obj|turf in view())
-	set name = "Point To"
+	set name = "Señala a"
 	set hidden = 1
 	if(!src || !isturf(src.loc) || !(A in view(client.view, src)))
 		return FALSE
@@ -516,9 +516,9 @@ GLOBAL_VAR_INIT(mobids, 1)
 	lastpoint = world.time
 	var/obj/I = get_active_held_item()
 	if(I)
-		src.visible_message(span_info("[src] points [I] at [A]."), span_info("I point [I] at [A]."))
+		src.visible_message(span_info("[src] apunta [I] hacia [A]."), span_info("Apunto [I] hacia [A]."))
 	else
-		src.visible_message(span_info("[src] points at [A]."), span_info("I point at [A]."))
+		src.visible_message(span_info("[src] apunta hacia [A]."), span_info("Apunto hacia [A]."))
 
 	return TRUE
 
@@ -754,7 +754,7 @@ GLOBAL_VAR_INIT(mobids, 1)
 				stat("Round End: [DisplayTimeText(time_left)]")
 			stat("TimeOfDay: [GLOB.tod]")
 
-	if(client && client.holder && check_rights(R_ADMIN,0))
+	if(client && client.holder && check_rights(R_DEBUG,0))
 		if(statpanel("MC"))
 			var/turf/T = get_turf(client.eye)
 			stat("Location:", COORD(T))

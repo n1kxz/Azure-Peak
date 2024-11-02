@@ -1,3 +1,5 @@
+#define BLESSINGOFLIGHT_FILTER "bol_glow"
+
 /obj/effect/proc_holder/spell/targeted/touch/orison
 	name = "Orison"
 	overlay_state = "thaumaturgy"
@@ -88,6 +90,7 @@
 	status_type = STATUS_EFFECT_REFRESH
 	examine_text = "SUBJECTPRONOUN is surrounded by an aura of gentle light."
 	var/potency = 1
+	var/outline_colour = "#f5edda"
 	var/list/mobs_affected
 
 /datum/status_effect/light_buff/on_creation(mob/living/new_owner, light_power)
@@ -100,6 +103,9 @@
 
 /datum/status_effect/light_buff/on_apply()
 	to_chat(owner, span_notice("Light blossoms into being around me!"))
+	var/filter = owner.get_filter(BLESSINGOFLIGHT_FILTER)
+	if (!filter)
+		owner.add_filter(BLESSINGOFLIGHT_FILTER, 2, list("type" = "outline", "color" = outline_colour, "alpha" = 60, "size" = 1))
 	add_light(owner)
 	return TRUE
 
@@ -120,6 +126,7 @@
 
 /datum/status_effect/light_buff/on_remove()
 	to_chat(owner, span_notice("The miraculous light surrounding me has fled..."))
+	owner.remove_filter(BLESSINGOFLIGHT_FILTER)
 	remove_light(owner)
 
 /obj/item/melee/touch_attack/orison/proc/cast_light(atom/thing, mob/living/carbon/human/user)
@@ -228,6 +235,65 @@
 			to_chat(user, span_warning("I can only direct thaumaturgical prayers towards myself, the ground, and any nearby light sources."))
 			return
 
+/datum/reagent/water/blessed
+	name = "blessed water"
+	description = "A gift of Devotion. Very slightly heals wounds."
+
+/datum/reagent/water/blessed/on_mob_life(mob/living/carbon/M)
+	. = ..()
+	if (M.mob_biotypes & MOB_UNDEAD)
+		M.adjustFireLoss(0.5*REM)
+	else
+		M.adjustBruteLoss(-0.1*REM)
+		M.adjustFireLoss(-0.1*REM)
+		M.adjustOxyLoss(-0.1, 0)
+		var/list/our_wounds = M.get_wounds()
+		if (LAZYLEN(our_wounds))
+			var/upd = M.heal_wounds(1)
+			if (upd)
+				M.update_damage_overlays()
+
+/datum/reagent/water/blessed/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
+	if (!istype(M))
+		return ..()
+	
+	if (method == TOUCH)
+		if (M.mob_biotypes & MOB_UNDEAD)
+			M.adjustFireLoss(2*reac_volume, 0)
+			M.visible_message(span_warning("[M] erupts into angry fizzling and hissing!"), span_warning("BLESSED WATER!!! IT BURNS!!!"))
+			M.emote("scream")
+	
+	return ..()
+
+/datum/reagent/water/cursed
+	name = "cursed water"
+	description = "A gift of Devotion. Very slightly heals wounds of the dead and the enlightened."
+
+/datum/reagent/water/cursed/on_mob_life(mob/living/carbon/M)
+	. = ..()
+	var/mob/living/carbon/human/M_hum
+	if(istype(M,/mob/living/carbon/human/))
+		M_hum = M
+	if((M.mob_biotypes & MOB_UNDEAD) || (M_hum.patron.undead_hater == FALSE))
+		M.adjustBruteLoss(-0.1*REM)
+		M.adjustFireLoss(-0.1*REM)
+		M.adjustOxyLoss(-0.1, 0)
+		var/list/our_wounds = M.get_wounds()
+		if (LAZYLEN(our_wounds))
+			var/upd = M.heal_wounds(1)
+			if (upd)
+				M.update_damage_overlays()
+	else
+		M.adjustBruteLoss(-0.1*REM)
+		M.adjustFireLoss(-0.1*REM)
+		M.adjustOxyLoss(-0.1, 0)
+		var/list/our_wounds = M.get_wounds()
+		if (LAZYLEN(our_wounds))
+			var/upd = M.heal_wounds(1)
+			if (upd)
+				M.update_damage_overlays()
+		M.rogfat_add(0.5*REM)
+
 /obj/item/melee/touch_attack/orison/proc/create_water(atom/thing, mob/living/carbon/human/user)
 	// normally we wouldn't use fatigue here to keep in line w/ other holy magic, but we have to since water is a persistent resource
 	if (!thing.Adjacent(user))
@@ -250,7 +316,9 @@
 				break
 
 			var/water_qty = max(1, holy_skill / 2) + 1
-			var/list/water_contents = list(/datum/reagent/water = water_qty)
+			var/list/water_contents = list(/datum/reagent/water/cursed = water_qty)
+			if(user.patron.undead_hater == TRUE)
+				water_contents = list(/datum/reagent/water/blessed = water_qty)
 			var/datum/reagents/reagents_to_add = new()
 			reagents_to_add.add_reagent_list(water_contents)
 			reagents_to_add.trans_to(thing, reagents_to_add.total_volume, transfered_by = user, method = INGEST)
@@ -273,3 +341,5 @@
 			return water_moisten
 	else
 		to_chat(user, span_info("I'll need to find a container that can hold water."))
+
+#undef BLESSINGOFLIGHT_FILTER
