@@ -340,19 +340,19 @@ GLOBAL_VAR(restart_counter)
 	var/players = GLOB.clients.len
 
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
-		new_status += "<br>GAME STATUS: <b>IN LOBBY</b><br>"
+		new_status += "<br>ESTADO: <b>EN ESPERA</b><br>"
 	else
-		new_status += "<br>GAME STATUS: <b>PLAYING</b><br>"
+		new_status += "<br>ESTADO: <b>JUGANDO</b><br>"
 
 	if (SSticker.HasRoundStarted())
 		new_status += "Round Time: <b>[time2text(STATION_TIME_PASSED(), "hh:mm", 0)]</b>"
 	else
-		new_status += "Round Time: <b>NEW ROUND STARTING</b>"
-	new_status += "<br>Player[players == 1 ? "": "s"]: <b>[players]</b>"
+		new_status += "Round Time: <b>EMPEZANDO NUEVA RONDA</b>"
+	new_status += "<br>Jugador[players == 1 ? "": "es"]: <b>[players]</b>"
 	new_status += "</a>"
 
 	if (!host && hostedby)
-		features += "hosted by <b>[hostedby]</b>"
+		features += "alojado por <b>[hostedby]</b>"
 
 	status = new_status
 /*

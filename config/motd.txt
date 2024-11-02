@@ -1,0 +1,2 @@
+<!-- Most valid html will work in here, excluding images. -->
+Para más información sobre las reglas, únete a nuestro servidor de Discord <a href="https://discord.com/invite/r23AGZHFzu">con este enlace.</a>

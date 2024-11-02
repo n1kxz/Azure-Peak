@@ -15,8 +15,8 @@ GLOBAL_LIST_INIT(named_breast_sizes, list(
 	"Very Small" = 1,
 	"Small" = 2,
 	"Normal" = 3,
-	"Large" = 4,
-	"Enormous" = 5
+	"Large" = 4/*,
+	"Enormous" = 5*/
 ))
 
 GLOBAL_LIST_INIT(customizer_choices, build_customizer_choices())

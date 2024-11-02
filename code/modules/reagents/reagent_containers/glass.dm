@@ -36,7 +36,7 @@
 /obj/item/reagent_containers/glass/attack(mob/M, mob/user, obj/target)
 	testing("a1")
 	if(istype(M))
-		if(user.used_intent.type == INTENT_GENERIC)
+		/*if(user.used_intent.type == INTENT_GENERIC)
 			return ..()
 		if(user.used_intent.type == /datum/intent/fill)
 			if(ishuman(M))
@@ -59,7 +59,7 @@
 						to_chat(user, span_warning("[M] cannot be milked!"))
 				else
 					to_chat(user, span_warning("[M]'s chest must be exposed before I can milk them!"))
-				return 1
+				return 1*/
 		if(!spillable)
 			return
 
