@@ -1,0 +1,25 @@
+/obj/item/rogueweapon/duster
+	force = 15
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
+	name = "metal dusters"
+	desc = "A set of iron knuckle dusters"
+	icon_state = "brass"
+	icon = 'modular_carpa/icons/weapons/blunt.dmi'
+	item_state = "brass"
+	lefthand_file = null
+	righthand_file = null
+	associated_skill = /datum/skill/combat/unarmed
+	wlength = WLENGTH_SHORT
+	w_class = WEIGHT_CLASS_SMALL
+	gripsprite = FALSE
+	slot_flags = ITEM_SLOT_HIP
+	sharpness = IS_BLUNT
+	smeltresult = /obj/item/ingot/iron
+	anvilrepair = /datum/skill/craft/weaponsmithing
+	parrysound = list('sound/combat/parry/parrygen.ogg')
+	swingsound = BLUNTWOOSH_MED
+	minstr = 2
+	wdefense = 4
+	wbalance = 1
+	blade_dulling = DULLING_BASH
+	gripped_intents = null

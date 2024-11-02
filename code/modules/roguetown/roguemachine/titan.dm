@@ -255,6 +255,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 		priority_announce("El nuevo impuesto en Azure Peak debera ser del [newtax] porciento.", "El Generoso Duque Establece", pick('sound/misc/royal_decree.ogg', 'sound/misc/royal_decree2.ogg'), "Captain")
 
 
+
 /obj/structure/roguemachine/titan/proc/make_announcement(mob/living/user, raw_message)
 	if(!SScommunications.can_announce(user))
 		return

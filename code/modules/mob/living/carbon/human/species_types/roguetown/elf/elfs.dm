@@ -72,10 +72,7 @@
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
 		/datum/customizer/bodypart_feature/underwear,
-		/datum/customizer/organ/testicles/anthro,
-		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/human,
-		/datum/customizer/organ/vagina/human,
 		)
 	body_markings = list(
 	)

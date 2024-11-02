@@ -1,8 +1,8 @@
 GLOBAL_VAR(king_throne)
 
 /obj/structure/roguethrone
-	name = "throne of Azure Peak"
-	desc = "A big throne, to hold the Lord's giant personality. Say 'secrets of the throat' with the crown on your head if you are confused."
+	name = "trono de Azure Peak"
+	desc = "Quien lleve la corona, poseera la llave a esta extraña cosa. Si todo falla, solo teneis que exclamar \"ayuda\""
 	icon = 'icons/roguetown/misc/96x96.dmi'
 	icon_state = "throne"
 	density = FALSE
