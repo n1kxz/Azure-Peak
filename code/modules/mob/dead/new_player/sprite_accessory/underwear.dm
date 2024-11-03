@@ -43,8 +43,32 @@
 	icon_state = "female_leotard"
 	underwear_type = /obj/item/undies/leotard
 	hides_breasts = TRUE
-//
+
 /datum/sprite_accessory/underwear/leotard/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	if(owner.gender == MALE)
 		return "male_leotard"
 	return "female_leotard"
+
+
+// Carpa 
+/datum/sprite_accessory/underwear/conjunto1
+	name = "Conjunto 1"
+	icon_state = "conjunto1"
+	underwear_type = /obj/item/undies/conjunto1
+	hides_breasts = TRUE
+
+/datum/sprite_accessory/underwear/conjunto2
+	name = "Conjunto 2"
+	icon_state = "conjunto2"
+	underwear_type = /obj/item/undies/conjunto2
+	hides_breasts = TRUE
+
+
+/datum/sprite_accessory/underwear/sport
+	name = "Sport"
+	icon_state = "sport"
+	underwear_type = /obj/item/undies/sport
+	hides_breasts = TRUE
+
+
+

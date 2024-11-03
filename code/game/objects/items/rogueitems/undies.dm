@@ -43,3 +43,22 @@
 	name = "leotard"
 	icon_state = "leotard"
 	covers_breasts = TRUE
+
+
+//  carpa
+
+/obj/item/undies/conjunto1
+	name = "Conjunto 1"
+	icon_state = "conjunto1"
+	covers_breasts = TRUE
+ 
+/obj/item/undies/conjunto2
+	name = "Conjunto 2"
+	icon_state = "conjunto2"
+	covers_breasts = TRUE
+
+
+/obj/item/undies/sport
+	name = "Sport"
+	icon_state = "sport"
+	covers_breasts = TRUE
