@@ -9,14 +9,14 @@
   */
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params)
 	if(user.check_arm_grabbed(user.active_hand_index))
-		to_chat(user, span_notice("I can't move my arm!"))
+		to_chat(user, span_notice("No puedo mover mi brazo!"))
 		return
 	if(!user.has_hand_for_held_index(user.active_hand_index, TRUE)) //we obviously have a hadn, but we need to check for fingers/prosthetics
-		to_chat(user, span_warning("I can't move the fingers."))
+		to_chat(user, span_warning("No puedo mover mis dedos!."))
 		return
 	if(!istype(src, /obj/item/grabbing))
 		if(HAS_TRAIT(user, TRAIT_CHUNKYFINGERS))
-			to_chat(user, span_warning("...What?"))
+			to_chat(user, span_warning("...Que?"))
 			return
 	if(tool_behaviour && target.tool_act(user, src, tool_behaviour))
 		return
@@ -73,7 +73,7 @@
 		return FALSE
 
 	if(force && HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, span_warning("I don't want to harm other living beings!"))
+		to_chat(user, span_warning("No quiero hacer daño a otros seres vivos!"))
 		return
 
 	M.lastattacker = user.real_name
@@ -144,8 +144,8 @@
 				M.throw_item(get_step(M,turn(M.dir, 90)), offhand = offh)
 			else
 				M.dropItemToGround(W)
-			M.visible_message(span_notice("[user] disarms [M]!"), \
-							span_boldwarning("I'm disarmed by [user]!"))
+			M.visible_message(span_notice("[user] desarma a [M]!"), \
+							span_boldwarning("He sido desarmado por [user]!"))
 			return
 
 	if(user.zone_selected == BODY_ZONE_PRECISE_L_INHAND)
@@ -156,8 +156,8 @@
 				M.throw_item(get_step(M,turn(M.dir, 270)), offhand = offh)
 			else
 				M.dropItemToGround(W)
-			M.visible_message(span_notice("[user] disarms [M]!"), \
-							span_boldwarning("I'm disarmed by [user]!"))
+			M.visible_message(span_notice("[user] desarma a [M]!"), \
+							span_boldwarning("He sido desarmado por [user]!"))
 			return
 
 	if(M.attacked_by(src, user))
@@ -295,6 +295,8 @@
 	newforce = (newforce * user.used_intent.damfactor) * dullfactor
 	if(user.used_intent.get_chargetime() && user.client?.chargedprog < 100)
 		newforce = newforce * 0.5
+	if(!(user.mobility_flags & MOBILITY_STAND))
+		newforce *= 0.5
 	newforce = round(newforce,1)
 	newforce = max(newforce, 1)
 	testing("endforce [newforce]")
@@ -420,27 +422,27 @@
 			var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
 			if(V)
 				if(V.disguised)
-					H.visible_message("<font color='white'>The silver weapon weakens the curse temporarily!</font>")
-					to_chat(H, span_userdanger("I'm hit by my BANE!"))
+					H.visible_message("<font color='white'>El arma de plata debilita la maldición temporalmente!</font>")
+					to_chat(H, span_userdanger("He sido herido por mi DEBILIDAD!"))
 					H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
 					src.last_used = world.time
 				else
-					H.visible_message("<font color='white'>The silver weapon weakens the curse temporarily!</font>")
-					to_chat(H, span_userdanger("I'm hit by my BANE!"))
+					H.visible_message("<font color='white'>El arma de plata debilita la maldición temporalmente!</font>")
+					to_chat(H, span_userdanger("He sido herido por mi DEBILIDAD!"))
 					H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
 					src.last_used = world.time
 			if(V_lord)
 				if(V_lord.vamplevel < 4 && !V)
-					H.visible_message("<font color='white'>The silver weapon weakens the curse temporarily!</font>")
-					to_chat(H, span_userdanger("I'm hit by my BANE!"))
+					H.visible_message("<font color='white'>El arma de plata debilita la maldición temporalmente!</font>")
+					to_chat(H, span_userdanger("He sido herido por mi DEBILIDAD!"))
 					H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
 					src.last_used = world.time
 				if(V_lord.vamplevel == 4 && !V)
-					to_chat(s_user, "<font color='red'> The silver weapon fails!</font>")
-					H.visible_message(H, span_userdanger("This feeble metal can't hurt me, I AM ANCIENT!"))
+					to_chat(s_user, "<font color='red'> El arma de plata falla!</font>")
+					H.visible_message(H, span_userdanger("Este débil metal no puede hacerme daño, SOY ANTIGUO!"))
 			if(W && W.transformed == TRUE)
-				H.visible_message("<font color='white'>The silver weapon weakens the curse temporarily!</font>")
-				to_chat(H, span_userdanger("I'm hit by my BANE!"))
+				H.visible_message("<font color='white'>El arma de plata debilita la maldición temporalmente!</font>")
+				to_chat(H, span_userdanger("He sido herido por mi DEBILIDAD!"))
 				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
 				src.last_used = world.time
 	return

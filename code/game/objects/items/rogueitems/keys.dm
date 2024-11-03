@@ -96,6 +96,12 @@
 	icon_state = "spikekey"
 	lockid = "garrison"
 
+/obj/item/roguekey/warden
+	name = "watchtower key"
+	desc = "This key belongs to the wardens."
+	icon_state = "spikekey"
+	lockid = "warden"
+
 /obj/item/roguekey/dungeon
 	name = "dungeon key"
 	desc = "This key should unlock the rusty bars and doors of the dungeon."
@@ -335,7 +341,7 @@
 
 /obj/item/roguekey/hand
 	name = "hand's key"
-	desc = "This regal key belongs to the King's Right Hand."
+	desc = "This regal key belongs to the Grand Duke's Right Hand."
 	icon_state = "cheesekey"
 	lockid = "hand"
 

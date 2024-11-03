@@ -34,7 +34,7 @@
 		return FALSE
 	if(!get_location_accessible(H, BODY_ZONE_PRECISE_GROIN))
 		return FALSE
-	return TRUE
+	return FALSE
 
 /datum/mob_descriptor/penis/get_description(mob/living/described)
 	var/mob/living/carbon/human/H = described
@@ -91,7 +91,7 @@
 	var/obj/item/organ/penis/penis = H.getorganslot(ORGAN_SLOT_PENIS)
 	if(penis && penis.sheath_type == SHEATH_TYPE_SLIT) //If our penis hides in a slit, dont describe testicles
 		return FALSE
-	return TRUE
+	return FALSE
 
 /datum/mob_descriptor/testicles/get_description(mob/living/described)
 	var/mob/living/carbon/human/H = described
@@ -123,7 +123,7 @@
 		return FALSE
 	if(!get_location_accessible(H, BODY_ZONE_PRECISE_GROIN))
 		return FALSE
-	return TRUE
+	return FALSE
 
 /datum/mob_descriptor/vagina/get_description(mob/living/described)
 	var/mob/living/carbon/human/H = described
@@ -169,7 +169,7 @@
 		return FALSE
 	if(!get_location_accessible(H, BODY_ZONE_CHEST))
 		return FALSE
-	return TRUE
+	return FALSE
 
 /datum/mob_descriptor/breasts/get_description(mob/living/described)
 	var/mob/living/carbon/human/H = described

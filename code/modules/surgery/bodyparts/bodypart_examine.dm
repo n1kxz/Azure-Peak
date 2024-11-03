@@ -26,13 +26,13 @@
 	*/
 
 	if(!eyes)
-		head_status += span_warning("The eyes appear to be missing.")
+		head_status += span_warning("Los ojos parecen estar amputados.")
 
 	if(!ears)
-		head_status += span_warning("The ears appear to be missing.")
+		head_status += span_warning("Las orejas parecen estar amputadas.")
 
 	if(!tongue)
-		head_status += span_warning("The tongue appears to be missing.")
+		head_status += span_warning("La lengua parece estar amputada.")
 	
 	if(length(head_status))
 		. += "<B>Organs:</B>"
@@ -44,28 +44,28 @@
 	if(owner && disabled)
 		switch(disabled)
 			if(BODYPART_DISABLED_DAMAGE)
-				bodypart_status += "[src] is numb to touch."
+				bodypart_status += "[src] es insensible al tacto."
 			if(BODYPART_DISABLED_PARALYSIS)
-				bodypart_status += "[src] is limp."
+				bodypart_status += "[src] esta flojo."
 			if(BODYPART_DISABLED_CLAMPED)
-				bodypart_status += "[src] is clamped."
+				bodypart_status += "[src] esta sujeto."
 			else
-				bodypart_status += "[src] is crippled."
+				bodypart_status += "[src] esta lisiado."
 	if(has_wound(/datum/wound/fracture))
-		bodypart_status += "[src] is fractured."
+		bodypart_status += "[src] esta fracturado."
 	if(has_wound(/datum/wound/dislocation))
-		bodypart_status += "[src] is dislocated."
+		bodypart_status += "[src] esta dislocado."
 	var/location_accessible = TRUE
 	if(owner)
 		location_accessible = get_location_accessible(owner, body_zone)
 		if(!observer_privilege && !location_accessible)
-			bodypart_status += "Obscured by clothing."
+			bodypart_status += "Oculto tras la ropa."
 	var/owner_ref = owner ? REF(owner) : REF(src)
 	if(observer_privilege || location_accessible)
 		if(skeletonized)
-			bodypart_status += "[src] is skeletonized."
+			bodypart_status += "[src] esta esqueletizado."
 		else if(rotted)
-			bodypart_status += "[src] is necrotic."
+			bodypart_status += "[src] esta necrotico."
 		
 		var/brute = brute_dam
 		var/burn = burn_dam
@@ -78,22 +78,22 @@
 		if(brute >= DAMAGE_PRECISION)
 			switch(brute/max_damage)
 				if(0.75 to INFINITY)
-					bodypart_status += "[src] is [heavy_brute_msg]."
+					bodypart_status += "[src] esta [heavy_brute_msg]."
 				if(0.25 to 0.75)
-					bodypart_status += "[src] is [medium_brute_msg]."
+					bodypart_status += "[src] esta [medium_brute_msg]."
 				else
-					bodypart_status += "[src] is [light_brute_msg]."
+					bodypart_status += "[src] esta [light_brute_msg]."
 		if(burn >= DAMAGE_PRECISION)
 			switch(burn/max_damage)
 				if(0.75 to INFINITY)
-					bodypart_status += "[src] is [heavy_burn_msg]."
+					bodypart_status += "[src] esta [heavy_burn_msg]."
 				if(0.25 to 0.75)
-					bodypart_status += "[src] is [medium_burn_msg]."
+					bodypart_status += "[src] esta [medium_burn_msg]."
 				else
-					bodypart_status += "[src] is [light_burn_msg]."
+					bodypart_status += "[src] esta [light_burn_msg]."
 
 		if(!location_accessible)
-			bodypart_status += "Obscured by clothing."
+			bodypart_status += "Oculto por la ropa."
 
 		if(bandage || length(wounds))
 			bodypart_status += "<B>Wounds:</B>"
@@ -107,7 +107,7 @@
 					bodypart_status += wound.get_visible_name(user)
 		
 	if(length(bodypart_status) <= 1)
-		bodypart_status += "[src] is healthy."
+		bodypart_status += "[src] esta saludable."
 
 	if(length(embedded_objects))
 		bodypart_status += "<B>Embedded objects:</B>"
@@ -171,9 +171,9 @@
 	var/bleed_rate = get_bleed_rate()
 	if(bleed_rate)
 		if(bleed_rate > 1) //Totally arbitrary value
-			status += span_bloody("<B>BLEEDING</B>")
+			status += span_bloody("<B>SANGRANDO</B>")
 		else
-			status += span_bloody("BLEEDING")
+			status += span_bloody("SANGRANDO")
 	
 	var/crazy_infection = FALSE
 	var/list/wound_strings = list()
@@ -185,10 +185,10 @@
 	status += wound_strings
 
 	if(crazy_infection)
-		status += span_infection("INFECTION")
+		status += span_infection("INFECCION")
 
 	if(skeletonized)
-		status += span_dead("SKELETON")
+		status += span_dead("ESQUELETO")
 	else if(rotted)
 		status += span_necrosis("NECROSIS")
 
@@ -206,7 +206,7 @@
 			status += "<a href='?src=[owner_ref];bandaged_limb=[REF(src)];bandage=[REF(bandage)]' class='info'>[uppertext(bandage.name)]</a>"
 
 	if(disabled)
-		status += span_deadsay("CRIPPLED")
+		status += span_deadsay("LISIADO")
 
 	return status
 

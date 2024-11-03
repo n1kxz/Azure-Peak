@@ -4,60 +4,60 @@
 	undead_hater = FALSE
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	confess_lines = list(
-		"PSYDON IS THE DEMIURGE!",
-		"THE TEN ARE WORTHLESS COWARDS!",
-		"THE TEN ARE DECEIVERS!",
+		"PSYDON ES EL DEMIURGO!",
+		"LOS DIEZ SON COBARDES!",
+		"LOS DIEZ SON VEN HUMOS!",
 	)
 
 /datum/patron/inhumen/zizo
 	name = "Zizo"
-	domain = "Advancement, Hubris, Left Hand Magicks"
-	desc = "Snow Elf turned God, who in her endless pursuit of greatness sacrificed her kin for ascension. Zizo revolutionized many a science and magick and taught mortals to bend the natural world to their will."
-	worshippers = "Necromancers, Warlocks, and the Undead"
+	domain = "Avance, Arrogancia, Magia de la mano izquierda"
+	desc = "Elfa de las Nieves convertida en Diosa: desterrada por Los Diez por difundir magias impias y ciencias prohibidas. Su arte enseño a los mortales a doblegar el mundo natural a su voluntad, pero destruyo la raza de los elfos de las nieves..."
+	worshippers = "Nigromantes, Brujos y los No Muertos"
 	mob_traits = list(TRAIT_CABAL)
 	t1 = /obj/effect/proc_holder/spell/invoked/projectile/profane/miracle
 	t2 = /obj/effect/proc_holder/spell/invoked/raise_lesser_undead/miracle
 	t3 = /obj/effect/proc_holder/spell/invoked/rituos/miracle
 	confess_lines = list(
-		"PRAISE ZIZO!",
-		"LONG LIVE ZIZO!",
-		"ZIZO IS KING!",
+		"ALABADO SEA ZIZO!",
+		"LARGA VIDA A ZIZO!",
+		"ZIZO ES UNA REINA!",
 	)
 
 /datum/patron/inhumen/graggar
 	name = "Graggar"
-	domain = "God of Conquest, Murder and Pillaging"
-	desc = "Orc turned deity, said by the Holy Ecclesial to have been blessed by Ravox himself to fight the Archdevil Vheslyn. Instead of joining the Stalwart Warrior's army, he took his blessings to rampage and tear down the Old Ten. Bless the Blooded One."
-	worshippers = "Prisoners, Murderers and the Cruel"
+	domain = "Dios de la conquista, La guerra, El asesinato y el saqueo."
+	desc = "Orco convertido en deidad, segun el Santo Eclesiastico, bendecido por el propio Ravox. Utilizo sus bendiciones para arrasar y derribar a los Diez Antiguos. Aunque a algunos graggarios les puede importar el 'honor', a la mayoría no: lo que importa son los resultados y la victoria a cualquier precio.."
+	worshippers = "Prisioneros, Asesinos y los Crueles"
 	mob_traits = list(TRAIT_HORDE, TRAIT_ORGAN_EATER)
 	confess_lines = list(
-		"GRAGGAR IS THE BEAST I WORSHIP!",
-		"THROUGH VIOLENCE, DIVINITY!",
-		"THE GOD OF CONQUEST DEMANDS BLOOD!",
+		"GRAGGAR ES LA BESTIA QUE ADORO!",
+		"JUNTO A LA VIOLENCIA, LA DIVINIDAD!",
+		"EL DIOS DE LA CONQUISTA DEMANDA SANGRE!",
 	)
 
 /datum/patron/inhumen/matthios
 	name = "Matthios"
-	domain = "God of Robbery, Redistribution of Wealth, and Commerce"
-	desc = "The Man who stole fire from the Underworld and gave it in exchange for worship; the first Transaction, cutting a hole in the firmament and flooding ontological reality with the fact of Wealth. Take from the wealthy, give to the worthless, empower."
-	worshippers = "Highwaymen, Robbers, Downtrodden Peasants, Merchants"
+	domain = "Dios del robo, La redistribucion de la riqueza y El comercio"
+	desc = "El Hombre que robo el fuego del Inframundo y lo entrego a cambio de adoracion; la primera Transaccion, cortando un agujero en el firmamento e inundando la realidad ontologica con el hecho de la Riqueza. Quitarle a los ricos, darle a los que no valen nada, empoderar."
+	worshippers = "Salteadores de Diliguencias, Ladrones, Campesinos Oprimidos, Comerciantes"
 	mob_traits = list(TRAIT_COMMIE)
 	confess_lines = list(
-		"MATTHIOS STEALS FROM THE WORTHLESS!",
-		"MATTHIOS IS JUSTICE!",
-		"MATTHIOS IS MY LORD!",
+		"MATTHIOS ROBA DE LOS QUE NO MERECEN RIQUEZA!",
+		"MATTHIOS ES JUSTICIA!",
+		"MATTHIOS ES MI SEÑOR!",
 	)
 
 /datum/patron/inhumen/baotha
 	name = "Baotha"
 	domain = "Goddess of Degeneracy, Debauchery and Addiction"
-	desc = "Eora's crueler half, made be from her one true love having been unfaithful. Filled with bitterness, she separated from Eora in spirit and spiraled into a dark hole of crippling hedonism. She teaches her ilk to place their trust in no one, and do only as they please."
-	worshippers = "Perverts, Gamblers, Drunkards, and Bards"
+	desc = "La mitad mas cruel de Eora, que se separo de su unico y verdadero amor tras haberle sido infiel. Llena de amargura, se separo de Eora en espiritu y se hundio en un oscuro agujero de hedonismo paralizante. Enseña a los de su calaña a no depositar su confianza en nadie y a hacer solo lo que les plazca.."
+	worshippers = "Pervertidos, Apostadores, Alcoholicos, y Bardos"
 	mob_traits = list(TRAIT_DEPRAVED, TRAIT_CRACKHEAD)
 	confess_lines = list(
-		"BAOTHA DEMANDS PLEASURE!",
-		"LIVE, LAUGH, LOVE!",
-		"BAOTHA IS MY JOY!",
+		"BAOTHA DEMANDA PLACER!",
+		"VIVE, RIE, AMA!",
+		"BAOTHA ES MI ALEGRIA!",
 	)
 
 

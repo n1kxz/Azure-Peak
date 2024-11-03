@@ -219,7 +219,7 @@
 						if(G.grab_state < GRAB_AGGRESSIVE)
 							return
 						if(HAS_TRAIT(src, TRAIT_PACIFISM))
-							to_chat(src, span_notice("I gently let go of [throwable_mob]."))
+							to_chat(src, span_notice("Yo me bajo gentilmente de [throwable_mob]."))
 							return
 						var/turf/start_T = get_turf(loc) //Get the start and target tile for the descriptors
 						var/turf/end_T = get_turf(target)
@@ -238,7 +238,7 @@
 			dropItemToGround(I, silent = TRUE)
 
 			if(HAS_TRAIT(src, TRAIT_PACIFISM) && I.throwforce)
-				to_chat(src, span_notice("I set [I] down gently on the ground."))
+				to_chat(src, span_notice("Dejo [I] gentilmente en el suelo."))
 				return
 
 
@@ -247,9 +247,9 @@
 			thrown_speed = thrown_thing.throw_speed
 		if(!thrown_range)
 			thrown_range = thrown_thing.throw_range
-		visible_message(span_danger("[src] throws [thrown_thing]."), \
-						span_danger("I toss [thrown_thing]."))
-		log_message("has thrown [thrown_thing]", LOG_ATTACK)
+		visible_message(span_danger("[src] lanza [thrown_thing]."), \
+						span_danger("Yo lanzo [thrown_thing]."))
+		log_message("ha lanzado [thrown_thing]", LOG_ATTACK)
 		newtonian_move(get_dir(target, src))
 		thrown_thing.safe_throw_at(target, thrown_range, thrown_speed, src, null, null, null, move_force)
 		if(!used_sound)

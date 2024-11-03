@@ -357,7 +357,7 @@
 	candodge = TRUE
 	canparry = TRUE
 	blade_class = BCLASS_PUNCH
-	miss_text = "swings a fist at the air!"
+	miss_text = "lanza un puñetazo al aire!"
 	miss_sound = "punchwoosh"
 	item_d_type = "blunt"
 
@@ -365,11 +365,11 @@
 	if(ismob(target))
 		var/mob/M = target
 		var/list/targetl = list(target)
-		user.visible_message(span_warning("[user] taunts [M]!"), span_warning("I taunt [M]!"), ignored_mobs = targetl)
+		user.visible_message(span_warning("[user] se burla de [M]!"), span_warning("Yo me burlo de [M]!"), ignored_mobs = targetl)
 		user.emote("taunt")
 		if(M.client)
 			if(M.can_see_cone(user))
-				to_chat(M, span_danger("[user] taunts me!"))
+				to_chat(M, span_danger("[user] se esta burlando de mi!"))
 		else
 			M.taunted(user)
 	return
@@ -392,10 +392,10 @@
 	if(ismob(target))
 		var/mob/M = target
 		var/list/targetl = list(target)
-		user.visible_message(span_blue("[user] shoos [M] away."), span_blue("I shoo [M] away."), ignored_mobs = targetl)
+		user.visible_message(span_blue("[user] señala a [M] que se vaya."), span_blue("Señalo a [M] para que se vaya."), ignored_mobs = targetl)
 		if(M.client)
 			if(M.can_see_cone(user))
-				to_chat(M, span_blue("[user] shoos me away."))
+				to_chat(M, span_blue("[user] me señala que me vaya."))
 		else
 			M.shood(user)
 	return
@@ -417,10 +417,10 @@
 	if(ismob(target))
 		var/mob/M = target
 		var/list/targetl = list(target)
-		user.visible_message(span_green("[user] beckons [M] to come closer."), span_green("I beckon [M] to come closer."), ignored_mobs = targetl)
+		user.visible_message(span_green("[user] hace señas a [M] para que se acerque."), span_green("Yo le hago señas a [M] para que se acerque."), ignored_mobs = targetl)
 		if(M.client)
 			if(M.can_see_cone(user))
-				to_chat(M, span_green("[user] beckons me to come closer."))
+				to_chat(M, span_green("[user] me hace señas para que me acerque."))
 		else
 			M.beckoned(user)
 	return
@@ -439,10 +439,10 @@
 	if(ismob(target))
 		var/mob/M = target
 		var/list/targetl = list(target)
-		user.visible_message(span_green("[user] waves friendly at [M]."), span_green("I wave friendly at [M]."), ignored_mobs = targetl)
+		user.visible_message(span_green("[user] saluda amigablemente a [M] con la mano."), span_green("Saludo amigablemente a [M] con la manos."), ignored_mobs = targetl)
 		if(M.client)
 			if(M.can_see_cone(user))
-				to_chat(M, span_green("[user] gives me a friendly wave."))
+				to_chat(M, span_green("[user] me da un saludo amigable con la mano."))
 	return
 
 /datum/intent/simple/headbutt

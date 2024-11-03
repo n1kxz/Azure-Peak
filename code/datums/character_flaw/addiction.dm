@@ -24,7 +24,7 @@
 //	var/debuff = /datum/status_effect/debuff/addiction
 	var/debuff //so heroin junkies can have big problems
 	var/needsate_text
-	var/sated_text = "That's much better..."
+	var/sated_text = "Eso esta mucho mejor..."
 	var/unsate_time
 
 
@@ -73,40 +73,40 @@
 /// ALCOHOLIC
 
 /datum/charflaw/addiction/alcoholic
-	name = "Alcoholic"
-	desc = "Drinking alcohol is my favorite thing."
+	name = "Alcoholico"
+	desc = "Beber alcohol es mi cosa favorita."
 	time = 40 MINUTES
-	needsate_text = "Time for a drink."
+	needsate_text = "Hora de beber."
 
 
 /// JUNKIE
 
 /datum/charflaw/addiction/junkie
-	name = "Junkie"
-	desc = "I need a REAL high to take the pain of this rotten world away."
+	name = "Yonki"
+	desc = "Necesito un COLOCON de verdad para alejarme del dolor de este mundo."
 	time = 40 MINUTES
-	needsate_text = "Time to get really high."
+	needsate_text = "Hora de colocarme."
 
 /// Smoker
 
 /datum/charflaw/addiction/smoker
-	name = "Smoker"
-	desc = "I need to smoke something to take the edge off."
+	name = "Fumador"
+	desc = "Necesito fumar algo para quitarme el estres."
 	time = 40 MINUTES
-	needsate_text = "Time for a flavorful smoke."
+	needsate_text = "Hora de echarse un cigarrillo."
 
 /// GOD-FEARING
 
 /datum/charflaw/addiction/godfearing
-	name = "Devout Follower"
-	desc = "I need to pray to my Patron, their blessings are stronger."
+	name = "Seguidor Devoto"
+	desc = "Necesito seguir a mi patron, sus bendiciones seran mas fuertes."
 	time = 40 MINUTES
-	needsate_text = "Time to pray to my Patron."
+	needsate_text = "Es hora de rezar."
 
 /// SADIST
 
 /datum/charflaw/addiction/sadist
-	name = "Sadist"
-	desc = "There is no greater pleasure than the suffering of another."
+	name = "Sadico"
+	desc = "No hay mayor placer que el dolor de otra persona."
 	time = 40 MINUTES
-	needsate_text = "I need to hear someone whimper."
+	needsate_text = "Necesito escuchar a alguien sufrir."

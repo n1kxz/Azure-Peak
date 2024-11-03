@@ -24,7 +24,7 @@
 	if(holder.fakekey)
 		rank_name = pick(strings("admin_nicknames.json", "ranks", "config"))
 		admin_name = pick(strings("admin_nicknames.json", "names", "config"))
-	var/rendered = span_gamedeadsay("<span class='prefix'>DEAD:</span> <span class='name'>[rank_name]([admin_name])</span> says, <span class='message'>\"[emoji_parse(msg)]\"</span>")
+	var/rendered = span_gamedeadsay("<span class='prefix'>DEAD:</span> <span class='name'>[rank_name]([admin_name])</span> dice, <span class='message'>\"[emoji_parse(msg)]\"</span>")
 
 	for (var/mob/M in GLOB.player_list)
 		if(isnewplayer(M))

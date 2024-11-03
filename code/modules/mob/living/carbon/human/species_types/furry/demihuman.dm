@@ -5,7 +5,7 @@
 	name = "Half-Kin"
 	id = "demihuman"
 	desc = "The inevitable union between wildkin and some form of humanity or another, and while they also experience animalistic tendencies akin to their full-blooded ancestors, their intermingling with others has stemmed the intensity. (Half-kin are not a template race to play your own custom race, if you play a half-kin, you are expected to roleplay to the setting and the race's lore.)"
-	skin_tone_wording = "Ancestry"
+	skin_tone_wording = "Ascendencia"
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY,MUTCOLORS_PARTSONLY)
 	default_features = MANDATORY_FEATURE_LIST
@@ -50,10 +50,7 @@
 		/datum/customizer/organ/horns/demihuman,
 		/datum/customizer/organ/tail/demihuman,
 		/datum/customizer/organ/wings/anthro,
-		/datum/customizer/organ/testicles/anthro,
-		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
-		/datum/customizer/organ/vagina/animal,
 		)
 	body_marking_sets = list(
 		/datum/body_marking_set/none,

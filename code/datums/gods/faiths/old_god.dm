@@ -1,8 +1,7 @@
 /datum/faith/old_god
-	name = "Old God"
-	desc = "The Holy See has been taken over by misguided fools who defile Psydon and worship false gods, but we survive.\n\
-		PSYDON YET LIVES. PSYDON YET ENDURES.\n\
-		The Holy See and Holy Ecclesial squabble over TRUE DIVINITY, while IGNORING the savior that sent the COMET SYON \
-		to save the Azure Coast from the rampaging Archdevil Vheslyn. HE YET RESTS- BUT HE IS NOT DEAD. PSYDON YET ENDURES. PSYDON YET LIVES."
-	worshippers = "People of Zybantium, people of Stine, religious extremists, zealotry-filled fools"
+	name = "Viejo Dios"
+	desc = "La Santa Sede ha sido tomada por tontos descarriados que profanan a Psydon y adoran a dioses falsos, pero sobreviviremos...\n\
+		<b>PSYDON SIGUE VIVO. PSYDON PERDURA.</b>\n\
+		PSYDON envio al COMETA SYON para destruir al arrasador ARCHIDEMONIO VHESLYN y salvar a toda la humanidad. Aunque ahora descansa, los tontos lo creen MUERTO- PERO PSYDON SIGUE VIVO, Y SIGUE PERDURANDO. Plegarias sin responder, milagros debiles - eso son PRUEBAS."
+	worshippers = "Zybantinos, Gente de Stine, Extremistas Religiosos, Tontos llenos de fanatismo."
 	godhead = /datum/patron/old_god
