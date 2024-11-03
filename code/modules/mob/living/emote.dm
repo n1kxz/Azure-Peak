@@ -121,8 +121,8 @@
 /datum/emote/living/bow
 	key = "bow"
 	key_third_person = "bows"
-	message = "se inclina."
-	message_param = "se inclina ante %t."
+	message = "hace una reverencia."
+	message_param = "se inclina ante %t haciendo una reverencia."
 	restraint_check = TRUE
 	emote_type = EMOTE_VISIBLE
 
