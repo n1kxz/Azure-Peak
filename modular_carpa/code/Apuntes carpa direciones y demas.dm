@@ -10,5 +10,14 @@ strings\accent_universal.json
 
 
 
+nueva ropa interior 3/11/2024 (por kans):
+code\game\objects\items\rogueitems\undies.dm
+code\modules\client\customizer\customizers\bodypart_feature\misc.dm
+icons\mob\sprite_accessory\underwear.dmi
+code\modules\mob\dead\new_player\sprite_accessory\underwear.dm
+icons\roguetown\items\misc.dmi
+modular_carpa\icons\carpeta rateable\icons\mob\clothing\under\dress.dmi
+
+
 
 
