@@ -7,7 +7,7 @@ code\modules\client\preferences.dm
 code\modules\roguetown\roguemachine\titan.dm
 modular_carpa\code\Apuntes carpa direciones y demas.dm
 strings\accent_universal.json
-
+code\modules\mob\living\emote.dm
 
 
 
