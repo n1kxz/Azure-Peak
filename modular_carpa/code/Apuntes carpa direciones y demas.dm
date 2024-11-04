@@ -18,6 +18,8 @@ code\modules\mob\dead\new_player\sprite_accessory\underwear.dm
 icons\roguetown\items\misc.dmi
 modular_carpa\icons\carpeta rateable\icons\mob\clothing\under\dress.dmi
 
-
+kans parche  4/11/2024
+añadi nuevas carpetas haciendo modular todo lo que se toco de ropa o bueno la mayoria
+son las unicas carpetas nuevas bruh
 
 
