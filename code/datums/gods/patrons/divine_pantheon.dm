@@ -23,8 +23,8 @@
 	desc = "La forma masculina de Los Dioses Gemelos, la amalgama combinada de Noc y Astrata en un solo cuerpo que abre sus ojos durante la ponderosa Noche. El otorgo al hombre el conocimiento de la divinidad y la magia. Una sola forma engendra dos Dioses que cambian en el Crepusculo y el Amanecer, pero siempre perduran, incluso en el dia."
 	worshippers = "Magos y Eruditos"
 	mob_traits = list(TRAIT_NOCSIGHT)
-	t1 = /obj/effect/proc_holder/spell/invoked/blindness
-	t2 = /obj/effect/proc_holder/spell/invoked/invisibility
+	t1 = /obj/effect/proc_holder/spell/invoked/blindness/miracle
+	t2 = /obj/effect/proc_holder/spell/invoked/invisibility/miracle
 	confess_lines = list(
 		"NOC ES LA NOCHE!",
 		"NOC TODO LO VE!",
