@@ -3,8 +3,9 @@ theme:
   name: material
   language: es
   palette:
-    primary: black
-    accent: red
+    primary: custom
+
+    
     
 nav:
   - Inicio: index.md
@@ -14,3 +15,6 @@ nav:
     - Mercenario: roles/mercenary.md
     - Nobleza: roles/nobility.md
     - Guardia Real: roles/royal-guard.md
+    
+extra_css:
+  - css/styles.css
