@@ -7,4 +7,4 @@
 Rankstrail459 = Host
 1gnite = Host
 TheJanitor21 = Host
-Hinagiscout = Host
+Blasko = Host
