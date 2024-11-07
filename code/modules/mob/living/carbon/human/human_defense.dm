@@ -765,10 +765,10 @@
 
 /mob/living/carbon/human/proc/check_for_injuries(mob/user = src, advanced = FALSE, silent = FALSE)
 	var/list/examination = list("<span class='info'>ø ------------ ø")
-	var/m1
+	//var/m1
 	var/deep_examination = advanced
 	if(user == src)
-		m1 = "I am"
+		//m1 = "I am"
 		if(!deep_examination)
 			deep_examination = HAS_TRAIT(src, TRAIT_SELF_AWARE)
 		examination += span_notice("Veamos como me va.")
@@ -776,7 +776,7 @@
 			user.visible_message(span_notice("[src] examines [p_them()]self."), \
 				span_notice("Me miro a mi mismo en busca de heridas."))
 	else if(user)
-		m1 = "[p_they(TRUE)] [p_are()]"
+		//m1 = "[p_they(TRUE)] [p_are()]"
 		if(!deep_examination)
 			deep_examination = HAS_TRAIT(user, TRAIT_EMPATH)
 		examination += span_notice("Veamos como le va a[src].")

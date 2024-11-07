@@ -4965,7 +4965,12 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/beach/forest)
 "On" = (
-/turf/closed,
+/obj/structure/table/wood{
+	icon_state = "longtable"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/book/rogue/secret/thefireisgone,
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/cave)
 "Oo" = (
 /obj/item/reagent_containers/powder/salt,
@@ -24263,7 +24268,7 @@ oP
 Ku
 gp
 QH
-pu
+On
 qi
 Ev
 nA
@@ -41950,7 +41955,7 @@ Iq
 kN
 kN
 kN
-On
+kN
 kN
 zC
 tk

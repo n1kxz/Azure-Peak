@@ -386,8 +386,8 @@
 	shit += "<br><span class='bold'>Δ--------------------Δ</span><br>"
 	shit += "<br><font color='#9b6937'><span class='bold'>Muertes:</span></font> [deaths]"
 	shit += "<br><font color='#af2323'><span class='bold'>Sangre Derramada:</span></font> [round(blood_lost / 100, 1)]L"
-	shit += "<br><font color='#36959c'><span class='bold'>TRIUNFOS(s) Ganados:</span></font> [tri_gained]"
-	shit += "<br><font color='#a02fa4'><span class='bold'>TRIUNFOS(s) Robados:</span></font> [tri_lost * -1]"
+	shit += "<br><font color='#36959c'><span class='bold'>TRIUNFOS Ganados:</span></font> [tri_gained]"
+	shit += "<br><font color='#a02fa4'><span class='bold'>TRIUNFOS Robados:</span></font> [tri_lost * -1]"
 	shit += "<br><font color='#ffd4fd'><span class='bold'>Degenerados Que Han Encontrado La Forma De Hacer ERP (me cago en tus putos muertos):</span></font> [cums]"
 	if(GLOB.confessors.len)
 		shit += "<br><font color='#93cac7'><span class='bold'>Confessors:</span></font> "

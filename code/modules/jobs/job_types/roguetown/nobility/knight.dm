@@ -99,7 +99,7 @@
 	H.verbs |= /mob/proc/haltyell
 
 
-	H.change_stat("strength", 2) //tanky, two-handed melee brutes. more endurance/con than other classes in exchange for a heavy speed debuff and worse bow skills
+	H.change_stat("strength", 4) //tanky, two-handed melee brutes. more endurance/con than other classes in exchange for a heavy speed debuff and worse bow skills
 	H.change_stat("constitution", 3)
 	H.change_stat("endurance", 3)
 	H.change_stat("intelligence", 1)

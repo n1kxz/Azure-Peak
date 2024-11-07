@@ -1,6 +1,6 @@
 /mob/living/carbon/human
-	name = "Unknown"
-	real_name = "Unknown"
+	name = "Desconocido"
+	real_name = "Desconocido"
 	icon = 'icons/mob/human.dmi'
 	icon_state = "human_basic"
 	appearance_flags = KEEP_TOGETHER|TILE_BOUND|PIXEL_SCALE

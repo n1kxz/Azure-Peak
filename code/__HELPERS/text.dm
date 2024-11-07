@@ -20,7 +20,7 @@
 	if(CHAT_FILTER_CHECK(t))
 		alert("You cannot set a name that contains a word prohibited in IC chat!")
 		return ""
-	if(t == "space" || t == "floor" || t == "wall" || t == "r-wall" || t == "monkey" || t == "unknown" || t == "inactive ai")	//prevents these common metagamey names
+	if(t == "space" || t == "floor" || t == "wall" || t == "r-wall" || t == "monkey" || t == "desconocido" || t == "inactive ai")	//prevents these common metagamey names
 		alert("Invalid name.")
 		return ""
 	return sanitize(t)

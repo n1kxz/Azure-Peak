@@ -43,6 +43,3 @@
 	name = "leotard"
 	icon_state = "leotard"
 	covers_breasts = TRUE
-
-
-

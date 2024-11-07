@@ -240,7 +240,7 @@
 /datum/status_effect/buff/guardbuffone
 	id = "guardbuffone"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/guardbuffone
-	effectedstats = list("constitution" = 1,"endurance" = 1, "speed" = 1, "perception" = 2) //dropped perception bonus, was regularly pushing to 17-18 per with statpacks/racial bonuses
+	effectedstats = list("constitution" = 1,"endurance" = 1, "speed" = 1, "perception" = 3) //if they can't figure out how to ply this for winning chances i'm going to sob openly
 	duration = 50000 //essentially permanent, removes when we're out of the area
 
 /datum/status_effect/buff/guardbuffone/process()
@@ -272,7 +272,7 @@
 	return TRUE
 
 /datum/status_effect/buff/healing/tick()
-	var/obj/effect/temp_visual/heal/H = new /obj/effect/temp_visual/heal_rogue(get_turf(owner))
+	var/obj/effect/temp_visual/heal/H = new /obj/effect/temp_visual/heal(get_turf(owner))
 	H.color = "#FF0000"
 	var/list/wCount = owner.get_wounds()
 	if(owner.blood_volume < BLOOD_VOLUME_NORMAL)

@@ -13,6 +13,20 @@
 
 /datum/outfit/job/roguetown/adventurer/monk/pre_equip(mob/living/carbon/human/H)
 	..()
+
+	
+	var/classes = list("Woods Staff","Duster")
+	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
+
+	switch(classchoice)
+		if("Woods Staff")
+			
+			r_hand = /obj/item/rogueweapon/woodstaff
+			
+		if("Duster")
+			
+			r_hand = /obj/item/rogueweapon/duster
+
 	head = /obj/item/clothing/head/roguetown/roguehood
 	neck = /obj/item/clothing/neck/roguetown/psicross
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
@@ -21,7 +35,10 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/storage/backpack/rogue/backpack
-	r_hand = /obj/item/rogueweapon/duster
+	
+
+
+
 	if(H.mind)
 		to_chat(src, span_warning("Monks are pilgrims of powerful belief who empart the teachings of their Temple or God by their interactions with the people of the world. A good monk would seek to help travellers on the road, feed the hungry and teach the weak to become strong. A bad one however..."))
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)

@@ -1,0 +1,47 @@
+{
+	"full": {
+		"adios": "nos vemoh'",
+		"hasta luego": ["adioh'","hasta luego"],
+		"si": "cí",
+		"gracias": "grazia'",
+		"tipo": "tio",
+		"tipa": "tia",
+		"hola": ["que paza?", "hola"],
+		"mala": ["malaje", "malage", "mala"],
+		"malo": ["malaje", "malage", "malo"]
+
+	},
+	"start": {
+		"amigo": ["miarmah'", "killo'", "empareh'", "pichah'", "pichitah'", "surmanoh'", "surmanitoh'", "illo'"],
+		"tomate": ["tomateh'", "tomaticoh"],
+		"puta": ["putah'", "guarrah'", "zopencah'", "busconah'", "cansinah'", "lagartah'"],
+		"zorra": ["zorrunah", "busconah", "chismosah"],
+		"queso": "quezo",
+		"como que no": "No ni nah'",
+		"homesexual": "maricon",
+		"gay": "maricon",
+		"lesbiana": "bollerah'",
+		"frio": "arrecioh'",
+		"tengo hambre": "estoy esmallaoh'",
+		"estoy hambriento": "estoy esmallaoh'",
+		"piola": "de puta madre",
+		"lo juro": "por mis muertos",
+		"madre": "mareh'",
+		"padre": "pareh'",
+		"hambriento": "esmallaoh'",
+		"ustedes": "vosotros",
+		"carajo": "ostiah'",
+		"verga": "pollah'",
+		"a casa de": "anca'"
+		
+	},
+    "end": {
+
+    },
+    "syllable": {
+        "shi": "chee",
+        "thi": "thee",
+        "s": "zh",
+		"ish": "eesh"
+    }
+}

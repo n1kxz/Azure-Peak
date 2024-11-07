@@ -48,6 +48,3 @@
 	if(owner.gender == MALE)
 		return "male_leotard"
 	return "female_leotard"
-
-
-

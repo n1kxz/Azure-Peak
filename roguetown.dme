@@ -715,13 +715,6 @@
 #include "code\datums\sexcon\sex_actions\sex\throat_sex.dm"
 #include "code\datums\sexcon\sex_actions\sex\vaginal_ride_sex.dm"
 #include "code\datums\sexcon\sex_actions\sex\vaginal_sex.dm"
-#include "code\datums\sexcon\sex_actions\toy\toy_anal.dm"
-#include "code\datums\sexcon\sex_actions\toy\toy_helpers.dm"
-#include "code\datums\sexcon\sex_actions\toy\toy_oral.dm"
-#include "code\datums\sexcon\sex_actions\toy\toy_other_anal.dm"
-#include "code\datums\sexcon\sex_actions\toy\toy_other_oral.dm"
-#include "code\datums\sexcon\sex_actions\toy\toy_other_vaginal.dm"
-#include "code\datums\sexcon\sex_actions\toy\toy_vaginal.dm"
 #include "code\datums\skills\_skill.dm"
 #include "code\datums\skills\combat.dm"
 #include "code\datums\skills\craft.dm"
@@ -3546,6 +3539,7 @@
 #include "interface\skin.dmf"
 #include "modular\code\controllers\configuration\entries\general.dm"
 #include "modular\code\controllers\subsystem\processing\sex.dm"
+#include "modular\code\datums\character_flaw.dm"
 #include "modular\code\game\objects\pillory.dm"
 #include "modular\code\game\objects\items\items.dm"
 #include "modular\code\modules\admin\bunker_bypass.dm"
@@ -3617,4 +3611,3 @@
 #include "modular_hearthstone\code\modules\reagents\reagent_containers\lux.dm"
 #include "modular_hearthstone\code\modules\spells\roguetown\wizard.dm"
 // END_INCLUDE
-
