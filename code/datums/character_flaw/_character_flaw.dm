@@ -1,25 +1,25 @@
 
 GLOBAL_LIST_INIT(character_flaws, list(
-	"Alcoholic"=/datum/charflaw/addiction/alcoholic,
-	"Devout Follower"=/datum/charflaw/addiction/godfearing,
-	"Colorblind"=/datum/charflaw/colorblind,
-	"Smoker"=/datum/charflaw/addiction/smoker,
-	"Junkie"=/datum/charflaw/addiction/junkie,
-	"Greedy"=/datum/charflaw/greedy,
-	"Narcoleptic"=/datum/charflaw/narcoleptic,
+	"Alcohólico"=/datum/charflaw/addiction/alcoholic,
+	"Devoto"=/datum/charflaw/addiction/godfearing,
+	"Daltónico"=/datum/charflaw/colorblind,
+	"Fumador"=/datum/charflaw/addiction/smoker,
+	"Adicto"=/datum/charflaw/addiction/junkie,
+	"Avaricioso"=/datum/charflaw/greedy,
+	"Narcoléptico"=/datum/charflaw/narcoleptic,
 	//"Nymphomaniac"=/datum/charflaw/addiction/lovefiend,
-	"Sadist"=/datum/charflaw/addiction/sadist,
-	"Masochist"=/datum/charflaw/masochist,
-	"Paranoid"=/datum/charflaw/paranoid,
-	"Clingy"=/datum/charflaw/clingy,
-	"Isolationist"=/datum/charflaw/isolationist,
-	"Bad Sight"=/datum/charflaw/badsight,
-	"Cyclops (R)"=/datum/charflaw/noeyer,
-	"Cyclops (L)"=/datum/charflaw/noeyel,
-	"Wood Arm (R)"=/datum/charflaw/limbloss/arm_r,
-	"Wood Arm (L)"=/datum/charflaw/limbloss/arm_l,
-	"Random or No Flaw"=/datum/charflaw/randflaw,
-	"No Flaw (3 TRIUMPHS)"=/datum/charflaw/noflaw
+	"Sadista"=/datum/charflaw/addiction/sadist,
+	"Masoquista"=/datum/charflaw/masochist,
+	"Paranoico"=/datum/charflaw/paranoid,
+	"Pegajoso"=/datum/charflaw/clingy,
+	"Ermitaño"=/datum/charflaw/isolationist,
+	"Miope"=/datum/charflaw/badsight,
+	"Cíclope (D)"=/datum/charflaw/noeyer,
+	"Cíclope (I)"=/datum/charflaw/noeyel,
+	"Brazo de Madera (D)"=/datum/charflaw/limbloss/arm_r,
+	"Brazo de Madera (I)"=/datum/charflaw/limbloss/arm_l,
+	"Defecto al azar o ninguno"=/datum/charflaw/randflaw,
+	"Sin Defecto (3 Triunfos)"=/datum/charflaw/noflaw
 	))
 
 /datum/charflaw
@@ -85,12 +85,12 @@ GLOBAL_LIST_INIT(character_flaws, list(
 
 
 /datum/charflaw/eznoflaw
-	name = "Ningun Defecto"
-	desc = "Eres una persona normal, que raro!"
+	name = "Ningún Defecto"
+	desc = "Eres una persona normal, ¡que raro!"
 
 /datum/charflaw/noflaw
-	name = "Ningun Defecto (3 TRI)"
-	desc = "Soy una persona normal, que raro! (Consume 3 TRIUNFOS o da un defecto aleatorio.)"
+	name = "Ningún Defecto (3 TRI)"
+	desc = "Soy una persona normal, ¡que raro! (Consume 3 TRIUNFOS o da un defecto aleatorio.)"
 	var/nochekk = TRUE
 
 /datum/charflaw/noflaw/flaw_on_life(mob/user)
@@ -158,7 +158,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 
 /datum/charflaw/paranoid
 	name = "Paranoico"
-	desc = "Tengo mas ansiedad que el resto de gente. Soy desconfio de otras razas y temo ver sangre."
+	desc = "Tengo más ansiedad que el resto de gente. Desconfío de otras razas y temo ver sangre."
 	var/last_check = 0
 
 /datum/charflaw/paranoid/flaw_on_life(mob/user)
@@ -191,7 +191,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 		user.add_stress(/datum/stressevent/parablood)
 
 /datum/charflaw/isolationist
-	name = "Hermitaño"
+	name = "Ermitaño"
 	desc = "No me gusta estar cerca de otras personas. Puede que me quieran hacer daño..."
 	var/last_check = 0
 
@@ -243,8 +243,8 @@ GLOBAL_LIST_INIT(character_flaws, list(
 		P.add_stress(/datum/stressevent/nopeople)
 
 /datum/charflaw/noeyer
-	name = "Ciclope (D)"
-	desc = "Perdi mi ojo derecho hace mucho tiempo"
+	name = "Cíclope (D)"
+	desc = "Perdí mi ojo derecho hace mucho tiempo"
 
 /datum/charflaw/noeyer/on_mob_creation(mob/user)
 	..()
@@ -258,8 +258,8 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	H.update_fov_angles()
 
 /datum/charflaw/noeyel
-	name = "Ciclope (I)"
-	desc = "Perdi mi ojo izquierdo hace mucho tiempo."
+	name = "Cíclope (I)"
+	desc = "Perdí mi ojo izquierdo hace mucho tiempo."
 
 /datum/charflaw/noeyel/on_mob_creation(mob/user)
 	..()
@@ -273,8 +273,8 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	H.update_fov_angles()
 
 /datum/charflaw/colorblind
-	name = "Daltonico"
-	desc = "Fui maldito con una mala vista, por consecuente no puedo distingar cosas que otros pueden."
+	name = "Daltónico"
+	desc = "Fui maldito con una mala vista, como consecuencia no puedo distinguir cosas que otros sí."
 
 /datum/charflaw/colorblind/on_mob_creation(mob/user)
 	..()
@@ -282,7 +282,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 
 /datum/charflaw/greedy
 	name = "Avaricioso"
-	desc = "No puedo conseguir suficientes mammons, necesito mas y mas! tambien me volvi bueno en saber cuando valen las cosas"
+	desc = "No puedo conseguir suficientes mammons, ¡necesito más y más! También me volví bueno en saber cuánto valen las cosas"
 	var/last_checked_mammons = 0
 	var/required_mammons = 0
 	var/next_mammon_increase = 0
@@ -312,7 +312,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 /datum/charflaw/greedy/proc/mammon_increase(mob/living/carbon/human/user)
 	if(last_passed_check + (50 MINUTES) < world.time) //If we spend a REALLY long time without being able to satisfy, then pity downgrade
 		required_mammons -= rand(10, 20)
-		to_chat(user, span_blue("Alomejor tener menos mammons estaria bien..."))
+		to_chat(user, span_blue("A lo mejor tener menos mammons estaría bien..."))
 	else
 		required_mammons += rand(25, 35) + extra_increment_value
 	required_mammons = min(required_mammons, 250) //Cap at 250 coins maximum
@@ -321,7 +321,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	if(current_mammons >= required_mammons)
 		to_chat(user, span_blue("Estoy feliz con los mammons que tengo..."))
 	else
-		to_chat(user, span_boldwarning("Necesito mas mammons, no puedo conseguir suficientes..."))
+		to_chat(user, span_boldwarning("Necesito más mammons, no puedo conseguir suficientes..."))
 
 	last_checked_mammons = current_mammons
 
@@ -333,7 +333,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	if(new_mammon_amount >= required_mammons)
 		// Feel better
 		if(user.has_stress_event(/datum/stressevent/vice))
-			to_chat(user, span_blue("[new_mammon_amount] mammons... Eso esta mucho mejor.."))
+			to_chat(user, span_blue("[new_mammon_amount] mammons... Eso está mucho mejor.."))
 		user.remove_stress(/datum/stressevent/vice)
 		user.remove_status_effect(/datum/status_effect/debuff/addiction)
 		last_passed_check = world.time
@@ -348,15 +348,15 @@ GLOBAL_LIST_INIT(character_flaws, list(
 
 	if(do_update_msg)
 		if(ascending)
-			to_chat(user, span_warning("Solo [new_mammon_amount] mammons.. Necesito mas..."))
+			to_chat(user, span_warning("Solo [new_mammon_amount] mammons.. Necesito más..."))
 		else
-			to_chat(user, span_boldwarning("No! My precious mammons..."))
+			to_chat(user, span_boldwarning("No! Mis preciosos mammons..."))
 
 	last_checked_mammons = new_mammon_amount
 
 /datum/charflaw/narcoleptic
-	name = "Narcoleptico"
-	desc = "Me pongo somnoliento y caigo dormido de forma involuntaria, pero puedo dormir mas facilmente si quiero, y el moondust puede ayudarme."
+	name = "Narcoléptico"
+	desc = "Me aletargo y me duermo de forma involuntaria, pero puedo dormir más fácilmente si quiero, y el moondust puede ayudarme."
 	var/last_unconsciousness = 0
 	var/next_sleep = 0
 	var/concious_timer = (10 MINUTES)
@@ -392,16 +392,16 @@ GLOBAL_LIST_INIT(character_flaws, list(
 					to_chat(user, span_info("El sentimiento se ha desvanecido."))
 				else
 					concious_timer = rand(7 MINUTES, 15 MINUTES)
-					to_chat(user, span_boldwarning("No puedo mantener mis ojos abiertos por mas tiempo..."))
+					to_chat(user, span_boldwarning("No puedo mantener mis ojos abiertos por más tiempo..."))
 					user.Sleeping(rand(30 SECONDS, 50 SECONDS))
-					user.visible_message(span_warning("[user] colapsa derrepente!"))
+					user.visible_message(span_warning("¡[user] colapsa de repente!"))
 			do_sleep = FALSE
 			last_unconsciousness = world.time
 	else
 		// Been conscious for ~10 minutes (whatever is the conscious timer)
 		if(last_unconsciousness + concious_timer < world.time)
 			drugged_up = FALSE
-			to_chat(user, span_blue("Me estoy poniendo somnoliento..."))
+			to_chat(user, span_blue("Me estoy aletargando..."))
 			user.emote("yawn", forced = TRUE)
 			next_sleep = world.time + rand(7 SECONDS, 11 SECONDS)
 			do_sleep = TRUE
@@ -419,7 +419,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 
 /datum/charflaw/masochist
 	name = "Masoquista"
-	desc = "Me encanta sentir dolor, tanto que necesito mas y mas."
+	desc = "Me encanta sentir dolor, tanto que necesito más y más."
 	var/next_paincrave = 0
 	var/last_pain_threshold = NONE
 
@@ -437,7 +437,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	var/bloodloss_factor = clamp(1.0 - (user.blood_volume / BLOOD_VOLUME_NORMAL), 0.0, 0.5)
 	var/new_pain_threshold = get_pain_threshold(current_pain * (1.0 + (bloodloss_factor * 1.4))) // Bloodloss factor goes up to 50%, and then counts at 140% value of that
 	if(last_pain_threshold == NONE)
-		to_chat(user, span_boldwarning("Quiero sentir el dolor ahora mismo..."))
+		to_chat(user, span_boldwarning("Quiero sentir dolor ahora mismo..."))
 	else if (new_pain_threshold != last_pain_threshold)
 		var/ascending = (new_pain_threshold > last_pain_threshold)
 		switch(new_pain_threshold)
@@ -445,15 +445,15 @@ GLOBAL_LIST_INIT(character_flaws, list(
 				to_chat(user, span_warning("El dolor se ha desvanecido..."))
 			if(MASO_THRESHOLD_TWO)
 				if(ascending)
-					to_chat(user, span_blue("SI, MAS DOLOR!"))
+					to_chat(user, span_blue("¡SI, MÁS DOLOR!"))
 				else
-					to_chat(user, span_warning("NO, MI DOLOR!"))
+					to_chat(user, span_warning("¡NO, MI DOLOR!"))
 			if(MASO_THRESHOLD_THREE)
-				to_chat(user, span_blue("MAS, LO AMO!"))
+				to_chat(user, span_blue("¡MÁS, MÁS!"))
 
 	last_pain_threshold = new_pain_threshold
 	if(new_pain_threshold == MASO_THRESHOLD_FOUR)
-		to_chat(user, span_blue("<b>Hm... Asi me gusta</b>"))
+		to_chat(user, span_blue("<b>Hm... Así me gusta</b>"))
 		next_paincrave = world.time + rand(35 MINUTES, 45 MINUTES)
 		user.remove_stress(/datum/stressevent/vice)
 		user.remove_status_effect(/datum/status_effect/debuff/addiction)
