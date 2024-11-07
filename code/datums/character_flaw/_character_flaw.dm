@@ -1,25 +1,25 @@
 
 GLOBAL_LIST_INIT(character_flaws, list(
-	"Alcoholic"=/datum/charflaw/addiction/alcoholic,
-	"Devout Follower"=/datum/charflaw/addiction/godfearing,
-	"Colorblind"=/datum/charflaw/colorblind,
-	"Smoker"=/datum/charflaw/addiction/smoker,
-	"Junkie"=/datum/charflaw/addiction/junkie,
-	"Greedy"=/datum/charflaw/greedy,
-	"Narcoleptic"=/datum/charflaw/narcoleptic,
+	"Alcohólico"=/datum/charflaw/addiction/alcoholic,
+	"Devoto"=/datum/charflaw/addiction/godfearing,
+	"Daltónico"=/datum/charflaw/colorblind,
+	"Fumador"=/datum/charflaw/addiction/smoker,
+	"Adicto"=/datum/charflaw/addiction/junkie,
+	"Avaricioso"=/datum/charflaw/greedy,
+	"Narcoléptico"=/datum/charflaw/narcoleptic,
 	//"Nymphomaniac"=/datum/charflaw/addiction/lovefiend,
-	"Sadist"=/datum/charflaw/addiction/sadist,
-	"Masochist"=/datum/charflaw/masochist,
-	"Paranoid"=/datum/charflaw/paranoid,
-	"Clingy"=/datum/charflaw/clingy,
-	"Isolationist"=/datum/charflaw/isolationist,
-	"Bad Sight"=/datum/charflaw/badsight,
-	"Cyclops (R)"=/datum/charflaw/noeyer,
-	"Cyclops (L)"=/datum/charflaw/noeyel,
-	"Wood Arm (R)"=/datum/charflaw/limbloss/arm_r,
-	"Wood Arm (L)"=/datum/charflaw/limbloss/arm_l,
-	"Random or No Flaw"=/datum/charflaw/randflaw,
-	"No Flaw (3 TRIUMPHS)"=/datum/charflaw/noflaw
+	"Sadista"=/datum/charflaw/addiction/sadist,
+	"Masoquista"=/datum/charflaw/masochist,
+	"Paranoico"=/datum/charflaw/paranoid,
+	"Pegajoso"=/datum/charflaw/clingy,
+	"Ermitaño"=/datum/charflaw/isolationist,
+	"Miope"=/datum/charflaw/badsight,
+	"Cíclope (D)"=/datum/charflaw/noeyer,
+	"Cíclope (I)"=/datum/charflaw/noeyel,
+	"Brazo de Madera (D)"=/datum/charflaw/limbloss/arm_r,
+	"Brazo de Madera (I)"=/datum/charflaw/limbloss/arm_l,
+	"Defecto al azar o ninguno"=/datum/charflaw/randflaw,
+	"Sin Defecto (3 Triunfos)"=/datum/charflaw/noflaw
 	))
 
 /datum/charflaw
@@ -145,7 +145,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 		return
 	var/mob/living/carbon/human/H = user
 	if(!H.wear_mask)
-		H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/spectacles(H), SLOT_WEAR_masK)
+		H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/spectacles(H), SLOT_WEAR_MASK)
 	else
 		new /obj/item/clothing/mask/rogue/spectacles(get_turf(H))
 
@@ -252,7 +252,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 		return
 	var/mob/living/carbon/human/H = user
 	if(!H.wear_mask)
-		H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/eyepatch(H), SLOT_WEAR_mask)
+		H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/eyepatch(H), SLOT_WEAR_MASK)
 	var/obj/item/bodypart/head/head = H.get_bodypart(BODY_ZONE_HEAD)
 	head?.add_wound(/datum/wound/facial/eyes/right/permanent)
 	H.update_fov_angles()
@@ -267,7 +267,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 		return
 	var/mob/living/carbon/human/H = user
 	if(!H.wear_mask)
-		H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/eyepatch/left(H), SLOT_WEAR_mask)
+		H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/eyepatch/left(H), SLOT_WEAR_MASK)
 	var/obj/item/bodypart/head/head = H.get_bodypart(BODY_ZONE_HEAD)
 	head?.add_wound(/datum/wound/facial/eyes/left/permanent)
 	H.update_fov_angles()
