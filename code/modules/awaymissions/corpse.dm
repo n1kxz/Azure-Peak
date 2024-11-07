@@ -3,7 +3,7 @@
 //To do: Allow corpses to appear mangled, bloody, etc. Allow customizing the bodies appearance (they're all bald and white right now).
 
 /obj/effect/mob_spawn
-	name = "Unknown"
+	name = "Desconocido"
 	density = TRUE
 	anchored = TRUE
 	var/mob_type = null

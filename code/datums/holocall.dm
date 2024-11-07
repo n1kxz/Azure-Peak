@@ -200,7 +200,7 @@
 
 //RECORDS
 /datum/holorecord
-	var/caller_name = "Unknown" //Caller name
+	var/caller_name = "Desconocido" //Caller name
 	var/image/caller_image
 	var/list/entries = list()
 	var/language = /datum/language/common //Initial language, can be changed by HOLORECORD_LANGUAGE entries

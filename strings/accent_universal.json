@@ -78,7 +78,7 @@
 		"sergant":  "sargento",
 		"omg":  "dios mio",
 		"lpm":  "la puta madre",	
-		"xd":  "ha",
+		"xd":  "ja",
 		"idk": "no lo se",
 		"irl": "ah...",
 		"brainrot": "retraso mental",
@@ -95,11 +95,8 @@
 		"satanas": "zizo",
 		"lag": "dolor de cabeza",
 		"internet": "Uh...",
-		"comunismo": "rebeldia",
-        "comunista": "rebelde",
         "karl marx": "matthios",
         "marx": "matthios",
-        "comunistas": "rebeldes",
         "josepf stalin": "lider rebelde",
 		"joseph stalin": "lider rebelde",
         "stalin": "jefe rebelde",
@@ -107,6 +104,9 @@
 		"niggers": "negros",
 		"milei": "duque",
 		"femboys": "afeminados",
+		"comunismo": "rebeldia",
+        "comunista": "rebelde",
+		"comunistas": "rebeldes",
 		"andaluces": "tieflings"
     }
 }

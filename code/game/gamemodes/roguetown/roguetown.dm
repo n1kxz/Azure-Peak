@@ -177,18 +177,17 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 				log_game("Major Antagonist: Extended") //gotta put something here.
 			*/
 
-		/* removing the "minor antagonist" system as we currently need them as major antagonist gamemodes while waiting for our own custom antags
+		 //removing the "minor antagonist" system as we currently need them as major antagonist gamemodes while waiting for our own custom antags
 		if(prob(45))
 			pick_bandits()
 			log_game("Minor Antagonist: Bandit")
 		if(prob(45))
 			pick_aspirants()
 			log_game("Minor Antagonist: Aspirant")
-		//Rest well, unoriginal LFWB reference. You will not be missed.
 		if(prob(10))
 			pick_maniac()
 			log_game("Minor Antagonist: Maniac")
-		*/
+		
 
 	return TRUE
 

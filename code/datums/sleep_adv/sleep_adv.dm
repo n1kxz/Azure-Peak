@@ -79,13 +79,13 @@
 	var/datum/skill/skillref = GetSkillRef(skill)
 	if(!can_advance_pre && can_advance_post && !silent)
 		to_chat(mind.current, span_nicegreen(pick(list(
-			"I'm getting a better grasp at [lowertext(skillref.name)]...",
-			"With some rest, I feel like I can get better at [lowertext(skillref.name)]...",
-			"[skillref.name] starts making more sense to me...",
+			"Empiezo a tener un mejor entendimiento de [lowertext(skillref.name)]...",
+			"Si duermo un poco, cree que aumentare mi habilidad de [lowertext(skillref.name)]...",
+			"[skillref.name] empieza a tener algo mas de sentido para...",
 		))))
 	if(!capped_pre && capped_post && !silent)
 		to_chat(mind.current, span_nicegreen(pick(list(
-			"My [lowertext(skillref.name)] is not gonna get any better without some rest...",
+			"Mi habilidad de [lowertext(skillref.name)] no va a mejorar si no duermo...",
 		))))
 
 /datum/sleep_adv/proc/advance_cycle()
@@ -95,7 +95,7 @@
 	if(prob(0)) //TODO SLEEP ADV SPECIALS
 		rolled_specials++
 	var/inspirations = 1
-	to_chat(mind.current, span_notice("My consciousness slips and I start dreaming..."))
+	to_chat(mind.current, span_notice("Mi conciencia empieza a desvanecerse al dormirme..."))
 
 	var/dream_dust = retained_dust
 	dream_dust += BASE_DREAM_DUST
@@ -245,7 +245,7 @@
 		else if(i != 1)
 			skill_string += ", "
 		skill_string += lowertext(skill_name)
-	to_chat(mind.current, span_notice("I feel inspired about [skill_string]..."))
+	to_chat(mind.current, span_notice("Me siento inspirado sobre [skill_string]..."))
 
 
 /datum/sleep_adv/proc/buy_special()

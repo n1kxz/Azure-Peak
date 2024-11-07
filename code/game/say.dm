@@ -102,7 +102,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 						appellation = "Person"
 				namepart = "Unknown [appellation]"
 			else
-				namepart = "Unknown"
+				namepart = "Desconocido"
 			spanpart1 = "<span class='smallyell'>"
 
 	var/languageicon = ""
@@ -238,7 +238,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 		if(findjob)
 			job = findjob.fields["rank"]
 		else
-			job = "Unknown"
+			job = "Desconocido"
 	else if(iscarbon(M))  // Carbon nonhuman
 		job = "No ID"
 	else if(isAI(M))  // AI
@@ -251,7 +251,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 	else if(isobj(M))  // Cold, emotionless machines
 		job = "Machine"
 	else  // Unidentifiable mob
-		job = "Unknown"
+		job = "Desconocido"
 
 /atom/movable/virtualspeaker/GetJob()
 	return job

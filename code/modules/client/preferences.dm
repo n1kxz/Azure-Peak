@@ -416,11 +416,11 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			if(headshot_link != null)
 				dat += "<br><img src='[headshot_link]' width='100px' height='100px'>"
 
-			dat += "<br><b>Texto De Descripcion:</b> <a href='?_src_=prefs;preference=flavortext;task=input'>Change</a>"
+			dat += "<br><b>Descripcion De Personaje:</b> <a href='?_src_=prefs;preference=flavortext;task=input'>Change</a>"
 
 			dat += "<br><b>Notas OOC:</b> <a href='?_src_=prefs;preference=ooc_notes;task=input'>Change</a>"
 
-			dat += "<br><b>Que Has Escondido?:</b> <a href='?_src_=prefs;preference=loadout_item;task=input'>[loadout ? loadout.name : "None"]</a>"
+			dat += "<br><b>Que Has Escondido? (Inventario):</b> <a href='?_src_=prefs;preference=loadout_item;task=input'>[loadout ? loadout.name : "None"]</a>"
 			dat += "</td>"
 
 
@@ -696,7 +696,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	dat += "</td>"
 	dat += "<td width='33%' align='right'>"
-	dat += "<b>Ser Voz:</b> <a href='?_src_=prefs;preference=schizo_voice'>[(toggles & SCHIZO_VOICE) ? "Habilitado":"Deshabilitado"]</a>"
+	dat += "<b>Ser Mentor:</b> <a href='?_src_=prefs;preference=schizo_voice'>[(toggles & SCHIZO_VOICE) ? "Habilitado":"Deshabilitado"]</a>"
 	dat += "</td>"
 	dat += "</tr>"
 	dat += "</table>"
@@ -2040,11 +2040,11 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 				if("schizo_voice")
 					toggles ^= SCHIZO_VOICE
 					if(toggles & SCHIZO_VOICE)
-						to_chat(user, "<span class='warning'>Ahora Eres Una Voz.\n\
-										Como voz, recibirás meditaciones de los jugadores que pregunten sobre la mecánica del juego.\n\
+						to_chat(user, "<span class='warning'>Ahora Eres Un Mentor.\n\
+										Como Mentor, recibirás meditaciones de los jugadores que pregunten sobre las mecánicas del juego y podras responder como una voz en sus cabezas.\n\
                                         Las buenas voces seran recompensadas con PQ por responder meditaciones, mientras que las malas seran castigadas a discrecion de los Admins.</span>")
 					else
-						to_chat(user, span_warning("Ya no eres una voz."))
+						to_chat(user, span_warning("Ya no eres un Mentor."))
 
 				if("migrants")
 					migrant.show_ui()

@@ -114,3 +114,6 @@
 //Final proc in the set for really silly shit
 ///datum/advclass/proc/extra_slop_proc_ending(mob/living/carbon/human/H)
 
+
+
+//

@@ -65,8 +65,11 @@
 		/datum/customizer/organ/snout/lizard,
 		/datum/customizer/organ/frills/lizard,
 		/datum/customizer/organ/horns/humanoid,
-		/datum/customizer/organ/ears/anthro,
+		/datum/customizer/organ/testicles/anthro,
+		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/organ/vagina/animal,
+		/datum/customizer/organ/ears/anthro,
 		)
 	body_marking_sets = list(
 		/datum/body_marking_set/none,

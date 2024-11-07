@@ -132,7 +132,7 @@
 		known_people[H.real_name]["VCOLOR"] = H.voice_color
 		var/used_title = H.get_role_title()
 		if(!used_title)
-			used_title = "unknown"
+			used_title = "desconocido"
 		known_people[H.real_name]["FJOB"] = used_title
 		var/referred_gender
 		switch(H.pronouns)
@@ -163,7 +163,7 @@
 				M.known_people[H.real_name]["VCOLOR"] = H.voice_color
 				var/used_title = H.get_role_title()
 				if(!used_title)
-					used_title = "unknown"
+					used_title = "desconocido"
 				M.known_people[H.real_name]["FJOB"] = used_title
 				var/referred_gender
 				switch(H.pronouns)
