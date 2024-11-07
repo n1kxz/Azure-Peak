@@ -123,7 +123,8 @@
 	"Danza De Las Lanzas" = 'sound/music/instruments/guitar (8).ogg',
 	"The Feline, Forever Returning" = 'sound/music/instruments/guitar (9).ogg',
 	"El Beso Carmesí" = 'sound/music/instruments/guitar (10).ogg',
-	"El Viaje" = 'sound/music/instruments/guitar (11).ogg')
+	"El Viaje" = 'sound/music/instruments/guitar (11).ogg',
+	"Valle Hueco" = 'sound/music/instruments/guitar (12).ogg')
 
 /obj/item/rogue/instrument/harp
 	name = "harp"
