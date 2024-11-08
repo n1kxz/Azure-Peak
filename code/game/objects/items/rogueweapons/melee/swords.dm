@@ -5,8 +5,8 @@
 	force_wielded = 25
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
-	name = "sword"
-	desc = "A simple steel sword, clean and effective."
+	name = "espada"
+	desc = "Una espada de acero sencilla, limpia y efectiva."
 	icon_state = "sword1"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/rogue_lefthand.dmi'
@@ -36,8 +36,8 @@
 		icon_state = "sword[rand(1,3)]"
 
 /obj/item/rogueweapon/sword/decorated
-	name = "engraved sword"
-	desc = "A valuable sword for celebrations and rites."
+	name = "espada grabada"
+	desc = "Una espada valiosa adornada con grabados exquisitos para celebraciones y ritos."
 	icon_state = "decsword1"
 	sellprice = 140
 
@@ -82,9 +82,24 @@
 	swingdelay = 0
 	item_d_type = "stab"
 
+/obj/item/rogueweapon/sword/stone
+	force = 17 //Weaker than a short sword
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/chop)
+	gripped_intents = null
+	name = "espada de piedra"
+	desc = "Una espada de piedra sencilla, tosca y efectiva."
+	icon_state = "stone_sword"
+	max_blade_int = 70
+	max_integrity = 70
+	anvilrepair = /datum/skill/craft/crafting
+	smeltresult = null
+	minstr = 4
+	wdefense = 4
+	sellprice = 10
+
 /obj/item/rogueweapon/sword/short
-	name = "short sword"
-	desc = "An archaic steel sword made for stabbing."
+	name = "espada corta"
+	desc = "Una espada de acero arcaica hecha para apuñalar."
 	force = 19
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
 	icon_state = "swordshort"
@@ -103,7 +118,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "bastard sword"
-	desc = "A bastard sword that can chop with ease."
+	desc = "Esta espada recibio el apodo de bastarda porque no tenia familia. No podia clasificarse como una espada de una sola mano y no era una gran espada de dos manos."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -144,7 +159,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "old sword"
-	desc = "A old steel sword with a green leather grip."
+	desc = "Una vieja espada de acero con empuñadura de cuero verde. Sin dudas es de tiempos antiguos. Una espada venerable, con el peso de los siglos en su hoja. aunque se le olvido cambiar de idioma... "
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -182,7 +197,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "judgement"
-	desc = "A sword with a silver grip, a topaz gem hilt and a steel blade, what more could a noble ask for."
+	desc = "Una espada con empuñadura de plata, empuñadura de topacio y hoja de acero, ¿qué más podría pedir un noble?"
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -221,7 +236,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "Psydonia Redentor"
-	desc = "...for the LORD is my tower, and HE gives me the power to tear down the works of the enemy..."
+	desc = "...Porque el SEÑOR es mi fortaleza, y EL me otorga el poder para derribar las obras del enemigo......"
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -252,8 +267,8 @@
 	item_state = "vlord"
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	name = "crimson fang"
-	desc = "A strange long sword with a green metal composition."
+	name = "colmillo carmesi"
+	desc = "Una singular espada larga forjada con un peculiar metal verde "
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -293,7 +308,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "shamshir"
-	desc = "A one-handed sword with elegant curves and deadly sharpness."
+	desc = "Espada de una mano con elegantes curvas y agudeza letal de origen persa."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -332,7 +347,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	name = "shalal saber"
-	desc = "Lightweight, slender and curved."
+	desc = "Ligero, delgado y curvo... Sable de origen exótico de fina curvatura, típico de tierras lejanas."
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
 	swingsound = BLADEWOOSH_SMALL
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -392,7 +407,7 @@
 	possible_item_intents = list(/datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/axe/chop)
 	icon_state = "exe"
-	name = "execution sword"
+	name = "Hoja de ejecución."
 	desc = ""
 	minstr = 10
 
@@ -419,8 +434,8 @@
 	return
 
 /obj/item/rogueweapon/sword/iron
-	name = "sword"
-	desc = "A simple iron sword, the most classical war weapon."
+	name = "espada"
+	desc = "Una simple espada de hierro, el arma de guerra más clásica. (iron)"
 	icon_state = "isword"
 	minstr = 6
 	smeltresult = /obj/item/ingot/iron
@@ -428,8 +443,8 @@
 	sellprice = 10
 
 /obj/item/rogueweapon/sword/iron/short
-	name = "short sword"
-	desc = "An archaic iron sword."
+	name = "espada corta"
+	desc = "Una espada de hierro arcaica. (iron)"
 	icon_state = "iswordshort"
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
 	gripped_intents = null
@@ -438,7 +453,7 @@
 
 /obj/item/rogueweapon/sword/iron/short/chipped
 	force = 17
-	desc = "An ancient-looking iron sword."
+	desc = "Una espada de hierro de aspecto antiguo."
 	icon_state = "iswordshort_d"
 	max_integrity = 75
 
@@ -451,8 +466,8 @@
 	damfactor = 1.1
 
 /obj/item/rogueweapon/sword/iron/messer
-	name = "iron messer"
-	desc = "A single edged blade to slice and chop with."
+	name = "cuchillo de hierro"
+	desc = "Una hoja de un solo filo para rebanar y picar. (iron)"
 	icon_state = "imesser"
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/axe/chop)
 	gripped_intents = null
@@ -460,8 +475,8 @@
 	wdefense = 2
 
 /obj/item/rogueweapon/sword/sabre
-	name = "sabre"
-	desc = "A swift saber. Parries realiantly and strikes swiftly"
+	name = "sable"
+	desc = "Un sable veloz. Para parrys con fiabilidad y atacar con rapidez."
 	icon_state = "saber"
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust)
 	gripped_intents = null
@@ -480,8 +495,8 @@
 
 /obj/item/rogueweapon/sword/rapier
 	name = "rapier"
-	desc = "A duelist's weapon derived from western battlefield instruments, it features a tapered \
-	blade with a specialized stabbing tip."
+	desc = "Una Espada ropera. un arma de duelista derivada de los instrumentos de batalla occidentales,\
+	 presenta una hoja cónica con una punta punzante especializada."
 	icon = 'icons/roguetown/weapons/64.dmi'
 	icon_state = "rapier"
 	bigboy = TRUE
@@ -587,16 +602,17 @@
 
 /obj/item/rogueweapon/sword/rapier/dec
 	icon_state = "decrapier"
-	desc = "A fine duelist's instrument with a tapered thrusting blade. Its hilt is gilt in gold and inlaid, \
-	and its blade bears twin inscriptions on either side. One reads, 'CAST IN THE NAME OF GODS' while the \
-	obverse reads, 'YE NOT GUILTY'."
+	desc = "Un refinado instrumento de duelo con una hoja estrecha y punzante. Su empuñadura está dorada en oro \
+	 e incrustada de ornamentos, y su hoja lleva inscripciones gemelas en ambos lados. \
+	  Una reza, 'FORJADO EN NOMBRE DE LOS DIOSES' y la otra, 'NO SOIS CULPABLES'."
 	sellprice = 140
 
 /obj/item/rogueweapon/sword/rapier/lord
-	name = "sword of the Mad Duke"
-	desc = "A royal heirloom whose spiraling basket hilt is inlaid with fine cut gems. It bears the burnish of \
-	time, where once sharply defined features have been worn down by so many hands. An old rumor ties this implement \
-	to the siege that smashed the Mad Duke's keep to rubble, and burnt the Duke himself to cinders."
+	name = "Destello del Duque Perdido"
+	desc = "Una reliquia real, cuya empuñadura en espiral está incrustada con gemas finamente talladas. \
+	 Tiene el brillo del tiempo, donde las características antaño definidas han sido desgastadas por tantas manos. \
+	 Un viejo rumor vincula este instrumento con el asedio que redujo a escombros la fortaleza del Duque Loco y quemó al propio Duque hasta convertirlo en cenizas. \
+	 Este refinado legado porta el peso de la historia, sus grabados desvanecidos contando las trágicas leyendas de antaño."
 	icon_state = "lordrap"
 	sellprice = 300
 	max_integrity = 300
@@ -604,8 +620,8 @@
 	wdefense = 7
 
 /obj/item/rogueweapon/sword/cutlass
-	name = "cutlass"
-	desc = "Used by pirates and deckhands."
+	name = "Alfanje"
+	desc = "oja curva, favorita de los piratas y marineros"
 	icon_state = "cutlass"
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	gripped_intents = null
@@ -614,7 +630,7 @@
 /obj/item/rogueweapon/sword/gladius
 	force = 22
 	name = "gladius"
-	desc = "A bronze short sword with a slightly wider end, and no guard. Compliments a shield."
+	desc = "Espada corta de los legionarios, hecha de bronce con un extremo ensanchado y sin guarda. Ideal para acompañar un escudo en batalla."
 	icon_state = "gladius"
 	gripped_intents = null
 	smeltresult = /obj/item/ingot/bronze
@@ -626,8 +642,8 @@
 
 /obj/item/rogueweapon/sword/sabre/elf
 	force = 25
-	name = "elvish saber"
-	desc = "This finely crafted saber is of elven design."
+	name = "sable elfico"
+	desc = "Este sable finamente elaborado es de diseño elfico."
 	icon_state = "esaber"
 	item_state = "esaber"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -639,8 +655,8 @@
 
 /obj/item/rogueweapon/sword/silver
 	force = 24
-	name = "silver sword"
-	desc = "A sword forged of pure silver. The guard is fashioned into a cross."
+	name = "espada de plata"
+	desc = "Espada forjada en plata pura. La guarda tiene forma de cruz. (silver)"
 	icon_state = "silversword"
 	is_silver = TRUE
 	smeltresult = /obj/item/ingot/silver
@@ -653,7 +669,7 @@
 	force_wielded = 32
 	icon_state = "blackflamb"
 	name = "blacksteel flamberge"
-	desc = "A strange sword with a winding blade forged of blacksteel and a rontz pommel."
+	desc = "Una singular espada de hoja serpenteante, forjada en acero negro y adornada con un pomo de rontz."
 	smeltresult = /obj/item/ingot/blacksteel
 	max_integrity = 200
 

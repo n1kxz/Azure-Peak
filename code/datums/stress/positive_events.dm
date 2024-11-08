@@ -1,37 +1,37 @@
 /datum/stressevent/psyprayer
 	timer = 30 MINUTES
 	stressadd = -2
-	desc = span_green("Los dioses me sonrien.")
+	desc = list(span_green("Los dioses me sonrien."),span_green("Los dioses me miran con favor"))
 
 /datum/stressevent/viewsinpunish
 	timer = 5 MINUTES
 	stressadd = -2
-	desc = span_green("He visto a un pecador ser castigado!")
+	desc = list(span_green("He visto a un pecador ser castigado!"),span_green("He presenciado el castigo de un pecador!"))
 
 /datum/stressevent/joke
 	timer = 30 MINUTES
 	stressadd = -2
-	desc = span_green("He escuchado una buena broma.")
+	desc = list(span_green("He escuchado una buena broma."),span_green("Escuche un buen chiste."),span_green("he oido un buen chiste."),span_green("Escuche una broma que me hizo reir."))
 
 /datum/stressevent/tragedy
 	timer = 30 MINUTES
 	stressadd = -2
-	desc = span_green("La vida no es tan mala despues de todo.")
+	desc = list(span_green("La vida no es tan mala despues de todo."),span_green("La vida no es tan mala al fin y al cabo."),span_green("Despues de todo, la vida no es tan mala."))
 
 /datum/stressevent/blessed
 	timer = 60 MINUTES
 	stressadd = -2
-	desc = span_green("Siento un alivio.")
+	desc = list(span_green("Siento un alivio."),span_green("Me siento aliviado."))
 
 /datum/stressevent/triumph
 	timer = 10 MINUTES
 	stressadd = -5
-	desc = span_boldgreen("He recordado un TRIUNFO.")
+	desc = list(span_boldgreen("He recordado un TRIUNFO."),span_boldgreen("Rememoro un glorioso TRIUNFO"),span_boldgreen("Recuerdo un TRIUNFO"))
 
 /datum/stressevent/drunk
 	timer = 1 MINUTES
 	stressadd = -2
-	desc = list(span_green("El alcohol cura mis heridas internas..."),span_green("Alcohol, mi unico y verdadero amigo..."))
+	desc = list(span_green("El alcohol cura mis heridas internas..."),span_green("Alcohol, mi unico y verdadero amigo..."),span_green("El alcohol mitiga el dolor."),span_green("El alcohol, mi fiel amigo."),span_green("El alcohol calma mis penas."),span_green("El licor, mi leal camarada."))
 
 /datum/stressevent/pweed
 	timer = 1 MINUTES
@@ -51,12 +51,12 @@
 /datum/stressevent/stuffed
 	timer = 20 MINUTES
 	stressadd = -1
-	desc = span_green("Estoy lleno! Se siente bien")
+	desc = list(span_green("Estoy lleno! Se siente bien"),span_green("Estoy saciado, ¡que sensacion mas placentera!"))
 
 /datum/stressevent/prebel
 	timer = 5 MINUTES
 	stressadd = -5
-	desc = span_boldgreen("Abajo con el tirano!")
+	desc = list(span_boldgreen("Abajo con el tirano!"),span_boldgreen("¡Abajo con la tirania!"),span_boldgreen("Derroquemos la opresion!"))
 
 /datum/stressevent/music
 	timer = 1 MINUTES
@@ -70,7 +70,7 @@
 
 /datum/stressevent/music/three
 	stressadd = -2
-	desc = span_green("La musica se come mi estres.")
+	desc = span_green("La musica disipa mi estres.")
 	timer = 4 MINUTES
 
 /datum/stressevent/music/four
@@ -100,7 +100,7 @@
 
 /datum/stressevent/beautiful
 	stressadd = -2
-	desc = span_green("Su cara es una obra de arte!")
+	desc = list(span_green("Su cara es una obra de arte!"),span_green("Su rostro es una obra de arte."),span_green("Su faz es una obra maestra."),span_green("Su semblante es arte puro."),span_green("Bromeas? es un papucho, su cara parece tallada por los mismos angeles"))
 	timer = 2 MINUTES
 
 /datum/stressevent/night_owl
@@ -142,3 +142,7 @@
 	stressadd = -4
 	desc = span_boldgreen("He resuelto un puzzle extremadamente dificil. Xylix me sonrie, y seguramente Noc lo vera como algo impresionante.")
 	timer = 15 MINUTES
+
+/datum/stressevent/noble_lavish_food
+	stressadd = -2
+	desc = list(span_green("Verdaderamente, un festin digno de mi posicion."),span_green("En verdad, un banquete digno de mi rango."),span_green("Realmente, un festín acorde a mi noble estatus."))

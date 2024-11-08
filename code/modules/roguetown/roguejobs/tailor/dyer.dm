@@ -9,7 +9,7 @@
 	var/activecolor = "#FFFFFF"
 	/// Allow holder'd mobs
 	var/allow_mobs = TRUE
-/*
+// esto venia desactivado pero lo active porque xd esta chistoso poder pintar mas cosas, en realidad venia a agregar una variable ya la añadi pero eso los gringos anti fun quitan cosas y las vuevlo activar
 	var/list/allowed_types = list(
 			/obj/item/clothing/suit/roguetown/shirt/robe,
 			/obj/item/clothing/suit/roguetown/shirt/dress,
@@ -29,8 +29,8 @@
 			/obj/item/clothing/shoes/roguetown/simpleshoes,
 			/obj/item/clothing/suit/roguetown/armor/gambeson
 			)
-*/
-	//EVIL CODE !!
+
+	//EVIL CODE !! (kans: cerra el orto gringo)
 	var/list/allowed_types = list(
 			/obj/item/clothing,
 			/obj/item/storage,
@@ -41,6 +41,7 @@
 		"White" = "#ffffff",
 		"Black" = "#414143",
 		"Light Grey" = "#999999",
+		"Dark Grey" = "#505050",
 		"Mage Grey" = "#6c6c6c",
 		"Mage Red" = "#b8252c",
 		"Mage Blue" = "#4756d8",

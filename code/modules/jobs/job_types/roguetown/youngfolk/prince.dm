@@ -109,8 +109,8 @@
 		H.change_stat("perception", 2)
 		H.change_stat("strength", -1)
 		H.change_stat("intelligence", 2)
-		H.change_stat("fortune", 1)
-		H.change_stat("speed", 1)
+		H.change_stat("fortune", 3)
+		H.change_stat("speed", 2)
 
 /datum/advclass/heir/inbred
 	name = "Inbred wastrel"

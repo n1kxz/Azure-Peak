@@ -88,7 +88,7 @@
 
 /obj/item/rogue/instrument/lute
 	name = "lute"
-	desc = "Its graceful curves were designed to weave joyful melodies."
+	desc = "Sus elegantes curvas fueron diseñadas para tejer alegres melodias."
 	icon_state = "lute"
 	song_list = list("A Knight's Return" = 'sound/music/instruments/lute (1).ogg',
 	"Amongst Fare Friends" = 'sound/music/instruments/lute (2).ogg',
@@ -100,18 +100,19 @@
 
 /obj/item/rogue/instrument/accord
 	name = "accordion"
-	desc = "A harmonious vessel of nostalgia and celebration."
+	desc = "Un recipiente armonioso de nostalgia, recuerdos, festejos y celebracion."
 	icon_state = "accordion"
 	song_list = list("Her Healing Tears" = 'sound/music/instruments/accord (1).ogg',
 	"Peddler's Tale" = 'sound/music/instruments/accord (2).ogg',
 	"We Toil Together" = 'sound/music/instruments/accord (3).ogg',
 	"Just One More, Tavern Wench" = 'sound/music/instruments/accord (4).ogg',
 	"Moonlight Carnival" = 'sound/music/instruments/accord (5).ogg',
-	"'Ye Best Be Goin'" = 'sound/music/instruments/accord (6).ogg')
+	"'Ye Best Be Goin'" = 'sound/music/instruments/accord (6).ogg',
+	"Beloved Blue" = 'sound/music/instruments/accord (7).ogg')
 
 /obj/item/rogue/instrument/guitar
 	name = "guitar"
-	desc = "This is a guitar, chosen instrument of wanderers and the heartbroken." // YIPPEE I LOVE GUITAR
+	desc = "Esta es una guitarra, el instrumento elegido por los errantes y los desconsolados." // YIPPEE I LOVE GUITAR
 	icon_state = "guitar"
 	song_list = list("Fire-Cast Shadows" = 'sound/music/instruments/guitar (1).ogg',
 	"The Forced Hand" = 'sound/music/instruments/guitar (2).ogg',
@@ -122,11 +123,12 @@
 	"El Odio" = 'sound/music/instruments/guitar (7).ogg',
 	"Danza De Las Lanzas" = 'sound/music/instruments/guitar (8).ogg',
 	"The Feline, Forever Returning" = 'sound/music/instruments/guitar (9).ogg',
-	"El Beso Carmesí" = 'sound/music/instruments/guitar (10).ogg')
+	"El Beso Carmesí" = 'sound/music/instruments/guitar (10).ogg',
+	"The Queen's High Seas" = 'sound/music/instruments/guitar (11).ogg')
 
 /obj/item/rogue/instrument/harp
 	name = "harp"
-	desc = "A harp of elven craftsmanship."
+	desc = "Un arpa de la fina artesania de los elfos."
 	icon_state = "harp"
 	song_list = list("Through Thine Window, He Glanced" = 'sound/music/instruments/harb (1).ogg',
 	"The Lady of Red Silks" = 'sound/music/instruments/harb (2).ogg',
@@ -134,7 +136,7 @@
 
 /obj/item/rogue/instrument/flute
 	name = "flute"
-	desc = "A slender flute carefully carved from a smooth wood piece."
+	desc = "Una flauta delgada, cuidadosamente tallada a partir de una pieza de madera lisa"
 	icon_state = "flute"
 	song_list = list("Half-Dragon's Ten Mammon" = 'sound/music/instruments/flute (1).ogg',
 	"'The Local Favorite'" = 'sound/music/instruments/flute (2).ogg',
@@ -146,7 +148,7 @@
 
 /obj/item/rogue/instrument/drum
 	name = "drum"
-	desc = "Fashioned from taut skins across a sturdy frame, pulses like a giant heartbeat."
+	desc = "Confeccionado con pieles tirantes en un robusto marco, palpita como el latido de un corazon gigantesco."
 	icon_state = "drum"
 	song_list = list("Barbarian's Moot" = 'sound/music/instruments/drum (1).ogg',
 	"Muster the Wardens" = 'sound/music/instruments/drum (2).ogg',
